@@ -6,7 +6,7 @@
   <link href="/mangosteen96.github.io/atom.xml" rel="self"/>
   
   <link href="https://mangosteen96.github.io/mangosteen96.github.io/"/>
-  <updated>2019-06-28T04:48:42.203Z</updated>
+  <updated>2019-06-28T05:11:20.574Z</updated>
   <id>https://mangosteen96.github.io/mangosteen96.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mangosteen96.github.io/mangosteen96.github.io/2019/06/28/%E6%B5%8B%E8%AF%95/"/>
     <id>https://mangosteen96.github.io/mangosteen96.github.io/2019/06/28/测试/</id>
     <published>2019-06-28T04:47:04.000Z</published>
-    <updated>2019-06-28T04:48:42.203Z</updated>
+    <updated>2019-06-28T05:11:20.574Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,10 @@
     
     </summary>
     
+      <category term="测试分类" scheme="https://mangosteen96.github.io/mangosteen96.github.io/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="测试标签" scheme="https://mangosteen96.github.io/mangosteen96.github.io/tags/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE/"/>
     
   </entry>
   
