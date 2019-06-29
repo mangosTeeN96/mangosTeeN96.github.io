@@ -17,21 +17,28 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>Java基础--3.数据类型转换、运算符 | MangosTeeN</title>
-  <meta name="description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。 自动转换将 取值范围小的类型 自动提升为 取值范围大的类型 。 1byte、short、char‐‐&amp;gt;int‐‐&amp;gt;long‐‐&amp;gt;float‐‐&amp;gt;double  强制转换 将 取值范围大的类型 强制转换成 取值范围小的类型 。 自动转换是Java自动执行的">
-<meta name="keywords" content="java基础">
+  <title>hadoop安装与伪分布式搭建 | MangosTeeN</title>
+  <meta name="description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
+<meta name="keywords" content="hadoop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础--3.数据类型转换、运算符">
-<meta property="og:url" content="http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/index.html">
+<meta property="og:title" content="hadoop安装与伪分布式搭建">
+<meta property="og:url" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。 自动转换将 取值范围小的类型 自动提升为 取值范围大的类型 。 1byte、short、char‐‐&amp;gt;int‐‐&amp;gt;long‐‐&amp;gt;float‐‐&amp;gt;double  强制转换 将 取值范围大的类型 强制转换成 取值范围小的类型 。 自动转换是Java自动执行的">
+<meta property="og:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-29T08:51:36.966Z">
+<meta property="og:image" content="http://yoursite.com/.com//1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172202777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjA0MTA3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172548792.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019062917263737.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172700720.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172740841.png">
+<meta property="og:updated_time" content="2019-06-29T09:48:23.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础--3.数据类型转换、运算符">
-<meta name="twitter:description" content="Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。 自动转换将 取值范围小的类型 自动提升为 取值范围大的类型 。 1byte、short、char‐‐&amp;gt;int‐‐&amp;gt;long‐‐&amp;gt;float‐‐&amp;gt;double  强制转换 将 取值范围大的类型 强制转换成 取值范围小的类型 。 自动转换是Java自动执行的">
+<meta name="twitter:title" content="hadoop安装与伪分布式搭建">
+<meta name="twitter:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
+<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/index.html">
+  <link rel="canonical" href="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -283,7 +290,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">自动转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">强制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.1.</span> <span class="toc-text">转换格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.2.</span> <span class="toc-text">注意：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">ASCII编码表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">算数运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">三元运算符</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">创建Hadoop用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">安装jdk1.7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">安装SSH服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">安装Hadoop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">启动Hadoop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">6.</span> <span class="toc-text">使用浏览器查看HDFS信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">7.</span> <span class="toc-text">关闭Hadoop</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -291,14 +298,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java基础-3-数据类型转换、运算符" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-hadoop安装与伪分布式搭建" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础--3.数据类型转换、运算符
+      hadoop安装与伪分布式搭建
     </h1>
   
 
@@ -306,118 +313,92 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/29/Java基础-3-数据类型转换、运算符/" class="article-date">
-	  <time datetime="2019-06-29T05:40:35.000Z" itemprop="datePublished">2019-06-29</time>
+	<a href="/2019/06/29/hadoop安装与伪分布式搭建/" class="article-date">
+	  <time datetime="2019-06-29T09:30:52.000Z" itemprop="datePublished">2019-06-29</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
+    <a class="article-category-link" href="/categories/大数据环境搭建/">大数据环境搭建</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
+	<a class="article-tag-link" href="/tags/hadoop/">hadoop</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/29/Java基础-3-数据类型转换、运算符/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/29/hadoop安装与伪分布式搭建/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。</p>
-<h2><span id="zi-dong-zhuan-huan">自动转换</span></h2><p>将 取值范围小的类型 自动提升为 取值范围大的类型 。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>、<span class="keyword">short</span>、<span class="keyword">char</span>‐‐&gt;<span class="keyword">int</span>‐‐&gt;<span class="keyword">long</span>‐‐&gt;<span class="keyword">float</span>‐‐&gt;<span class="keyword">double</span></span><br></pre></td></tr></table></figure>
-
-<h2><span id="qiang-zhi-zhuan-huan">强制转换</span></h2><ul>
-<li>将 取值范围大的类型 强制转换成 取值范围小的类型 。</li>
-<li>自动转换是Java自动执行的，而强制转换需要我们自己手动执行。</li>
-</ul>
-<h3><span id="zhuan-huan-ge-shi">转换格式：</span></h3><blockquote>
-<p>数据类型 变量名 = (数据类型)被转数据值;</p>
-</blockquote>
-<h3><span id="zhu-yi">注意：</span></h3><ul>
-<li>浮点转成整数，直接取消小数点，可能造成数据损失精度。<ul>
-<li>int 强制转成 short 砍掉2个字节，可能造成数据丢失。</li>
-</ul>
+        <h2><span id="chuang-jian-hadoop-yong-hu">创建Hadoop用户</span></h2><ol>
+<li><p>创建新用户<br>用户名为hadoop，使用/bin/bash作为shell<br><code>sudo useradd -m hadoop -s /bin/bash</code></p>
 </li>
-</ul>
-<h2><span id="ascii-bian-ma-biao">ASCII编码表</span></h2><table>
-<thead>
-<tr>
-<th align="left">字符</th>
-<th align="left">数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">0</td>
-<td align="left">48</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">57</td>
-</tr>
-<tr>
-<td align="left">A</td>
-<td align="left">65</td>
-</tr>
-<tr>
-<td align="left">Z</td>
-<td align="left">90</td>
-</tr>
-<tr>
-<td align="left">a</td>
-<td align="left">97</td>
-</tr>
-<tr>
-<td align="left">z</td>
-<td align="left">122</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 <span class="comment">//字符类型变量</span></span><br><span class="line">	<span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//字符类型和int类型计算</span></span><br><span class="line">	System.out.println(c+i);<span class="comment">//输出结果是98 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd hadoop</span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为hadoop用户添加管理员权限<br><code>sudo adduser hadoop sudo</code></p>
+<h2><span id="an-zhuang-jdk1-7">安装jdk1.7</span></h2><p>首先在oracle官网下载,接下来进行安装与环境变量配置，根据个人电脑系统选择对应版本，我选的是jdk-8u211-linux-x64.tar.gz </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /usr/lib/jvm                           #创建jvm文件夹</span><br><span class="line">$ sudo tar -zxvf jdk-8u211-linux-x64.tar.gz  -C /usr/lib/jvm   #/ 解压到/usr/lib/jvm目录下</span><br><span class="line">$ cd /usr/lib/jvm                                 #进入该目录</span><br><span class="line">$ mv  jdk1.8.0_211 java                         #重命名为java</span><br><span class="line">$ vim ~/.bashrc                               #给JDK配置环境变量</span><br></pre></td></tr></table></figure>
 
-<h2><span id="suan-shu-yun-suan-fu">算数运算符</span></h2><table>
-<thead>
-<tr>
-<th>+</th>
-<th>加法运算，字符串连接运算</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-</td>
-<td>减法运算</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘法运算</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除法运算</td>
-</tr>
-<tr>
-<td>%</td>
-<td>取模运算，两个数字相除取余数</td>
-</tr>
-<tr>
-<td>++ 、 –</td>
-<td>自增自减运算</td>
-</tr>
-</tbody></table>
-<p>注意：变量在独立运算时， 前++ 和 后++ 没有区别 ；和其他变量放在一起， 前++ 和 后++ 就产生了不同（+1后赋值、赋值后+1）。</p>
-<h2><span id="san-yuan-yun-suan-fu">三元运算符</span></h2><p>格式：</p>
-<blockquote>
-<p>数据类型 变量名 = 布尔类型表达式?结果1:结果2</p>
-</blockquote>
-<p>计算方式:<br>布尔类型表达式结果是true，三元运算符整体结果为结果1，赋值给变量。<br>布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">int</span> i = (<span class="number">1</span>==<span class="number">2</span> ? <span class="number">100</span> : <span class="number">200</span>); 			</span><br><span class="line">	System.out.println(i);<span class="comment">//200</span></span><br><span class="line">	<span class="keyword">int</span> j = (<span class="number">3</span>&lt;=<span class="number">4</span> ? <span class="number">500</span> : <span class="number">600</span>); 				</span><br><span class="line">	System.out.println(j);<span class="comment">//500</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在.bashrc文件添加如下指令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
 
+<p>在文件修改完毕以后，输入代码：<br><code>$ source ~/.bashrc                       #使新配置的环境变量生效</code><br><code>$ java -version                          #检测是否安装成功，查看java版本</code></p>
+<p> <img src="/.com//1.png" alt></p>
+<h2><span id="an-zhuang-ssh-fu-wu-duan">安装SSH服务端</span></h2><ol>
+<li>安装<br><code>$ sudo apt-get install openssh-server</code></li>
+<li>登录localhost<br><code>$ ssh localhost</code><br>之后会在~/文件夹下发现一个.ssh文件<ol start="3">
+<li>设置为无密码登录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh/</span><br><span class="line">$ ssh-keygen -t rsa  #出现提示直接按enter</span><br><span class="line">$ cat ./id_rsa.pub &gt;&gt; ./authorized_keys  #加入授权</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<p>此时就直接使用$ ssh localhost，无密码登录了。</p>
+<h2><span id="an-zhuang-hadoop">安装Hadoop</span></h2><p>本文采用伪分布式模式：存储采用分布式文件系统HDFS，但是HDFS的节点和数据节点都在同一节点。</p>
+<ol>
+<li>下载安装<br>下载安装包后解压即可使用：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar -zxvf hadoop-2.7.1.tar.gz -C /usr/local</span><br><span class="line">$ cd /usr/local/</span><br><span class="line">$ sudo mv ./hadoop-2.7.1/ ./hadoop      # 将文件夹名改为hadoop</span><br><span class="line">$ sudo chown -R hadoop ./hadoop       # 修改文件权限</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>查看Hadoop版本信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop/bin</span><br><span class="line">$ ./hadoop version</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190629172202777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjA0MTA3Ng==,size_16,color_FFFFFF,t_70" alt></p>
+<ol start="2">
+<li>伪分布式模式配置<br>修改配置文件:<br>需要修改/usr/local/hadoop/etc/hadoop/文件夹下的core-site.xml和hdfs-site.xml文件。<br>core-site.xml文件:<br>将<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;</span><br><span class="line">        &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>hdfs-site.xml文件修改如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/name&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/data&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将/hadoop/etc/hadoop/hadoop-env.sh文件的JAVA_HOME改为绝对路径。将export JAVA_HOME=$JAVA_HOME改为<br>export JAVA_HOME=/usr/lib/jvm/default-java</p>
+<p>注意：Hadoop的运行方式是由配置文件决定的，如果想从伪分布式模式切换回单机模式，只需删除core-site.xml文件中的配置项即可</p>
+<ol start="3">
+<li>执行名称节点格式化<br>执行如下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>出现如下错误</strong><br> <img src="https://img-blog.csdnimg.cn/20190629172548792.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br><img src="https://img-blog.csdnimg.cn/2019062917263737.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="https://img-blog.csdnimg.cn/20190629172700720.png" alt></p>
+<h2><span id="qi-dong-hadoop">启动Hadoop</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="https://img-blog.csdnimg.cn/20190629172740841.png" alt></p>
+<h2><span id="shi-yong-liu-lan-qi-cha-kan-hdfs-xin-xi">使用浏览器查看HDFS信息</span></h2><p>在浏览器中打开链接：<a href="http://localhost:50070/dfshealth.html#tab-overview" target="_blank" rel="noopener">http://localhost:50070/dfshealth.html#tab-overview</a><br>即可查看</p>
+<h2><span id="guan-bi-hadoop">关闭Hadoop</span></h2><p>使用命令：<br><code>./sbin/stop-dfs.sh</code><br>下次启动时不需要再执行节点格式化命令（否则会报错），只需要直接运行start-dfs.sh命令即可。</p>
 
       
     </div>
@@ -427,7 +408,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/" title="Java基础--3.数据类型转换、运算符" target="_blank" rel="external">http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/</a>
+      <a href="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/" title="hadoop安装与伪分布式搭建" target="_blank" rel="external">http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -471,13 +452,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/06/29/hadoop安装与伪分布式搭建/" title="hadoop安装与伪分布式搭建"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2019/06/29/Java基础-2-常量、变量/" title="Java基础-2.常量、变量"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/06/29/Java基础-3-数据类型转换、运算符/" title="Java基础--3.数据类型转换、运算符"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
