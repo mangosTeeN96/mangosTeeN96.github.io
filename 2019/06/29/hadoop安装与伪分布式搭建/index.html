@@ -27,12 +27,12 @@
 <meta property="og:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/.com//1.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172202777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjA0MTA3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172548792.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019062917263737.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172700720.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190629172740841.png">
-<meta property="og:updated_time" content="2019-06-29T09:48:23.284Z">
+<meta property="og:image" content="http://yoursite.com/.com//2.png">
+<meta property="og:image" content="http://yoursite.com/.com//3.png">
+<meta property="og:image" content="http://yoursite.com/.com//4.png">
+<meta property="og:image" content="http://yoursite.com/.com//5.png">
+<meta property="og:image" content="http://yoursite.com/.com//6.png">
+<meta property="og:updated_time" content="2019-06-29T09:57:07.532Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop安装与伪分布式搭建">
 <meta name="twitter:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
@@ -374,7 +374,7 @@
 <p>查看Hadoop版本信息：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop/bin</span><br><span class="line">$ ./hadoop version</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20190629172202777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjA0MTA3Ng==,size_16,color_FFFFFF,t_70" alt></p>
+<p> <img src="/.com//2.png" alt></p>
 <ol start="2">
 <li>伪分布式模式配置<br>修改配置文件:<br>需要修改/usr/local/hadoop/etc/hadoop/文件夹下的core-site.xml和hdfs-site.xml文件。<br>core-site.xml文件:<br>将<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
 
@@ -393,10 +393,10 @@
 
 </li>
 </ol>
-<p><strong>出现如下错误</strong><br> <img src="https://img-blog.csdnimg.cn/20190629172548792.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br><img src="https://img-blog.csdnimg.cn/2019062917263737.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="https://img-blog.csdnimg.cn/20190629172700720.png" alt></p>
+<p><strong>出现如下错误</strong><br> <img src="/.com//3.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br> <img src="/.com//4.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="/.com//5.png" alt></p>
 <h2><span id="qi-dong-hadoop">启动Hadoop</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
 
-<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="https://img-blog.csdnimg.cn/20190629172740841.png" alt></p>
+<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="/.com//6.png" alt></p>
 <h2><span id="shi-yong-liu-lan-qi-cha-kan-hdfs-xin-xi">使用浏览器查看HDFS信息</span></h2><p>在浏览器中打开链接：<a href="http://localhost:50070/dfshealth.html#tab-overview" target="_blank" rel="noopener">http://localhost:50070/dfshealth.html#tab-overview</a><br>即可查看</p>
 <h2><span id="guan-bi-hadoop">关闭Hadoop</span></h2><p>使用命令：<br><code>./sbin/stop-dfs.sh</code><br>下次启动时不需要再执行节点格式化命令（否则会报错），只需要直接运行start-dfs.sh命令即可。</p>
 
