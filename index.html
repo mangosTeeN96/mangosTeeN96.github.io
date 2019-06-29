@@ -1,23 +1,99 @@
 <!DOCTYPE html>
-<html lang=zh>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000">
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top">
-  
-  
-  <title>MangosTeeN</title>
+
+
+
+
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -25,332 +101,1639 @@
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
   
   
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hexo</title>
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/mangosTeeN96" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">MangosTeeN</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">想养一只猫</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav ">
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">分类</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">标签</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">友链</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="Mail" data-toggle=tooltip data-placement=top><i class="icon icon-mail"></i></a></li>
-        
-    </ul>
-
-    </nav>
-  </div>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
+  
     
-      
-  <div class="widget">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li></ul>
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+    
+    
   </div>
 
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
-    </div>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
+</div>
 
 
-    
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
       
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/hexo/">hexo</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/06/28/hexo个人博客搭建/" class="title">hexo个人博客搭建</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-06-28T04:47:04.000Z" itemprop="datePublished">2019-06-28</time>
-              </p>
-            </div>
-          </li>
+        
+        
           
-          <li>
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
             
-            <div class="item-inner">
-              <p class="item-category">
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-              </p>
-              <p class="item-title">
-                <a href="/2019/06/28/hello-world/" class="title">Hello World</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-06-28T04:42:41.376Z" itemprop="datePublished">2019-06-28</time>
-              </p>
-            </div>
-          </li>
+                
+                <a href="/2019/06/29/Java基础-3-数据类型转换、运算符/" class="post-title-link" itemprop="url">Java基础--3.数据类型转换、运算符</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
           
-      </ul>
-    </div>
-  </div>
-  
+          
+          
 
-    
-  </div>
-</aside>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
-  
-  <main class="main" role="main">
-  
-  <div class="content article-list">
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/28/hexo个人博客搭建/">hexo个人博客搭建</a>
-    </h1>
-  
+              
+                
+              
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/28/hexo个人博客搭建/" class="article-date">
-	  <time datetime="2019-06-28T04:47:04.000Z" itemprop="datePublished">6月 28</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-  </span>
+              <time title="创建时间：2019-06-29 13:40:35 / 修改时间：13:48:16" itemprop="dateCreated datePublished" datetime="2019-06-29T13:40:35+08:00">2019-06-29</time>
+            </span>
+          
 
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/hexo/">hexo</a>
-  </span>
+          
+            
 
+            
+          
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/28/hexo个人博客搭建/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/28/hello-world/">Hello World</a>
-    </h1>
-  
+                
+                
+              
+            </span>
+          
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/28/hello-world/" class="article-date">
-	  <time datetime="2019-06-28T04:42:41.376Z" itemprop="datePublished">6月 28</time>
-	</a>
-</span>
-    
-    
+          
+            
+            
+          
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/28/hello-world/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
+          
+          
 
-    
-  </div>
+          
 
-   
-</main>
+          <br>
+          
 
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="Mail" data-toggle=tooltip data-placement=top><i class="icon icon-mail"></i></a></li>
-        
-    </ul>
+          
 
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。</p>
+<h2><span id="自动转换">自动转换</span></h2><p>将 取值范围小的类型 自动提升为 取值范围大的类型 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>、<span class="keyword">short</span>、<span class="keyword">char</span>‐‐&gt;<span class="keyword">int</span>‐‐&gt;<span class="keyword">long</span>‐‐&gt;<span class="keyword">float</span>‐‐&gt;<span class="keyword">double</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="强制转换">强制转换</span></h2><ul>
+<li>将 取值范围大的类型 强制转换成 取值范围小的类型 。</li>
+<li>自动转换是Java自动执行的，而强制转换需要我们自己手动执行。</li>
+</ul>
+<p>转换格式：</p>
+<blockquote>
+<p>数据类型 变量名 = (数据类型)被转数据值;</p>
+</blockquote>
+<p>注意：</p>
+<ul>
+<li>浮点转成整数，直接取消小数点，可能造成数据损失精度。<ul>
+<li>int 强制转成 short 砍掉2个字节，可能造成数据丢失。</li>
+</ul>
+</li>
+</ul>
+<h2><span id="ascii编码表">ASCII编码表</span></h2><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">57</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">65</td>
+</tr>
+<tr>
+<td align="left">Z</td>
+<td align="left">90</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">97</td>
+</tr>
+<tr>
+<td align="left">z</td>
+<td align="left">122</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 <span class="comment">//字符类型变量</span></span><br><span class="line">	<span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//字符类型和int类型计算</span></span><br><span class="line">	System.out.println(c+i);<span class="comment">//输出结果是98 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="算数运算符">算数运算符</span></h2><table>
+<thead>
+<tr>
+<th>+</th>
+<th>加法运算，字符串连接运算</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>减法运算</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法运算</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法运算</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模运算，两个数字相除取余数</td>
+</tr>
+<tr>
+<td>++ 、 –</td>
+<td>自增自减运算</td>
+</tr>
+</tbody></table>
+<p>注意：变量在独立运算时， 前++ 和 后++ 没有区别 ；和其他变量放在一起， 前++ 和 后++ 就产生了不同（+1后赋值、赋值后+1）。</p>
+<h2><span id="三元运算符">三元运算符</span></h2><p>格式：</p>
+<blockquote>
+<p>数据类型 变量名 = 布尔类型表达式?结果1:结果2</p>
+</blockquote>
+<p>计算方式:<br>布尔类型表达式结果是true，三元运算符整体结果为结果1，赋值给变量。<br>布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">int</span> i = (<span class="number">1</span>==<span class="number">2</span> ? <span class="number">100</span> : <span class="number">200</span>); 					System.out.println(i);<span class="comment">//200</span></span><br><span class="line">	<span class="keyword">int</span> j = (<span class="number">3</span>&lt;=<span class="number">4</span> ? <span class="number">500</span> : <span class="number">600</span>); 					System.out.println(j);<span class="comment">//500</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
     </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/Java基础-2-常量、变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/29/Java基础-2-常量、变量/" class="post-title-link" itemprop="url">Java基础-2.常量、变量</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 13:38:16 / 修改时间：13:46:34" itemprop="dateCreated datePublished" datetime="2019-06-29T13:38:16+08:00">2019-06-29</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2><span id="常量">常量</span></h2><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">含义</th>
+<th align="left">数据举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">整数常量</td>
+<td align="left">所有的整数</td>
+<td align="left">0，1， 567， -9</td>
+</tr>
+<tr>
+<td align="left">小数常量</td>
+<td align="left">所有的小数</td>
+<td align="left">0.0， -0.1， 2.55</td>
+</tr>
+<tr>
+<td align="left">字符常量</td>
+<td align="left">单引号引起来,只能写一个字符,必须有内容</td>
+<td align="left">‘a’，’’， ‘好’</td>
+</tr>
+<tr>
+<td align="left">字符串常量</td>
+<td align="left">双引号引起来,可以写多个字符,也可以不写</td>
+<td align="left">“A” ，”Hello” ，”你好” ，””</td>
+</tr>
+<tr>
+<td align="left">布尔常量</td>
+<td align="left">只有两个值</td>
+<td align="left">true ， false</td>
+</tr>
+<tr>
+<td align="left">空常量</td>
+<td align="left">只有一个值</td>
+<td align="left">null</td>
+</tr>
+</tbody></table>
+<h2><span id="变量">变量</span></h2><ol>
+<li>Java的数据类型分为两大类:</li>
+</ol>
+<ul>
+<li>基本数据类型:包括 整数、浮点数、字符、布尔。 </li>
+<li>引用数据类型:包括 类 、 数组 、 接口 。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">关键字</th>
+<th align="left">内存占用</th>
+<th align="left">取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">字节型</td>
+<td align="left">byte</td>
+<td align="left">1个字节</td>
+<td align="left">-128~127</td>
+</tr>
+<tr>
+<td align="left">短整型</td>
+<td align="left">short</td>
+<td align="left">2个字节</td>
+<td align="left">-32768~32767</td>
+</tr>
+<tr>
+<td align="left">整型</td>
+<td align="left">int(默认)</td>
+<td align="left">4个字节</td>
+<td align="left">-231次方~2的31次方-1</td>
+</tr>
+<tr>
+<td align="left">长整型</td>
+<td align="left">long</td>
+<td align="left">8个字节</td>
+<td align="left">-2的63次方~2的63次方-1</td>
+</tr>
+<tr>
+<td align="left">单精度浮点数</td>
+<td align="left">float</td>
+<td align="left">4个字节</td>
+<td align="left">1.4013E-45~3.4028E+38</td>
+</tr>
+<tr>
+<td align="left">双精度浮点数</td>
+<td align="left">double(默认)</td>
+<td align="left">8个字节</td>
+<td align="left">4.9E-324~1.7977E+308</td>
+</tr>
+<tr>
+<td align="left">字符型</td>
+<td align="left">char</td>
+<td align="left">2个字节</td>
+<td align="left">0-65535</td>
+</tr>
+<tr>
+<td align="left">布尔类型</td>
+<td align="left">boolean</td>
+<td align="left">1个字节</td>
+<td align="left">true，false</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>变量定义</li>
+</ol>
+<p>格式：</p>
+<blockquote>
+<p>数据类型 变量名 = 数据值;</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/Java基础--1.入门程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/29/Java基础--1.入门程序/" class="post-title-link" itemprop="url">Java基础--1.入门程序</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 13:26:32 / 修改时间：13:42:11" itemprop="dateCreated datePublished" datetime="2019-06-29T13:26:32+08:00">2019-06-29</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2><span id="helloworld入门程序">HelloWorld入门程序</span></h2><p>Java程序开发三步骤:编写、编译、运行。</p>
+<ol>
+<li>编写Java源程序</li>
+</ol>
+<p>创建<code>HelloWorld.java</code>文件，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>编译Java源文件</p>
+<p>在DOS命令行中，进入Java源文件的目录，使用 <code>javac</code> 命令进行编译。<br>命令:</p>
+<blockquote>
+<p>javac Java源文件名.后缀名</p>
+</blockquote>
+</li>
+</ol>
+<p>举例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
+
+<p>译成功后，产生一个新的文件 <code>HelloWorld.class</code> ，该文件就是编译后的文件，是Java的可运行文件，称为字节码文件，有了字节码文件，就可以运行程序了。</p>
+<ol start="3">
+<li>运行Java程序</li>
+</ol>
+<p>在DOS命令行中，进入Java源文件的目录，使用 <code>java</code> 命令进行运行。<br>命令:</p>
+<blockquote>
+<p>java 类名字 </p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java HelloWolrd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>入门程序说明</p>
+</li>
+<li><p><strong>main方法</strong>：
+称为主方法。写法是固定格式不可以更改。main方法是程序的入口点或起始点，无论我们编写多少程序，JVM在运行的时候，都会从main方法这里开始执行。</p>
+</li>
+<li><p><strong>注释</strong>：
+单行注释以 <code>//开头 换行结束</code><br>多行注释以 <code>/*开头 以*/结束</code> </p>
+</li>
+<li><p><strong>关键字</strong>：
+是指在程序中，Java已经定义好的单词，具有特殊含义。<br>HelloWorld案例中，出现的关键字有 <code>public</code> 、 <code>class</code> 、 <code>static</code> 、 <code>void</code> 等，这些单词已经被 Java定义好，全部都是小写字母。</p>
+</li>
+<li><p><strong>标识符</strong>：
+是指在程序中，我们自己定义内容。比如类的名字、方法的名字和变量的名字等等，都是标识符。 HelloWorld案例中，出现的标识符有类名字 <code>HelloWorld</code> 。</p>
+</li>
+<li><p><strong>命名规则</strong>：
+<kbd>硬性要求</kbd><br>标识符可以包含 英文字母26个(区分大小写) 、 0-9数字 、 $(美元符号) 和 _(下划线) 。<br>标识符不能以数字开头。<br>标识符不能是关键字。<br><kbd>软性要求</kbd><br>类名规范:首字母大写，后面每个单词首字母大写(大驼峰式)。<br>方法名规范: 首字母小写，后面每个单词首字母大写(小驼峰式)。<br>变量名规范:全部小写</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/hexo-markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/28/hexo-markdown/" class="post-title-link" itemprop="url">hexo markdown</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-28 18:24:45" itemprop="dateCreated datePublished" datetime="2019-06-28T18:24:45+08:00">2019-06-28</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-29 11:29:59" itemprop="dateModified" datetime="2019-06-29T11:29:59+08:00">2019-06-29</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- toc -->
+
+
+
+<!-- tocstop -->
+
+<br>
+
+<ul>
+<li>两个空格+回车：换行  </li>
+<li>两个回车：换段落</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/hexo个人博客搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/28/hexo个人博客搭建/" class="post-title-link" itemprop="url">hexo个人博客搭建</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-28 12:47:04 / 修改时间：19:04:54" itemprop="dateCreated datePublished" datetime="2019-06-28T12:47:04+08:00">2019-06-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><br>&emsp;&emsp;1. 安装node.js</p>
+<p>打开nodejs.org下载安装包，直接点开安装包安装。</p>
+<p>查看安装版本</p>
+<p><code>node -v</code></p>
+<p><code>npm -v</code></p>
+<p><br>&emsp;&emsp;2. 安装hexo框架（以下若权限不足sudo）</p>
+<p><code>npm install -g hexo-cli</code></p>
+<p><code>hexo -v</code></p>
+<p>查看hexo版本</p>
+<p><br>&emsp;&emsp;3. 建立blog空文件夹（在用户文件夹中建立即可（位置随意））</p>
+<p><code>mkdir blog</code></p>
+<p>后续如果出现什么问题，把blog文件夹删除重新来即可。</p>
+<p><code>cd blog</code></p>
+<p><br>&emsp;&emsp;4. 初始化博客</p>
+<p><code>sudo hexo init</code></p>
+<p><br>&emsp;&emsp;5. 启动博客</p>
+<p><code>hexo s</code></p>
+<p>浏览器打开<a href="localhost:4000" target="_blank" rel="noopener">localhost:4000</a>，可以看到默认创建的博客</p>
+<p><br>&emsp;&emsp;6. 创建自己的博客</p>
+<p><code>sudo hexo new &quot;测试&quot;</code></p>
+<p><code>cd source/_posts/</code></p>
+<p>编辑测试.md即可更改博客内容（markdown）</p>
+<p><code>cd ../..</code>退回到blog目录下</p>
+<p><br>&emsp;&emsp;7. 本地查看博客总结</p>
+<p><code>hexo clean</code>     清理一下</p>
+<p><code>hexo g</code>       生成一下</p>
+<p><code>hexo s</code>      启动一下</p>
+<p><br>&emsp;&emsp;8. 建repository（为了博客部署到github上公开使用）</p>
+<p>登陆自己的github账户，右上角+点开 New repository<br>repository name 必须是 ：昵称（前面的Owner）.github.io</p>
+<p>点击greate，出现一个空仓库，保留页面</p>
+<p><br>&emsp;&emsp;9. 安装部署插件</p>
+<p><code>sudo npm install --save hexo-deployer-git</code></p>
+<p>更改_config.yml文件</p>
+<p><code>sudo vim _config.yml</code></p>
+<p>到达文件最底部更改增加如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/mangosTeeN96/mangosTeeN96.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中repo地址为刚刚创建的仓库页面的地址<br>（注意冒号后面的空格）</p>
+<p><br>&emsp;&emsp;10. 部署到远端</p>
+<p><code>hexo d</code></p>
+<p>中途需要输入GitHub的账户密码</p>
+<p>此时访问  <a href="mangosteen96.github.io">mangosteen96.github.io</a> 即可看到自己的博客</p>
+<p>到此博客的基本部署就完成了</p>
+<p><br>&emsp;&emsp;11. 更换博客主题</p>
+<p>以yilia主题为例</p>
+<p><code>sudo git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
+<p>此时themes文件夹中出现yilia文件夹，更改站点配置文件</p>
+<p>找到theme：xxx</p>
+<p>改为theme：yilia</p>
+<p><code>hexo clean</code></p>
+<p><code>hexo g</code></p>
+<p><code>hexo s</code></p>
+<p>4000端口即可看到更改</p>
+<p><code>hexo d</code></p>
+<p>推到远端，<br>mangosteen96.github.io   可以看到<br>（主题更换可能要等一下下）</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/28/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/28/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-28 12:42:41" itemprop="dateCreated datePublished" datetime="2019-06-28T12:42:41+08:00">2019-06-28</time>
+            </span>
+          
+
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-<script src="/js/plugin.min.js"></script>
-<script src="/js/application.js"></script>
-
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-
-
-
-
-   
 
 
 
@@ -359,6 +1742,101 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-28T10:17:08.747Z</updated>
+  <updated>2019-06-29T05:48:16.544Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java基础--3.数据类型转换、运算符</title>
+    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/</id>
+    <published>2019-06-29T05:40:35.000Z</published>
+    <updated>2019-06-29T05:48:16.544Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;自动转换&quot;&gt;自动转换&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;将 取值范围小的类型 自动提升为 取值范围大的类型 。&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-2.常量、变量</title>
+    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80-2-%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/"/>
+    <id>http://yoursite.com/2019/06/29/Java基础-2-常量、变量/</id>
+    <published>2019-06-29T05:38:16.000Z</published>
+    <updated>2019-06-29T05:46:34.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;常量&quot;&gt;常量&lt;/span&gt;&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;含义&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;数据举例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/th
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--1.入门程序</title>
+    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80--1.%E5%85%A5%E9%97%A8%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://yoursite.com/2019/06/29/Java基础--1.入门程序/</id>
+    <published>2019-06-29T05:26:32.000Z</published>
+    <updated>2019-06-29T05:42:11.783Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;helloworld入门程序&quot;&gt;HelloWorld入门程序&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Java程序开发三步骤:编写、编译、运行。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;编写Java源程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;创建&lt;code&gt;HelloWorld.jav
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo markdown</title>
+    <link href="http://yoursite.com/2019/06/28/hexo-markdown/"/>
+    <id>http://yoursite.com/2019/06/28/hexo-markdown/</id>
+    <published>2019-06-28T10:24:45.000Z</published>
+    <updated>2019-06-29T03:29:59.826Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- toc --&gt;
+
+
+
+&lt;!-- tocstop --&gt;
+
+&lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;两个空格+回车：换行  &lt;/li&gt;
+&lt;li&gt;两个回车：换段落&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo个人博客搭建</title>
     <link href="http://yoursite.com/2019/06/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2019/06/28/hexo个人博客搭建/</id>
     <published>2019-06-28T04:47:04.000Z</published>
-    <updated>2019-06-28T10:17:08.747Z</updated>
+    <updated>2019-06-28T11:04:54.767Z</updated>
     
     <summary type="html">
     
