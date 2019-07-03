@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/2019/06/29/hadoop%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2019-06-29</lastmod>
+    <lastmod>2019-07-03</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
     <lastmod>2019-06-29</lastmod>
