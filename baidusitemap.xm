@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80-7-%E6%95%B0%E7%BB%84-%E4%BA%8C/</loc>
+    <lastmod>2019-07-03</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--6.%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2019-07-03</lastmod>
   </url>  <url>
