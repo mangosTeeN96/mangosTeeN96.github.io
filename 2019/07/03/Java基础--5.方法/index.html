@@ -17,20 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>Hello World | MangosTeeN</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <title>Java基础--5.方法 | MangosTeeN</title>
+  <meta name="description" content="方法:   就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。 定义 修饰符 返回值类型 方法名 (参数列表){&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;代码…&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;return 返回值;}   定义格式解释: 修饰符: 目前固定写">
+<meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://mangosTeeN96.github.io/2019/06/28/hello-world/index.html">
+<meta property="og:title" content="Java基础--5.方法">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/03/Java基础--5.方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="方法:   就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。 定义 修饰符 返回值类型 方法名 (参数列表){&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;代码…&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;return 返回值;}   定义格式解释: 修饰符: 目前固定写">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-28T04:42:41.377Z">
+<meta property="og:updated_time" content="2019-07-03T10:12:53.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Java基础--5.方法">
+<meta name="twitter:description" content="方法:   就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。 定义 修饰符 返回值类型 方法名 (参数列表){&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;代码…&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;return 返回值;}   定义格式解释: 修饰符: 目前固定写">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/06/28/hello-world/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/03/Java基础--5.方法/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -45,7 +46,7 @@
 </head>
 
 
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+<body class="main-center no-sidebar" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
   <div class="slimContent">
     <div class="navbar-header">
@@ -278,17 +279,26 @@
 
   
   
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">方法的调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">方法重载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">3.1.</span> <span class="toc-text">重载练习</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Java基础--5.方法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Java基础--5.方法
     </h1>
   
 
@@ -296,35 +306,79 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/28/hello-world/" class="article-date">
-	  <time datetime="2019-06-28T04:42:41.376Z" itemprop="datePublished">2019-06-28</time>
+	<a href="/2019/07/03/Java基础--5.方法/" class="article-date">
+	  <time datetime="2019-07-03T08:32:38.000Z" itemprop="datePublished">2019-07-03</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
+  </span>
+
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/28/hello-world/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础--5.方法/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <br>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><strong><em>方法</em></strong>:  
+就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。</p>
+<h2><span id="ding-yi">定义</span></h2><blockquote>
+<p>修饰符 返回值类型 方法名 (参数列表){<br>&emsp;&emsp;&emsp;&emsp;代码…<br>&emsp;&emsp;&emsp;&emsp;return 返回值;<br>}</p>
+</blockquote>
+<ul>
+<li>定义格式解释:<ul>
+<li>修饰符: 目前固定写法 public static </li>
+<li>返回值类型: 没有返回值时为&ensp;void</li>
+<li>方法名:满足标识符的规范，用来调用方法。</li>
+<li>参数列表: 参数</li>
+<li>return:方法结束。返回值类型是void，方法大括号内的return可以不写，有返回值时返回给调用者。</li>
+</ul>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> public static void methodName() &#123; </span><br><span class="line">    System.out.println(&quot;这是一个方法&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法定义注意事项:<ul>
+<li>方法必须定义在一类中方法外 </li>
+<li>方法不能定义在另一个方法的里面</li>
+</ul>
+</li>
+</ul>
+<h2><span id="fang-fa-de-diao-yong">方法的调用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> public static void main(String[] args) &#123; </span><br><span class="line">    //调用定义的方法method</span><br><span class="line">    method();</span><br><span class="line">&#125;</span><br><span class="line">//定义方法，被main方法调用 </span><br><span class="line">public static void method() &#123;</span><br><span class="line">    System.out.println(&quot;自己定义的方法，需要被main调用运行&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<ul>
+<li><p>上面方法为直接调用，有参数时括号内写入参数</p>
+</li>
+<li><p>还可以输出语句调用:  </p>
+<ul>
+<li>在输出语句中调用方法， System.out.println(方法名()) 。</li>
+<li>不能用输出语句调用 void 类型的方法</li>
+</ul>
+</li>
+</ul>
+<h2><span id="fang-fa-chong-zai">方法重载</span></h2><ul>
+<li>方法重载:指在同一个类中，允许存在一个以上的同名方法，只要它们的参数列表不同即可，与修饰符和返 回值类型无关。<ul>
+<li>参数列表:个数不同，数据类型不同，顺序不同。 </li>
+<li>重载方法调用:JVM通过方法的参数列表，调用不同的方法。</li>
+</ul>
+</li>
+</ul>
+<h3><span id="chong-zai-lian-xi">重载练习</span></h3><p>比较两个数据是否相等。参数类型分别为两个 byte 类型，两个 short 类型，两个 int 类型，两个 long 类型，并在 main 方法中进行测试。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public class Method_Demo6 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //定义不同数据类型的变量  </span><br><span class="line">        byte a = 10;</span><br><span class="line">        byte b = 20;</span><br><span class="line">        short c = 10;</span><br><span class="line">        short d = 20;</span><br><span class="line">        int e = 10;</span><br><span class="line">        int f = 10;</span><br><span class="line">        long g = 10;</span><br><span class="line">        long h = 20;</span><br><span class="line">        // 调用 System.out.println(compare(a, b)); System.out.println(compare(c, d)); </span><br><span class="line">        System.out.println(compare(e, f)); </span><br><span class="line">        System.out.println(compare(g, h));</span><br><span class="line">    &#125;</span><br><span class="line">    // 两个byte类型的</span><br><span class="line">    public static boolean compare(byte a, byte b) &#123;</span><br><span class="line">        System.out.println(&quot;byte&quot;);</span><br><span class="line">        return a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 两个short类型的</span><br><span class="line">    public static boolean compare(short a, short b) &#123;</span><br><span class="line">        System.out.println(&quot;short&quot;);</span><br><span class="line">        return a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 两个int类型的</span><br><span class="line">    public static boolean compare(int a, int b) &#123;</span><br><span class="line">        System.out.println(&quot;int&quot;);</span><br><span class="line">        return a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 两个long类型的</span><br><span class="line">    public static boolean compare(long a, long b) &#123;</span><br><span class="line">        System.out.println(&quot;long&quot;); </span><br><span class="line">        return a == b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -333,7 +387,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://mangosTeeN96.github.io/2019/06/28/hello-world/" title="Hello World" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/06/28/hello-world/</a>
+      <a href="http://mangosTeeN96.github.io/2019/07/03/Java基础--5.方法/" title="Java基础--5.方法" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/03/Java基础--5.方法/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -378,10 +432,23 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2019/06/28/hexo个人博客搭建/" title="hexo个人博客搭建"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2019/07/03/Java基础--6.数组/" title="Java基础--6.数组"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
+    <li class="next">
+      <a href="/2019/07/03/Java基础--4.判断、选择、循环语句/" title="Java基础--4.判断、选择、循环语句"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
     
   </ul>
   
