@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-07-03T05:33:47.949Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://mangosTeeN96.github.io/"/>
+  <updated>2019-07-03T05:49:19.373Z</updated>
+  <id>http://mangosTeeN96.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>hadoop安装与伪分布式搭建</title>
-    <link href="http://yoursite.com/2019/06/29/hadoop%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/29/hadoop%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/</id>
     <published>2019-06-29T09:30:52.000Z</published>
-    <updated>2019-07-03T05:33:47.949Z</updated>
+    <updated>2019-07-03T05:49:19.373Z</updated>
     
     <summary type="html">
     
@@ -33,17 +33,17 @@
     
     </summary>
     
-      <category term="大数据环境搭建" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="大数据环境搭建" scheme="http://mangosTeeN96.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="hadoop" scheme="http://yoursite.com/tags/hadoop/"/>
+      <category term="hadoop" scheme="http://mangosTeeN96.github.io/tags/hadoop/"/>
     
   </entry>
   
   <entry>
     <title>Java基础--3.数据类型转换、运算符</title>
-    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://yoursite.com/2019/06/29/Java基础-3-数据类型转换、运算符/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/29/Java%E5%9F%BA%E7%A1%80-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/29/Java基础-3-数据类型转换、运算符/</id>
     <published>2019-06-29T05:40:35.000Z</published>
     <updated>2019-06-29T08:51:36.966Z</updated>
     
@@ -57,17 +57,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
     
     
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Java基础-2.常量、变量</title>
-    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80-2-%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/"/>
-    <id>http://yoursite.com/2019/06/29/Java基础-2-常量、变量/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/29/Java%E5%9F%BA%E7%A1%80-2-%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/29/Java基础-2-常量、变量/</id>
     <published>2019-06-29T05:38:16.000Z</published>
     <updated>2019-06-29T08:50:04.029Z</updated>
     
@@ -86,17 +86,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
     
     
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Java基础--1.入门程序</title>
-    <link href="http://yoursite.com/2019/06/29/Java%E5%9F%BA%E7%A1%80--1.%E5%85%A5%E9%97%A8%E7%A8%8B%E5%BA%8F/"/>
-    <id>http://yoursite.com/2019/06/29/Java基础--1.入门程序/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/29/Java%E5%9F%BA%E7%A1%80--1.%E5%85%A5%E9%97%A8%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/29/Java基础--1.入门程序/</id>
     <published>2019-06-29T05:26:32.000Z</published>
     <updated>2019-06-29T05:42:11.783Z</updated>
     
@@ -113,17 +113,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
     
     
-      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>hexo markdown</title>
-    <link href="http://yoursite.com/2019/06/28/hexo-markdown/"/>
-    <id>http://yoursite.com/2019/06/28/hexo-markdown/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/</id>
     <published>2019-06-28T10:24:45.000Z</published>
     <updated>2019-06-29T08:49:47.562Z</updated>
     
@@ -143,19 +143,19 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://mangosTeeN96.github.io/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
     
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+      <category term="markdown" scheme="http://mangosTeeN96.github.io/tags/markdown/"/>
     
   </entry>
   
   <entry>
     <title>hexo个人博客搭建</title>
-    <link href="http://yoursite.com/2019/06/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2019/06/28/hexo个人博客搭建/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/28/hexo个人博客搭建/</id>
     <published>2019-06-28T04:47:04.000Z</published>
     <updated>2019-06-28T11:04:54.767Z</updated>
     
@@ -172,17 +172,17 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://mangosTeeN96.github.io/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/06/28/hello-world/"/>
-    <id>http://yoursite.com/2019/06/28/hello-world/</id>
+    <link href="http://mangosTeeN96.github.io/2019/06/28/hello-world/"/>
+    <id>http://mangosTeeN96.github.io/2019/06/28/hello-world/</id>
     <published>2019-06-28T04:42:41.376Z</published>
     <updated>2019-06-28T04:42:41.377Z</updated>
     

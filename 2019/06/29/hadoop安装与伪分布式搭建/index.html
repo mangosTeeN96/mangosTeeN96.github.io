@@ -22,23 +22,22 @@
 <meta name="keywords" content="hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hadoop安装与伪分布式搭建">
-<meta property="og:url" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/index.html">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/source/img/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/6.png">
-<meta property="og:updated_time" content="2019-07-03T05:33:47.949Z">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/4.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/5.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/6.png">
+<meta property="og:updated_time" content="2019-07-03T05:49:19.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop安装与伪分布式搭建">
 <meta name="twitter:description" content="创建Hadoop用户 创建新用户用户名为hadoop，使用/bin/bash作为shellsudo useradd -m hadoop -s /bin/bash  修改密码 1234$ sudo passwd hadoopEnter new UNIX password: Retype new UNIX password: passwd: password updated successfully">
-<meta name="twitter:image" content="http://yoursite.com/source/img/1.jpg">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2019/06/29/hadoop安装与伪分布式搭建/1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -354,8 +353,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
 
 <p>在文件修改完毕以后，输入代码：<br><code>$ source ~/.bashrc                       #使新配置的环境变量生效</code><br><code>$ java -version                          #检测是否安装成功，查看java版本</code></p>
-<img src="/source/img/1.jpg">
-
+<p> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/1.png" alt></p>
 <h2><span id="an-zhuang-ssh-fu-wu-duan">安装SSH服务端</span></h2><ol>
 <li>安装<br><code>$ sudo apt-get install openssh-server</code></li>
 <li>登录localhost<br><code>$ ssh localhost</code><br>之后会在~/文件夹下发现一个.ssh文件<ol start="3">
@@ -375,8 +373,7 @@
 <p>查看Hadoop版本信息：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop/bin</span><br><span class="line">$ ./hadoop version</span><br></pre></td></tr></table></figure>
 
- <img src="//yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/2.png">
-
+<p> &lt;img src=”hadoop安装与伪分布式搭建/2.png&gt;</p>
 <ol start="2">
 <li>伪分布式模式配置<br>修改配置文件:<br>需要修改/usr/local/hadoop/etc/hadoop/文件夹下的core-site.xml和hdfs-site.xml文件。<br>core-site.xml文件:<br>将<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
 
@@ -395,10 +392,10 @@
 
 </li>
 </ol>
-<p><strong>出现如下错误</strong><br> <img src="//yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/3.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br> <img src="//yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/4.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="//yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/5.png" alt></p>
+<p><strong>出现如下错误</strong><br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/3.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/4.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/5.png" alt></p>
 <h2><span id="qi-dong-hadoop">启动Hadoop</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
 
-<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="//yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/6.png" alt></p>
+<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/6.png" alt></p>
 <h2><span id="shi-yong-liu-lan-qi-cha-kan-hdfs-xin-xi">使用浏览器查看HDFS信息</span></h2><p>在浏览器中打开链接：<a href="http://localhost:50070/dfshealth.html#tab-overview" target="_blank" rel="noopener">http://localhost:50070/dfshealth.html#tab-overview</a><br>即可查看</p>
 <h2><span id="guan-bi-hadoop">关闭Hadoop</span></h2><p>使用命令：<br><code>./sbin/stop-dfs.sh</code><br>下次启动时不需要再执行节点格式化命令（否则会报错），只需要直接运行start-dfs.sh命令即可。</p>
 
@@ -410,7 +407,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/" title="hadoop安装与伪分布式搭建" target="_blank" rel="external">http://yoursite.com/2019/06/29/hadoop安装与伪分布式搭建/</a>
+      <a href="http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/" title="hadoop安装与伪分布式搭建" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/</a>
     </li>
     
     <li class="post-copyright-license">
