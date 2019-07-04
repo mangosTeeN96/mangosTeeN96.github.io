@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-04T06:32:15.580Z</updated>
+  <updated>2019-07-04T13:02:53.002Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -17,18 +17,131 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(Java)常用API--4.ArrayList类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-4-ArrayList%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/</id>
+    <published>2019-07-04T11:58:43.000Z</published>
+    <updated>2019-07-04T13:02:53.002Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;dui-xiang-shu-zu&quot;&gt;对象数组&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;数组类型选用对象，例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Java)常用API--3.Random类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-3-Random%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java-常用API-3-Random类/</id>
+    <published>2019-07-04T11:35:57.000Z</published>
+    <updated>2019-07-04T12:49:20.764Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;Random类：用来生成随机数字&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用步骤&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;导包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;import java.util.Random;&lt;/p&gt;
+&lt;/blockquote
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Java)常用API--2.匿名对象</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-2-%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java-常用API-2-匿名对象/</id>
+    <published>2019-07-04T10:53:42.000Z</published>
+    <updated>2019-07-04T12:49:05.981Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;匿名对象：没有变量名的对象&lt;/p&gt;
+&lt;p&gt;格式:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;new 类名(参数列表);&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;应用场景:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建匿名对象直接调用方法，没有变量名&lt;/li&gt;
+&lt;li&gt;匿名对象
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Java)常用API--1.Scanner类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-1-Scanner%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java-常用API-1-Scanner类/</id>
+    <published>2019-07-04T07:35:24.000Z</published>
+    <updated>2019-07-04T12:48:49.804Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;api&quot;&gt;API&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;API(Application Programming Interface)，应用程序编程接口&lt;br&gt;Java API是一本程序员的字典&lt;br&gt;是我们使用的类的说明文档&lt;/p&gt;
+&lt;p&gt;API帮助文档（中文版
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java基础--10.封装优化</title>
     <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-10-%E5%B0%81%E8%A3%85%E4%BC%98%E5%8C%96/"/>
     <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-10-封装优化/</id>
     <published>2019-07-04T06:01:09.000Z</published>
-    <updated>2019-07-04T06:32:15.580Z</updated>
+    <updated>2019-07-04T12:52:03.114Z</updated>
     
     <summary type="html">
     
       
       
         &lt;h2&gt;&lt;span id=&quot;this-guan-jian-zi&quot;&gt;this关键字&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;上一篇笔记中，setXxx 方法中形参名字并不符合见名知意的规定&lt;br&gt;如果修改与成员变量名一致，代码如下:&lt;/p&gt;
-&lt;figure class=&quot;highlight p
+&lt;figure class=&quot;highlight j
       
     
     </summary>
@@ -45,7 +158,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-9-%E5%B0%81%E8%A3%85/"/>
     <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-9-封装/</id>
     <published>2019-07-04T05:26:52.000Z</published>
-    <updated>2019-07-04T06:00:11.515Z</updated>
+    <updated>2019-07-04T12:51:34.441Z</updated>
     
     <summary type="html">
     
@@ -68,7 +181,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-8-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"/>
     <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/</id>
     <published>2019-07-04T04:48:39.000Z</published>
-    <updated>2019-07-04T05:25:44.887Z</updated>
+    <updated>2019-07-04T12:51:13.639Z</updated>
     
     <summary type="html">
     
@@ -101,7 +214,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80-7-%E6%95%B0%E7%BB%84-%E4%BA%8C/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Java基础-7-数组-二/</id>
     <published>2019-07-03T11:43:45.000Z</published>
-    <updated>2019-07-03T12:02:45.306Z</updated>
+    <updated>2019-07-04T12:50:52.354Z</updated>
     
     <summary type="html">
     
@@ -109,7 +222,7 @@
       
         &lt;br&gt;
 
-&lt;h2&gt;&lt;span id=&quot;shu-zu-bian-li&quot;&gt;数组遍历&lt;/span&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;
+&lt;h2&gt;&lt;span id=&quot;shu-zu-bian-li&quot;&gt;数组遍历&lt;/span&gt;&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
       
     
     </summary>
@@ -126,7 +239,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--6.%E6%95%B0%E7%BB%84/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Java基础--6.数组/</id>
     <published>2019-07-03T10:14:36.000Z</published>
-    <updated>2019-07-03T12:06:14.465Z</updated>
+    <updated>2019-07-04T12:50:36.781Z</updated>
     
     <summary type="html">
     
@@ -156,7 +269,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--5.%E6%96%B9%E6%B3%95/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Java基础--5.方法/</id>
     <published>2019-07-03T08:32:38.000Z</published>
-    <updated>2019-07-03T10:12:53.344Z</updated>
+    <updated>2019-07-04T12:50:15.681Z</updated>
     
     <summary type="html">
     
@@ -235,7 +348,7 @@
     <link href="http://mangosTeeN96.github.io/2019/06/29/hadoop%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/"/>
     <id>http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/</id>
     <published>2019-06-29T09:30:52.000Z</published>
-    <updated>2019-07-03T05:49:19.373Z</updated>
+    <updated>2019-07-04T12:47:55.604Z</updated>
     
     <summary type="html">
     

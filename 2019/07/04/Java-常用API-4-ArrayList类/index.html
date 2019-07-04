@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>Java基础--8.类与对象 | MangosTeeN</title>
-  <meta name="description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
-<meta name="keywords" content="java基础">
+  <title>(Java)常用API--4.ArrayList类 | MangosTeeN</title>
+  <meta name="description" content="对象数组数组类型选用对象，例如： 123456789101112public static void main(String[] args) &amp;#123;        // 首先创建一个长度为3的数组，里面用来存放Person类型的对象        Person[] array = new Person[3];        Person one = new Person(&quot;迪丽热巴&quot;, 18">
+<meta name="keywords" content="常用API">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础--8.类与对象">
-<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/index.html">
+<meta property="og:title" content="(Java)常用API--4.ArrayList类">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
+<meta property="og:description" content="对象数组数组类型选用对象，例如： 123456789101112public static void main(String[] args) &amp;#123;        // 首先创建一个长度为3的数组，里面用来存放Person类型的对象        Person[] array = new Person[3];        Person one = new Person(&quot;迪丽热巴&quot;, 18">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-04T12:51:13.639Z">
+<meta property="og:updated_time" content="2019-07-04T13:02:53.002Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础--8.类与对象">
-<meta name="twitter:description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
+<meta name="twitter:title" content="(Java)常用API--4.ArrayList类">
+<meta name="twitter:description" content="对象数组数组类型选用对象，例如： 123456789101112public static void main(String[] args) &amp;#123;        // 首先创建一个长度为3的数组，里面用来存放Person类型的对象        Person[] array = new Person[3];        Person one = new Person(&quot;迪丽热巴&quot;, 18">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -283,7 +283,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">对象的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.1.</span> <span class="toc-text">成员变量和局部变量区别</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">对象数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">ArrayList类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.1.</span> <span class="toc-text">查看类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.2.</span> <span class="toc-text">格式(查看构造方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.3.</span> <span class="toc-text">常用方法及遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.4.</span> <span class="toc-text">存储基本数据类型</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -291,14 +291,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java基础-8-类与对象" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Java-常用API-4-ArrayList类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础--8.类与对象
+      (Java)常用API--4.ArrayList类
     </h1>
   
 
@@ -306,8 +306,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java基础-8-类与对象/" class="article-date">
-	  <time datetime="2019-07-04T04:48:39.000Z" itemprop="datePublished">2019-07-04</time>
+	<a href="/2019/07/04/Java-常用API-4-ArrayList类/" class="article-date">
+	  <time datetime="2019-07-04T11:58:43.000Z" itemprop="datePublished">2019-07-04</time>
 	</a>
 </span>
         
@@ -319,137 +319,104 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
+	<a class="article-tag-link" href="/tags/常用API/">常用API</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java基础-8-类与对象/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java-常用API-4-ArrayList类/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <br>
+        <h2><span id="dui-xiang-shu-zu">对象数组</span></h2><p>数组类型选用对象，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 首先创建一个长度为3的数组，里面用来存放Person类型的对象</span></span><br><span class="line">        Person[] array = <span class="keyword">new</span> Person[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">        Person one = <span class="keyword">new</span> Person(<span class="string">"迪丽热巴"</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将one当中的地址值赋值到数组的0号元素位置</span></span><br><span class="line">        array[<span class="number">0</span>] = one;</span><br><span class="line"></span><br><span class="line">        System.out.println(array[<span class="number">0</span>]); <span class="comment">// 地址值</span></span><br><span class="line">        System.out.println(array[<span class="number">0</span>].getName()); <span class="comment">// 迪丽热巴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>类与对象的关系<ul>
-<li>类是对一类事物的描述，是抽象的。 </li>
-<li>对象是一类事物的实例，是具体的。 </li>
-<li>类是对象的模板，对象是类的实体。</li>
+<p>而数组的长度是固定的，无法适应数据变化的需求</p>
+<h2><span id="arraylist-lei">ArrayList类</span></h2><p>数组的长度不可以发生改变<br>但是ArrayList集合的长度是可以随意变化的</p>
+<h3><span id="cha-kan-lei">查看类</span></h3><ul>
+<li><code>java.util.ArrayList &lt;E&gt;</code>:需要 import导入  <ul>
+<li><code>&lt;E&gt;</code> ，表示一种指定的数据类型，叫做泛型。  </li>
+<li>在出现 E 的地方，我们使用一种引用数据类型将其替换即可，表示我们将存储哪种引用类型的元素</li>
 </ul>
 </li>
 </ul>
-<h2><span id="lei-de-ding-yi">类的定义</span></h2><p><strong>格式</strong>：</p>
 <blockquote>
-<p>public class ClassName {<br>&emsp;&emsp;&emsp;&emsp;//成员变量(属性)<br>&emsp;&emsp;&emsp;&emsp;//成员方法(行为)<br>}</p>
+<p>ArrayList<string>，ArrayList<student></student></string></p>
+</blockquote>
+<h3><span id="ge-shi-cha-kan-gou-zao-fang-fa">格式(查看构造方法)</span></h3><p>基本格式:</p>
+<blockquote>
+<p>ArrayList&lt; String&gt; list = new ArrayList&lt; String&gt;();</p>
+</blockquote>
+<p>在JDK 1.7后,右侧泛型的尖括号之内可以留空，但是&lt;&gt;仍然要写。<br>简化格式: </p>
+<blockquote>
+<p>ArrayList&lt; String&gt; list = new ArrayList&lt;&gt;();</p>
 </blockquote>
 <ul>
-<li>成员变量:和以前定义变量几乎是一样的。只不过位置发生了改变。在类中，方法外。 </li>
-<li>成员方法:和以前定义方法几乎是一样的。只不过把static去掉。</li>
+<li>注意：对于ArrayList集合来说，未添加数据直接打印得到的不是地址值，而是内容。<br>如果内容是空，得到的是空的中括号：[]</li>
 </ul>
-<p>举例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123; </span><br><span class="line">     <span class="comment">//成员变量</span></span><br><span class="line">    String name;<span class="comment">//姓名 </span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="comment">//学习的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"好好学习，天天向上"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//吃饭的方法 </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学习饿了要吃饭"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="chang-yong-fang-fa-ji-bian-li">常用方法及遍历</span></h3><ul>
+<li>对于元素的操作,基本体现在——增、删、查。常用的方法有:<ul>
+<li><code>public boolean add(E e)</code>：向集合当中添加元素，参数的类型和泛型一致。返回值代表添加是否成功。<br>备注：对于ArrayList集合来说，add添加动作一定是成功的，所以返回值可用可不用。<br>但是对于其他集合（后面会有）来说，add添加动作不一定成功。</li>
+<li><code>public E get(int index)</code>：从集合当中获取元素，参数是索引编号，返回值就是对应位置的元素。</li>
+<li><code>public E remove(int index)</code>：从集合当中删除元素，参数是索引编号，返回值就是被删除掉的元素。</li>
+<li><code>public int size()</code>：获取集合的尺寸长度，返回值是集合中包含的元素个数</li>
+</ul>
+</li>
+</ul>
+<p><strong>举例</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    System.out.println(list); <span class="comment">// []</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向集合中添加元素：add</span></span><br><span class="line">    <span class="keyword">boolean</span> success = list.add(<span class="string">"柳岩"</span>);</span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩]</span></span><br><span class="line">    System.out.println(<span class="string">"添加的动作是否成功："</span> + success); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    list.add(<span class="string">"高圆圆"</span>);</span><br><span class="line">    list.add(<span class="string">"赵又廷"</span>);</span><br><span class="line">    list.add(<span class="string">"李小璐"</span>);</span><br><span class="line">    list.add(<span class="string">"贾乃亮"</span>);</span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩, 高圆圆, 赵又廷, 李小璐, 贾乃亮]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从集合中获取元素：get。索引值从0开始</span></span><br><span class="line">    String name = list.get(<span class="number">2</span>);</span><br><span class="line">    System.out.println(<span class="string">"第2号索引位置："</span> + name); <span class="comment">// 赵又廷</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从集合中删除元素：remove。索引值从0开始。</span></span><br><span class="line">    String whoRemoved = list.remove(<span class="number">3</span>);</span><br><span class="line">    System.out.println(<span class="string">"被删除的人是："</span> + whoRemoved); <span class="comment">// 李小璐</span></span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩, 高圆圆, 赵又廷, 贾乃亮]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取集合的长度尺寸，也就是其中元素的个数</span></span><br><span class="line">    <span class="keyword">int</span> size = list.size();</span><br><span class="line">    System.out.println(<span class="string">"集合的长度是："</span> + size);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">        System.out.println(list.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//idea中，list.fori可以自动生成这个循环</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2><span id="dui-xiang-de-shi-yong">对象的使用</span></h2><p><strong>格式</strong>：  </p>
-<ol>
-<li>导包<blockquote>
-<p>import 包名称.类名称；</p>
-</blockquote>
-</li>
-</ol>
-<p>（属于同一个包可以不写）</p>
-<ol start="2">
-<li>创建对象<blockquote>
-<p>类名 对象名 = new 类名();</p>
-</blockquote>
-</li>
-<li>使用对象访问类中的成员<blockquote>
-<p>对象名.成员变量;<br>对象名.成员方法();</p>
-</blockquote>
-</li>
-</ol>
-<br>
-
-<p><strong>成员变量的默认值</strong></p>
+<h3><span id="cun-chu-ji-ben-shu-ju-lei-xing">存储基本数据类型</span></h3><p>ArrayList对象不能存储基本类型，只能存储引用类型的数据。<br>类似 &lt; int&gt; 不能写，但是存储基本数据类型对应的 包装类型是可以的。</p>
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="left">数据类型</th>
-<th align="left">默认值</th>
+<th align="left">基本类型</th>
+<th align="left">基本类型包装类</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">基本类型</td>
-<td align="left">整数(byte，short，int，long)</td>
-<td align="left">0</td>
+<td align="left">byte</td>
+<td align="left">Byte</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">浮点数(float，double)</td>
-<td align="left">0.0</td>
+<td align="left">short</td>
+<td align="left">Short</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">字符(char)</td>
-<td align="left">‘\u0000’</td>
+<td align="left"><strong>int</strong></td>
+<td align="left"><strong>Integer</strong></td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">布尔(boolean)</td>
-<td align="left">false</td>
+<td align="left">long</td>
+<td align="left">Long</td>
 </tr>
 <tr>
-<td align="left">引用类型</td>
-<td align="left">数组，类，接口</td>
-<td align="left">null</td>
+<td align="left">float</td>
+<td align="left">Float</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Double</td>
+</tr>
+<tr>
+<td align="left"><strong>char</strong></td>
+<td align="left"><strong>Character</strong></td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">Boolean</td>
 </tr>
 </tbody></table>
-<p><strong>类与对象举例</strong>：</p>
-<p>定义手机类:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Phone</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 成员变量</span></span><br><span class="line">    String brand; <span class="comment">//品牌 </span></span><br><span class="line">    <span class="keyword">int</span> price; <span class="comment">//价格 </span></span><br><span class="line">    String color; <span class="comment">//颜色</span></span><br><span class="line">    <span class="comment">// 成员方法</span></span><br><span class="line">    <span class="comment">//打电话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"给"</span>+name+<span class="string">"打电话"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//发短信</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"群发短信"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
 
-<p>定义测试类:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02Phone</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象</span></span><br><span class="line">        Phone p = <span class="keyword">new</span> Phone();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出成员变量值 </span></span><br><span class="line">        System.out.println(<span class="string">"品牌:"</span>+p.brand);<span class="comment">//null </span></span><br><span class="line">        System.out.println(<span class="string">"价格:"</span>+p.price);<span class="comment">//0 System.out.println("颜色:"+p.color);//null</span></span><br><span class="line">        System.out.println(<span class="string">"‐‐‐‐‐‐‐‐‐‐‐‐"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给成员变量赋值 </span></span><br><span class="line">        p.brand = <span class="string">"锤子"</span>; </span><br><span class="line">        p.price = <span class="number">2999</span>; </span><br><span class="line">        p.color = <span class="string">"棕色"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//再次输出成员变量值 </span></span><br><span class="line">        System.out.println(<span class="string">"品牌:"</span>+p.brand);<span class="comment">//锤子 </span></span><br><span class="line">        System.out.println(<span class="string">"价格:"</span>+p.price);<span class="comment">//2999 </span></span><br><span class="line">        System.out.println(<span class="string">"颜色:"</span>+p.color);<span class="comment">//棕色 </span></span><br><span class="line">        System.out.println(<span class="string">"‐‐‐‐‐‐‐‐‐‐‐‐"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//调用成员方法 </span></span><br><span class="line">        p.call(<span class="string">"紫霞"</span>); </span><br><span class="line">        p.sendMessage();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
 
-<h3><span id="cheng-yuan-bian-liang-he-ju-bu-bian-liang-qu-bie">成员变量和局部变量区别</span></h3><ul>
-<li>在类中的位置不同<ul>
-<li>成员变量:类中，方法外</li>
-<li>局部变量:方法中或者方法声明上(形式参数) </li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>作用范围不一样<ul>
-<li>成员变量:类中 </li>
-<li>局部变量:方法中</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>初始化值的不同<ul>
-<li>成员变量:有默认值 </li>
-<li>局部变量:没有默认值。必须先定义，赋值，最后使用</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>在内存中的位置不同<ul>
-<li>成员变量:堆内存 </li>
-<li>局部变量:栈内存</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>生命周期不同<ul>
-<li>成员变量:随着对象的创建而存在，随着对象的消失而消失 </li>
-<li>局部变量:随着方法的调用而存在，随着方法的调用完毕而消失</li>
-</ul>
-</li>
-</ul>
-
+<p><strong>练习</strong>：</p>
+<p>1.生成6个1~33之间的随机整数,添加到集合,并遍历</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01ArrayList</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建Random 对象</span></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="comment">// 创建ArrayList 对象</span></span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">// 添加随机数到集合</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> r = random.nextInt(<span class="number">33</span>) + <span class="number">1</span>; </span><br><span class="line">      list.add(r); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历集合输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">      System.out.println(list.get(i)); </span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -458,7 +425,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/" title="Java基础--8.类与对象" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/</a>
+      <a href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/" title="(Java)常用API--4.ArrayList类" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -502,13 +469,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/07/04/Java基础-9-封装/" title="Java基础--9.封装"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2019/07/03/Java基础-7-数组-二/" title="Java基础--7.数组-二"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/07/04/Java-常用API-3-Random类/" title="(Java)常用API--3.Random类"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
