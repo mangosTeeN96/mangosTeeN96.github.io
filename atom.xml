@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-03T12:02:45.306Z</updated>
+  <updated>2019-07-04T06:32:15.580Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础--10.封装优化</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-10-%E5%B0%81%E8%A3%85%E4%BC%98%E5%8C%96/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-10-封装优化/</id>
+    <published>2019-07-04T06:01:09.000Z</published>
+    <updated>2019-07-04T06:32:15.580Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;this-guan-jian-zi&quot;&gt;this关键字&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;上一篇笔记中，setXxx 方法中形参名字并不符合见名知意的规定&lt;br&gt;如果修改与成员变量名一致，代码如下:&lt;/p&gt;
+&lt;figure class=&quot;highlight p
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--9.封装</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-9-%E5%B0%81%E8%A3%85/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-9-封装/</id>
+    <published>2019-07-04T05:26:52.000Z</published>
+    <updated>2019-07-04T06:00:11.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;&lt;span id=&quot;feng-zhuang&quot;&gt;封装&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;封装可以被认为是一个保护屏障，防止该类的代码和数据被其他类随意访问。要访问该类的数据，必须通过指定的方式。适当的封装可以让代码更容易理解与维护，也加强了代码的安全性。&lt;br&gt;原则：将属性隐藏起
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--8.类与对象</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-8-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/</id>
+    <published>2019-07-04T04:48:39.000Z</published>
+    <updated>2019-07-04T05:25:44.887Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;类与对象的关系&lt;ul&gt;
+&lt;li&gt;类是对一类事物的描述，是抽象的。 &lt;/li&gt;
+&lt;li&gt;对象是一类事物的实例，是具体的。 &lt;/li&gt;
+&lt;li&gt;类是对象的模板，对象是类的实体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;span id=&quot;l
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Java基础--7.数组-二</title>
@@ -46,7 +126,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--6.%E6%95%B0%E7%BB%84/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Java基础--6.数组/</id>
     <published>2019-07-03T10:14:36.000Z</published>
-    <updated>2019-07-03T11:34:43.761Z</updated>
+    <updated>2019-07-03T12:06:14.465Z</updated>
     
     <summary type="html">
     
@@ -259,7 +339,7 @@
     <link href="http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/"/>
     <id>http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/</id>
     <published>2019-06-28T10:24:45.000Z</published>
-    <updated>2019-07-03T08:39:47.062Z</updated>
+    <updated>2019-07-03T12:06:36.611Z</updated>
     
     <summary type="html">
     

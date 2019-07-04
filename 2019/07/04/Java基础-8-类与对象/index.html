@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>Java基础--4.判断、选择、循环语句 | MangosTeeN</title>
-  <meta name="description" content="判断语句 if  123if(关系表达式)&amp;#123; 	语句体;&amp;#125;   if…else  12345if(关系表达式) &amp;#123; 	语句体1;&amp;#125;else &amp;#123; 	语句体2;&amp;#125;   if…else if…else  12345678910if (判断条件1) &amp;#123; 	执行语句1;&amp;#125; else if (判断条件2) &amp;#123; 	执行语句">
+  <title>Java基础--8.类与对象 | MangosTeeN</title>
+  <meta name="description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
 <meta name="keywords" content="java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础--4.判断、选择、循环语句">
-<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/03/Java基础--4.判断、选择、循环语句/index.html">
+<meta property="og:title" content="Java基础--8.类与对象">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断语句 if  123if(关系表达式)&amp;#123; 	语句体;&amp;#125;   if…else  12345if(关系表达式) &amp;#123; 	语句体1;&amp;#125;else &amp;#123; 	语句体2;&amp;#125;   if…else if…else  12345678910if (判断条件1) &amp;#123; 	执行语句1;&amp;#125; else if (判断条件2) &amp;#123; 	执行语句">
+<meta property="og:description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-03T07:53:22.147Z">
+<meta property="og:updated_time" content="2019-07-04T05:25:44.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础--4.判断、选择、循环语句">
-<meta name="twitter:description" content="判断语句 if  123if(关系表达式)&amp;#123; 	语句体;&amp;#125;   if…else  12345if(关系表达式) &amp;#123; 	语句体1;&amp;#125;else &amp;#123; 	语句体2;&amp;#125;   if…else if…else  12345678910if (判断条件1) &amp;#123; 	执行语句1;&amp;#125; else if (判断条件2) &amp;#123; 	执行语句">
+<meta name="twitter:title" content="Java基础--8.类与对象">
+<meta name="twitter:description" content="类与对象的关系 类是对一类事物的描述，是抽象的。  对象是一类事物的实例，是具体的。  类是对象的模板，对象是类的实体。    类的定义格式：  public class ClassName {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员变量(属性)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//成员方法(行为)}   成员变量:和以前定义变量几乎是一样的。只不过位置发生了改">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/03/Java基础--4.判断、选择、循环语句/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -283,7 +283,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">跳出语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">嵌套循环</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">对象的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">2.1.</span> <span class="toc-text">成员变量和局部变量区别</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -291,14 +291,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java基础--4.判断、选择、循环语句" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Java基础-8-类与对象" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础--4.判断、选择、循环语句
+      Java基础--8.类与对象
     </h1>
   
 
@@ -306,8 +306,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/03/Java基础--4.判断、选择、循环语句/" class="article-date">
-	  <time datetime="2019-07-03T07:38:22.000Z" itemprop="datePublished">2019-07-03</time>
+	<a href="/2019/07/04/Java基础-8-类与对象/" class="article-date">
+	  <time datetime="2019-07-04T04:48:39.000Z" itemprop="datePublished">2019-07-04</time>
 	</a>
 </span>
         
@@ -325,77 +325,129 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础--4.判断、选择、循环语句/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java基础-8-类与对象/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2><span id="pan-duan-yu-ju">判断语句</span></h2><ol>
-<li>if</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式)&#123; </span><br><span class="line">	语句体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <br>
 
-<ol start="2">
-<li>if…else</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123; </span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123; </span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>if…else if…else</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (判断条件<span class="number">1</span>) &#123; </span><br><span class="line">	执行语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件<span class="number">2</span>) &#123; </span><br><span class="line">	执行语句<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (判断条件n) &#123;</span><br><span class="line">	执行语句n; </span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	执行语句n+<span class="number">1</span>; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：在某些简单的应用中，if语句是可以和三元运算符互换使用的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">20</span>; <span class="comment">//定义变量，保存a和b的较大值 int c;</span></span><br><span class="line">	<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">		c = a; </span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		c = b; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//上述功能可以改写为三元运算符形式</span></span><br><span class="line">	c = a &gt; b ? a:b; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2><span id="xuan-ze-yu-ju">选择语句</span></h2><ol>
-<li>switch</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式) &#123; </span><br><span class="line">	<span class="keyword">case</span> 常量值<span class="number">1</span>: </span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>; </span><br><span class="line">	<span class="keyword">case</span> 常量值<span class="number">2</span>:</span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	 ...</span><br><span class="line">	<span class="keyword">default</span>: </span><br><span class="line">		语句体n+<span class="number">1</span>; </span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>switch语句中，表达式的数据类型，可以是byte，short，int，char，enum(枚举)，JDK7后可以接收字符串</p>
-<p>注意：case的穿透性<br>在switch语句中，如果case的后面不写break，将出现穿透现象，也就是不会在判断下一个case的值，直接向后运行，直到遇到break，或者整体switch结束。</p>
-<h2><span id="xun-huan-yu-ju">循环语句</span></h2><ol>
-<li>for循环</li>
-</ol>
-<blockquote>
-<p>for(初始化表达式1; 布尔表达式2; 步进表达式4){<br>                循环体3<br>}</p>
-</blockquote>
-<p>执行顺序:1234&gt;234&gt;234…2不满足为止。</p>
-<ol start="2">
-<li>while循环</li>
-</ol>
-<blockquote>
-<p>初始化表达式1 while(布尔表达式2){<br>&emsp;&emsp;&emsp;循环体3<br>&emsp;&emsp;&emsp;步进表达式4<br>}</p>
-</blockquote>
-<p>执行顺序:1234&gt;234&gt;234…2不满足为止。</p>
-<ol start="3">
-<li>do…while循环</li>
-</ol>
-<blockquote>
-<p>初始化表达式1 do{<br>&emsp;&emsp;&emsp;循环体3<br>&emsp;&emsp;&emsp;步进表达式4<br>}while(布尔表达式2);</p>
-</blockquote>
-<p>执行顺序:134&gt;234&gt;234…2不满足为止。</p>
 <ul>
-<li>for 和 while 的小区别:  <ul>
-<li>控制条件语句所控制的那个变量，在for循环结束后，就不能再被访问到了，而while循环结束还可以继 续使用，如果你想继续使用，就用while，否则推荐使用for。原因是for循环结束，该变量就从内存中消 失，能够提高内存的使用效率。 </li>
-<li>在已知循环次数的时候使用推荐使用for，循环次数未知的时推荐使用while。</li>
+<li>类与对象的关系<ul>
+<li>类是对一类事物的描述，是抽象的。 </li>
+<li>对象是一类事物的实例，是具体的。 </li>
+<li>类是对象的模板，对象是类的实体。</li>
 </ul>
 </li>
 </ul>
-<h2><span id="tiao-chu-yu-ju">跳出语句</span></h2><p><strong><em>break</em></strong><br> -使用场景:终止switch或者循环</p>
+<h2><span id="lei-de-ding-yi">类的定义</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public class ClassName {<br>&emsp;&emsp;&emsp;&emsp;//成员变量(属性)<br>&emsp;&emsp;&emsp;&emsp;//成员方法(行为)<br>}</p>
+</blockquote>
 <ul>
-<li>在选择结构switch语句中 </li>
-<li>在循环语句中 </li>
-<li>离开使用场景的存在是没有意义的</li>
+<li>成员变量:和以前定义变量几乎是一样的。只不过位置发生了改变。在类中，方法外。 </li>
+<li>成员方法:和以前定义方法几乎是一样的。只不过把static去掉。</li>
 </ul>
-<p><strong><em>continue</em></strong></p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> public class Student &#123; </span><br><span class="line">     //成员变量</span><br><span class="line">    String name;//姓名 </span><br><span class="line">    int age;//年龄</span><br><span class="line">    //成员方法</span><br><span class="line">    //学习的方法</span><br><span class="line">    public void study() &#123; </span><br><span class="line">        System.out.println(&quot;好好学习，天天向上&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //吃饭的方法 </span><br><span class="line">    public void eat() &#123;</span><br><span class="line">        System.out.println(&quot;学习饿了要吃饭&quot;); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="dui-xiang-de-shi-yong">对象的使用</span></h2><p><strong>格式</strong>：  </p>
+<ol>
+<li>导包<blockquote>
+<p>import 包名称.类名称；</p>
+</blockquote>
+</li>
+</ol>
+<p>（属于同一个包可以不写）</p>
+<ol start="2">
+<li>创建对象<blockquote>
+<p>类名 对象名 = new 类名();</p>
+</blockquote>
+</li>
+<li>使用对象访问类中的成员<blockquote>
+<p>对象名.成员变量;<br>对象名.成员方法();</p>
+</blockquote>
+</li>
+</ol>
+<br>
+
+<p><strong>成员变量的默认值</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">基本类型</td>
+<td align="left">整数(byte，short，int，long)</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">浮点数(float，double)</td>
+<td align="left">0.0</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">字符(char)</td>
+<td align="left">‘\u0000’</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">布尔(boolean)</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">引用类型</td>
+<td align="left">数组，类，接口</td>
+<td align="left">null</td>
+</tr>
+</tbody></table>
+<p><strong>类与对象举例</strong>：</p>
+<p>定义手机类:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Phone &#123; </span><br><span class="line">    // 成员变量</span><br><span class="line">    String brand; //品牌 </span><br><span class="line">    int price; //价格 </span><br><span class="line">    String color; //颜色</span><br><span class="line">    // 成员方法</span><br><span class="line">    //打电话</span><br><span class="line">    public void call(String name) &#123;</span><br><span class="line">        System.out.println(&quot;给&quot;+name+&quot;打电话&quot;); </span><br><span class="line">    &#125;</span><br><span class="line">    //发短信</span><br><span class="line">    public void sendMessage() &#123;</span><br><span class="line">        System.out.println(&quot;群发短信&quot;); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义测试类:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Test02Phone &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //创建对象</span><br><span class="line">        Phone p = new Phone();</span><br><span class="line"></span><br><span class="line">        //输出成员变量值 </span><br><span class="line">        System.out.println(&quot;品牌:&quot;+p.brand);//null </span><br><span class="line">        System.out.println(&quot;价格:&quot;+p.price);//0 System.out.println(&quot;颜色:&quot;+p.color);//null</span><br><span class="line">        System.out.println(&quot;‐‐‐‐‐‐‐‐‐‐‐‐&quot;);</span><br><span class="line"></span><br><span class="line">        //给成员变量赋值 </span><br><span class="line">        p.brand = &quot;锤子&quot;; </span><br><span class="line">        p.price = 2999; </span><br><span class="line">        p.color = &quot;棕色&quot;;</span><br><span class="line"></span><br><span class="line">        //再次输出成员变量值 </span><br><span class="line">        System.out.println(&quot;品牌:&quot;+p.brand);//锤子 </span><br><span class="line">        System.out.println(&quot;价格:&quot;+p.price);//2999 </span><br><span class="line">        System.out.println(&quot;颜色:&quot;+p.color);//棕色 </span><br><span class="line">        System.out.println(&quot;‐‐‐‐‐‐‐‐‐‐‐‐&quot;);</span><br><span class="line">        </span><br><span class="line">        //调用成员方法 </span><br><span class="line">        p.call(&quot;紫霞&quot;); </span><br><span class="line">        p.sendMessage();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3><span id="cheng-yuan-bian-liang-he-ju-bu-bian-liang-qu-bie">成员变量和局部变量区别</span></h3><ul>
+<li>在类中的位置不同<ul>
+<li>成员变量:类中，方法外</li>
+<li>局部变量:方法中或者方法声明上(形式参数) </li>
+</ul>
+</li>
+</ul>
 <ul>
-<li>使用场景:结束本次循环，继续下一次的循环</li>
+<li>作用范围不一样<ul>
+<li>成员变量:类中 </li>
+<li>局部变量:方法中</li>
 </ul>
-<h2><span id="qian-tao-xun-huan">嵌套循环</span></h2><ul>
-<li>所谓嵌套循环，是指一个循环的循环体是另一个循环。比如for循环里面还有一个for循环，就是嵌套循环。总共的循环次数=外循环次数*内循环次数</li>
+</li>
+</ul>
+<ul>
+<li>初始化值的不同<ul>
+<li>成员变量:有默认值 </li>
+<li>局部变量:没有默认值。必须先定义，赋值，最后使用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在内存中的位置不同<ul>
+<li>成员变量:堆内存 </li>
+<li>局部变量:栈内存</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>生命周期不同<ul>
+<li>成员变量:随着对象的创建而存在，随着对象的消失而消失 </li>
+<li>局部变量:随着方法的调用而存在，随着方法的调用完毕而消失</li>
+</ul>
+</li>
 </ul>
 
       
@@ -406,7 +458,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://mangosTeeN96.github.io/2019/07/03/Java基础--4.判断、选择、循环语句/" title="Java基础--4.判断、选择、循环语句" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/03/Java基础--4.判断、选择、循环语句/</a>
+      <a href="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/" title="Java基础--8.类与对象" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -451,12 +503,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2019/07/03/Java基础--5.方法/" title="Java基础--5.方法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2019/07/04/Java基础-9-封装/" title="Java基础--9.封装"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2019/07/03/Hexo博客导入图片/" title="Hexo博客导入图片"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/07/03/Java基础-7-数组-二/" title="Java基础--7.数组-二"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
