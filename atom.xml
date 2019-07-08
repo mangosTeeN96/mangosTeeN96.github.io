@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-08T05:55:59.454Z</updated>
+  <updated>2019-07-08T07:54:31.015Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(Java)常用API--6.static关键字</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/08/(Java)%E5%B8%B8%E7%94%A8API--6.static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--6.static关键字/</id>
+    <published>2019-07-08T07:16:54.000Z</published>
+    <updated>2019-07-08T07:54:31.015Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;&lt;code&gt;static&lt;/code&gt;关键字：它可以用来修饰的成员变量和成员方法，被修饰的成员是属于类的，而不是单单是属于某个对象的。&lt;br&gt;也就是说，既然属于类，就可以不靠创建对象来调用了。&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;lei-bian-liang-x
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(Java)常用API--5.String类</title>
     <link href="http://mangosTeeN96.github.io/2019/07/08/(Java)%E5%B8%B8%E7%94%A8API--5.String%E7%B1%BB/"/>
     <id>http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/</id>
     <published>2019-07-08T05:33:30.000Z</published>
-    <updated>2019-07-08T05:55:59.454Z</updated>
+    <updated>2019-07-08T07:17:04.731Z</updated>
     
     <summary type="html">
     
@@ -351,7 +377,7 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Hexo%E5%8D%9A%E5%AE%A2%E5%AF%BC%E5%85%A5%E5%9B%BE%E7%89%87/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Hexo博客导入图片/</id>
     <published>2019-07-03T07:13:20.000Z</published>
-    <updated>2019-07-03T07:29:49.982Z</updated>
+    <updated>2019-07-08T06:07:00.595Z</updated>
     
     <summary type="html">
     
@@ -528,25 +554,6 @@
     
     
       <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/28/hello-world/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/28/hello-world/</id>
-    <published>2019-06-28T04:42:41.376Z</published>
-    <updated>2019-06-28T04:42:41.377Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
