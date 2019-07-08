@@ -22,18 +22,18 @@
 <meta name="keywords" content="常用API">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(Java)常用API--5.String类">
-<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/08/Java-常用API-5-String类/index.html">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="java.lang.String类代表字符串程序当中所有的双引号字符串，都是String类的对象。（就算没有new，也照样是。） 特点：  字符串的内容永不可变。 正是因为字符串不可改变，所以字符串是可以共享使用的。 字符串效果上相当于是char[ ]字符数组，但是底层原理是byte[]字节数组。  构造方法创建字符串的常见3+1种方式。    三种构造方法： public String()：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://mangosteen96.github.io/2019/07/08/Java-常用API-5-String类/1.png">
-<meta property="og:updated_time" content="2019-07-08T05:53:14.980Z">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/07/08/(Java)常用API--5.String类/1.png">
+<meta property="og:updated_time" content="2019-07-08T05:55:59.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(Java)常用API--5.String类">
 <meta name="twitter:description" content="java.lang.String类代表字符串程序当中所有的双引号字符串，都是String类的对象。（就算没有new，也照样是。） 特点：  字符串的内容永不可变。 正是因为字符串不可改变，所以字符串是可以共享使用的。 字符串效果上相当于是char[ ]字符数组，但是底层原理是byte[]字节数组。  构造方法创建字符串的常见3+1种方式。    三种构造方法： public String()：">
-<meta name="twitter:image" content="http://mangosteen96.github.io/2019/07/08/Java-常用API-5-String类/1.png">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2019/07/08/(Java)常用API--5.String类/1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/08/Java-常用API-5-String类/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -202,7 +202,7 @@
                 <a class="category-link" href="/categories/java/">java</a>
               </p>
               <p class="item-title">
-                <a href="/2019/07/08/Java-常用API-5-String类/" class="title">(Java)常用API--5.String类</a>
+                <a href="/2019/07/08/(Java)常用API--5.String类/" class="title">(Java)常用API--5.String类</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-07-08T05:33:30.000Z" itemprop="datePublished">2019-07-08</time>
@@ -293,7 +293,7 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java-常用API-5-String类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-(Java)常用API--5.String类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
@@ -308,7 +308,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/08/Java-常用API-5-String类/" class="article-date">
+	<a href="/2019/07/08/(Java)常用API--5.String类/" class="article-date">
 	  <time datetime="2019-07-08T05:33:30.000Z" itemprop="datePublished">2019-07-08</time>
 	</a>
 </span>
@@ -327,7 +327,7 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/08/Java-常用API-5-String类/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/08/(Java)常用API--5.String类/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -369,7 +369,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String str1 = <span class="string">"abc"</span>;</span><br><span class="line">    String str2 = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span>[] charArray = &#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>&#125;;</span><br><span class="line">    String str3 = <span class="keyword">new</span> String(charArray);</span><br><span class="line"></span><br><span class="line">    System.out.println(str1 == str2); <span class="comment">// true</span></span><br><span class="line">    System.out.println(str1 == str3); <span class="comment">// false</span></span><br><span class="line">    System.out.println(str2 == str3); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="//mangosTeeN96.github.io/2019/07/08/Java-常用API-5-String类/1.png" alt="字符串常量池"></p>
+<p><img src="//mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/1.png" alt></p>
 
       
     </div>
@@ -379,7 +379,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://mangosTeeN96.github.io/2019/07/08/Java-常用API-5-String类/" title="(Java)常用API--5.String类" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/08/Java-常用API-5-String类/</a>
+      <a href="http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/" title="(Java)常用API--5.String类" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/08/(Java)常用API--5.String类/</a>
     </li>
     
     <li class="post-copyright-license">
