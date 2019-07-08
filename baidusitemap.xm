@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/08/Java-%E5%B8%B8%E7%94%A8API-5-String%E7%B1%BB/</loc>
+    <lastmod>2019-07-08</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-4-ArrayList%E7%B1%BB/</loc>
-    <lastmod>2019-07-04</lastmod>
+    <lastmod>2019-07-08</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80-10-%E5%B0%81%E8%A3%85%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2019-07-04</lastmod>
