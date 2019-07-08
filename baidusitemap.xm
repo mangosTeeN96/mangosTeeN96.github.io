@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/08/Java-%E5%B8%B8%E7%94%A8API-8-Math%E7%B1%BB/</loc>
+    <lastmod>2019-07-08</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/08/Java-%E5%B8%B8%E7%94%A8API-7-Arrays%E7%B1%BB/</loc>
+    <lastmod>2019-07-08</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/08/(Java)%E5%B8%B8%E7%94%A8API--6.static%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
     <lastmod>2019-07-08</lastmod>
   </url>  <url>

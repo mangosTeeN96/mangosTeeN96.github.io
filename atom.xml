@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-08T08:05:59.315Z</updated>
+  <updated>2019-07-08T10:47:43.391Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(Java)常用API--8.Math类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/08/Java-%E5%B8%B8%E7%94%A8API-8-Math%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/08/Java-常用API-8-Math类/</id>
+    <published>2019-07-08T08:47:15.000Z</published>
+    <updated>2019-07-08T10:47:43.391Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;&lt;code&gt;java.lang.Math&lt;/code&gt; 类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。&lt;br&gt;类似这样的工具类，其所有方法均为静态方法，并且不会创建对象，调用起来非常简单。&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;ji-ben
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Java)常用API--7.Arrays类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/08/Java-%E5%B8%B8%E7%94%A8API-7-Arrays%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/08/Java-常用API-7-Arrays类/</id>
+    <published>2019-07-08T08:24:13.000Z</published>
+    <updated>2019-07-08T08:46:39.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;&lt;code&gt;java.util.Arrays&lt;/code&gt;此类包含用来操作数组的各种方法，比如排序和搜索等。&lt;br&gt;其所有方法均为静态方法，调用起来非常简单。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;常用方法&lt;/strong&gt;：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="常用API" scheme="http://mangosTeeN96.github.io/tags/%E5%B8%B8%E7%94%A8API/"/>
+    
+  </entry>
   
   <entry>
     <title>(Java)常用API--6.static关键字</title>
@@ -499,61 +553,6 @@
     
     
       <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo markdown</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/</id>
-    <published>2019-06-28T10:24:45.000Z</published>
-    <updated>2019-07-03T12:06:36.611Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;&lt;span id=&quot;yi-xie-nan-ji-or-you-xie-bu-yi-yang-de-markdown&quot;&gt;一些难记or有些不一样的markdown&lt;/span&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&amp;lt; br&amp;gt; 换行&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;两
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://mangosTeeN96.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
-    
-      <category term="markdown" scheme="http://mangosTeeN96.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo个人博客搭建</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/28/hexo个人博客搭建/</id>
-    <published>2019-06-28T04:47:04.000Z</published>
-    <updated>2019-06-28T11:04:54.767Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;br&gt;&amp;emsp;&amp;emsp;1. 安装node.js&lt;/p&gt;
-&lt;p&gt;打开nodejs.org下载安装包，直接点开安装包安装。&lt;/p&gt;
-&lt;p&gt;查看安装版本&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;node -v&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm -v&lt;/code&gt;&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://mangosTeeN96.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
     
   </entry>
   
