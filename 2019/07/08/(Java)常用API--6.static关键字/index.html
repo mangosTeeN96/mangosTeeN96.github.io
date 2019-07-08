@@ -27,7 +27,7 @@
 <meta property="og:description" content="static关键字：它可以用来修饰的成员变量和成员方法，被修饰的成员是属于类的，而不是单单是属于某个对象的。也就是说，既然属于类，就可以不靠创建对象来调用了。 类变量（修饰成员变量） 当static修饰成员变量时，该变量称为类变量 该类的每个对象都共享同一个类变量的值 任何对象都可以更改该类变量的值 但也可以在不创建该类的对象的情况下对类变量进行操作。    举例： 每新来一个同学，id自动+">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://mangosteen96.github.io/2019/07/08/(Java)常用API--6.static关键字/1.png">
-<meta property="og:updated_time" content="2019-07-08T07:54:31.015Z">
+<meta property="og:updated_time" content="2019-07-08T08:05:59.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(Java)常用API--6.static关键字">
 <meta name="twitter:description" content="static关键字：它可以用来修饰的成员变量和成员方法，被修饰的成员是属于类的，而不是单单是属于某个对象的。也就是说，既然属于类，就可以不靠创建对象来调用了。 类变量（修饰成员变量） 当static修饰成员变量时，该变量称为类变量 该类的每个对象都共享同一个类变量的值 任何对象都可以更改该类变量的值 但也可以在不创建该类的对象的情况下对类变量进行操作。    举例： 每新来一个同学，id自动+">
@@ -285,7 +285,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">类变量（修饰成员变量）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">静态方法（类方法）（修饰成员方法）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">类变量（修饰成员变量）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">静态方法（类方法）（修饰成员方法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">静态代码块</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -388,6 +388,27 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02StaticMethod</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        MyClass obj = <span class="keyword">new</span> MyClass(); <span class="comment">// 首先创建对象</span></span><br><span class="line">        <span class="comment">// 然后才能使用没有static关键字的内容</span></span><br><span class="line">        obj.method();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对于静态方法来说，可以通过对象名进行调用，也可以直接通过类名称来调用。</span></span><br><span class="line">        obj.methodStatic(); <span class="comment">// 正确，不推荐，这种写法在编译之后也会被javac翻译成为“类名称.静态方法名”</span></span><br><span class="line">        MyClass.methodStatic(); <span class="comment">// 正确，推荐</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对于本来当中的静态方法，可以省略类名称</span></span><br><span class="line">        myMethod();</span><br><span class="line">        Demo02StaticMethod.myMethod(); <span class="comment">// 完全等效</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"自己的方法！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="//mangosTeeN96.github.io/2019/07/08/(Java)常用API--6.static关键字/1.png" alt></p>
+<h2><span id="jing-tai-dai-ma-kuai">静态代码块</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public class 类名称 {<br>&emsp;&emsp;&emsp;&emsp;static {<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// 静态代码块的内容<br>&emsp;&emsp;&emsp;&emsp;}<br>}</p>
+</blockquote>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>当第一次用到本类时，静态代码块执行唯一的一次。</li>
+<li>静态内容总是优先于非静态，所以静态代码块比构造方法先执行。</li>
+</ul>
+<p><strong>典型用途</strong>：  
+用来一次性地对静态成员变量进行赋值。</p>
+<p>Person类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"静态代码块执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造方法执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Person one = <span class="keyword">new</span> Person();</span><br><span class="line">    Person two = <span class="keyword">new</span> Person();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>静态代码块执行！<br>构造方法执行！<br>构造方法执行！</p>
+</blockquote>
 
       
     </div>
