@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>(Java)继承与多态--2.抽象类 | MangosTeeN</title>
+  <meta name="description" content="没有方法主体的方法称为抽象方法包含抽象方法的类就是抽象类 抽象方法概念图： 格式抽象类与抽象方法格式： 123456public abstract class Animal &amp;#123;    // 这是一个抽象方法，代表吃东西，但是具体吃什么（大括号的内容）不确定。    public abstract void eat();&amp;#125;  使用使用抽象类和抽象方法：    不能直接创建ne">
+<meta name="keywords" content="继承与多态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(Java)继承与多态--2.抽象类">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="没有方法主体的方法称为抽象方法包含抽象方法的类就是抽象类 抽象方法概念图： 格式抽象类与抽象方法格式： 123456public abstract class Animal &amp;#123;    // 这是一个抽象方法，代表吃东西，但是具体吃什么（大括号的内容）不确定。    public abstract void eat();&amp;#125;  使用使用抽象类和抽象方法：    不能直接创建ne">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/2.png">
+<meta property="og:updated_time" content="2019-07-09T07:09:09.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(Java)继承与多态--2.抽象类">
+<meta name="twitter:description" content="没有方法主体的方法称为抽象方法包含抽象方法的类就是抽象类 抽象方法概念图： 格式抽象类与抽象方法格式： 123456public abstract class Animal &amp;#123;    // 这是一个抽象方法，代表吃东西，但是具体吃什么（大括号的内容）不确定。    public abstract void eat();&amp;#125;  使用使用抽象类和抽象方法：    不能直接创建ne">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center no-sidebar" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/mangosTeeN96" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">MangosTeeN</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">想养一只猫</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据环境搭建/">大数据环境搭建</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/">hadoop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用API/">常用API</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承与多态/">继承与多态</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/09/(Java)继承与多态--2.抽象类/" class="title">(Java)继承与多态--2.抽象类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-09T05:06:59.000Z" itemprop="datePublished">2019-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/09/(Java)继承与多态--1.继承/" class="title">(Java)继承与多态--1.继承</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-09T03:16:06.000Z" itemprop="datePublished">2019-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/08/Java-常用API-8-Math类/" class="title">(Java)常用API--8.Math类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-08T08:47:15.000Z" itemprop="datePublished">2019-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/08/Java-常用API-7-Arrays类/" class="title">(Java)常用API--7.Arrays类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-08T08:24:13.000Z" itemprop="datePublished">2019-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/08/(Java)常用API--6.static关键字/" class="title">(Java)常用API--6.static关键字</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-08T07:16:54.000Z" itemprop="datePublished">2019-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">案例</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-(Java)继承与多态--2.抽象类" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      (Java)继承与多态--2.抽象类
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/07/09/(Java)继承与多态--2.抽象类/" class="article-date">
+	  <time datetime="2019-07-09T05:06:59.000Z" itemprop="datePublished">2019-07-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/继承与多态/">继承与多态</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/09/(Java)继承与多态--2.抽象类/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <br>
+
+<p>没有方法主体的方法称为<strong>抽象方法</strong><br>包含抽象方法的类就是<strong>抽象类</strong></p>
+<p>抽象方法概念图：<br><img src="//mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/1.png" alt></p>
+<h2><span id="ge-shi">格式</span></h2><p>抽象类与抽象方法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这是一个抽象方法，代表吃东西，但是具体吃什么（大括号的内容）不确定。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="shi-yong">使用</span></h2><p>使用抽象类和抽象方法：  </p>
+<ol>
+<li>不能直接创建new抽象类对象。</li>
+<li>必须用一个子类来继承抽象父类。</li>
+<li>子类必须覆盖重写抽象父类当中所有的抽象方法。<br>覆盖重写（实现）：子类去掉抽象方法的abstract关键字，然后补上方法体大括号。</li>
+<li>创建子类对象进行使用。</li>
+</ol>
+<p><strong>注意事项</strong>：  </p>
+<ol>
+<li>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的。<br>理解:子类的构造方法中，有默认的super()，需要访问父类构造方法。</li>
+<li>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。<br>理解:未包含抽象方法的抽象类，目的就是不想让调用者创建该类对象，通常用于某些特殊的类结构设计。</li>
+<li>抽象类的子类，必须重写抽象父类中所有的抽象方法，除非该子类也是抽象类。<br>理解:假设不重写所有抽象方法，则类中可能包含抽象方法。那么创建对象后，调用抽象的方法，没有意义。</li>
+</ol>
+<h2><span id="an-li">案例</span></h2><p>案例分析：<br><img src="//mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/2.png" alt></p>
+<p>用户父类:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> money; <span class="comment">// 余额，也就是当前用户拥有的钱数</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name, <span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.money = money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 展示一下当前用户有多少钱</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我叫："</span> + name + <span class="string">"，我有多少钱："</span> + money);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMoney</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMoney</span><span class="params">(<span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.money = money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>群主子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Manager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Manager</span><span class="params">(String name, <span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, money);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">send</span><span class="params">(<span class="keyword">int</span> totalMoney, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 首先需要一个集合，用来存储若干个红包的金额</span></span><br><span class="line">        ArrayList&lt;Integer&gt; redList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 看一下群主自己有多少钱</span></span><br><span class="line">        <span class="keyword">int</span> leftMoney = <span class="keyword">super</span>.getMoney(); <span class="comment">// 群主当前余额</span></span><br><span class="line">        <span class="keyword">if</span> (totalMoney &gt; leftMoney) &#123;</span><br><span class="line">            System.out.println(<span class="string">"余额不足"</span>);</span><br><span class="line">            <span class="keyword">return</span> redList; <span class="comment">// 返回空集合</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 扣钱，其实就是重新设置余额</span></span><br><span class="line">        <span class="keyword">super</span>.setMoney(leftMoney - totalMoney);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 发红包需要平均拆分成为count份</span></span><br><span class="line">        <span class="keyword">int</span> avg = totalMoney / count;</span><br><span class="line">        <span class="keyword">int</span> mod = totalMoney % count; <span class="comment">// 余数，也就是甩下的零头</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 除不开的零头，包在最后一个红包当中</span></span><br><span class="line">        <span class="comment">// 下面把红包一个一个放到集合当中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            redList.add(avg);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 最后一个红包</span></span><br><span class="line">        <span class="keyword">int</span> last = avg + mod;</span><br><span class="line">        redList.add(last);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> redList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>群成员子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Member</span> <span class="keyword">extends</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Member</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Member</span><span class="params">(String name, <span class="keyword">int</span> money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, money);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(ArrayList&lt;Integer&gt; list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 从多个红包当中随便抽取一个，给我自己。</span></span><br><span class="line">        <span class="comment">// 随机获取一个集合当中的索引编号</span></span><br><span class="line">        <span class="keyword">int</span> index = <span class="keyword">new</span> Random().nextInt(list.size());</span><br><span class="line">        <span class="comment">// 根据索引，从集合当中删除，并且得到被删除的红包，给我自己</span></span><br><span class="line">        <span class="keyword">int</span> delta = list.remove(index);</span><br><span class="line">        <span class="comment">// 当前成员自己本来有多少钱：</span></span><br><span class="line">        <span class="keyword">int</span> money = <span class="keyword">super</span>.getMoney();</span><br><span class="line">        <span class="comment">// 加法，并且重新设置回去</span></span><br><span class="line">        <span class="keyword">super</span>.setMoney(money + delta);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>发红包：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainRedPacket</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Manager manager = <span class="keyword">new</span> Manager(<span class="string">"群主"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">        Member one = <span class="keyword">new</span> Member(<span class="string">"成员A"</span>, <span class="number">0</span>);</span><br><span class="line">        Member two = <span class="keyword">new</span> Member(<span class="string">"成员B"</span>, <span class="number">0</span>);</span><br><span class="line">        Member three = <span class="keyword">new</span> Member(<span class="string">"成员C"</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        manager.show(); <span class="comment">// 100</span></span><br><span class="line">        one.show(); <span class="comment">// 0</span></span><br><span class="line">        two.show(); <span class="comment">// 0</span></span><br><span class="line">        three.show(); <span class="comment">// 0</span></span><br><span class="line">        System.out.println(<span class="string">"==============="</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 群主总共发20块钱，分成3个红包</span></span><br><span class="line">        ArrayList&lt;Integer&gt; redList = manager.send(<span class="number">20</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="comment">// 三个普通成员收红包</span></span><br><span class="line">        one.receive(redList);</span><br><span class="line">        two.receive(redList);</span><br><span class="line">        three.receive(redList);</span><br><span class="line"></span><br><span class="line">        manager.show(); <span class="comment">// 100-20=80</span></span><br><span class="line">        <span class="comment">// 6、6、8，随机分给三个人</span></span><br><span class="line">        one.show();</span><br><span class="line">        two.show();</span><br><span class="line">        three.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/" title="(Java)继承与多态--2.抽象类" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章若无特别声明，转载请注明出处
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/mangosTeeN96" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/mangosTeeN96" target="_blank"><span class="text-dark">MangosTeeN</span><small class="ml-1x">想养一只猫</small></a></h3>
+        <div>在这里做一些笔记</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/07/09/(Java)继承与多态--1.继承/" title="(Java)继承与多态--1.继承"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

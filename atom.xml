@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-09T05:00:24.764Z</updated>
+  <updated>2019-07-09T07:09:09.901Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(Java)继承与多态--2.抽象类</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/09/(Java)%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81--2.%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--2.抽象类/</id>
+    <published>2019-07-09T05:06:59.000Z</published>
+    <updated>2019-07-09T07:09:09.901Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;没有方法主体的方法称为&lt;strong&gt;抽象方法&lt;/strong&gt;&lt;br&gt;包含抽象方法的类就是&lt;strong&gt;抽象类&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;抽象方法概念图：&lt;br&gt;&lt;img src=&quot;//mangosTeeN96.github.io/2019/07/09
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="继承与多态" scheme="http://mangosTeeN96.github.io/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(Java)继承与多态--1.继承</title>
     <link href="http://mangosTeeN96.github.io/2019/07/09/(Java)%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81--1.%E7%BB%A7%E6%89%BF/"/>
     <id>http://mangosTeeN96.github.io/2019/07/09/(Java)继承与多态--1.继承/</id>
     <published>2019-07-09T03:16:06.000Z</published>
-    <updated>2019-07-09T05:00:24.764Z</updated>
+    <updated>2019-07-09T05:06:28.481Z</updated>
     
     <summary type="html">
     
@@ -515,35 +541,6 @@
       
         &lt;p&gt;Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。&lt;/p&gt;
 &lt;h2&gt;&lt;span id=&quot;zi-dong-zhuan-huan&quot;&gt;自动转换&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;将 取值范围小的类型 自动提升为 取值
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础-2.常量、变量</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/29/Java%E5%9F%BA%E7%A1%80--2.%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/29/Java基础--2.常量、变量/</id>
-    <published>2019-06-29T05:38:16.000Z</published>
-    <updated>2019-06-29T08:50:04.029Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;&lt;span id=&quot;chang-liang&quot;&gt;常量&lt;/span&gt;&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;含义&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;数据举例&lt;/th&gt;
-&lt;
       
     
     </summary>
