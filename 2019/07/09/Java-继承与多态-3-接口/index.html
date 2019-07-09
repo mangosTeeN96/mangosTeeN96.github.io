@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>(Java)继承与多态--3.接口 | MangosTeeN</title>
+  <meta name="description" content="接口就是多个类的公共规范。 接口，是Java语言中一种引用类型，是方法的集合。如果说类的内部封装了成员变量、构造方法和成员方法，那么，接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。 格式 public interface 接口名称 {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;// 抽象方法&amp;emsp;&amp;emsp">
+<meta name="keywords" content="继承与多态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(Java)继承与多态--3.接口">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/09/Java-继承与多态-3-接口/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="接口就是多个类的公共规范。 接口，是Java语言中一种引用类型，是方法的集合。如果说类的内部封装了成员变量、构造方法和成员方法，那么，接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。 格式 public interface 接口名称 {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;// 抽象方法&amp;emsp;&amp;emsp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-09T09:48:17.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(Java)继承与多态--3.接口">
+<meta name="twitter:description" content="接口就是多个类的公共规范。 接口，是Java语言中一种引用类型，是方法的集合。如果说类的内部封装了成员变量、构造方法和成员方法，那么，接口的内部主要就是封装了方法，包含抽象方法(JDK 7及以前)，默认方法和静态方法(JDK 8)，私有方法 (JDK 9)。 格式 public interface 接口名称 {&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;// 抽象方法&amp;emsp;&amp;emsp">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/09/Java-继承与多态-3-接口/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center no-sidebar" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/mangosTeeN96" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">MangosTeeN</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">想养一只猫</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据环境搭建/">大数据环境搭建</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/">hadoop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用API/">常用API</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承与多态/">继承与多态</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/09/Java-继承与多态-3-接口/" class="title">(Java)继承与多态--3.接口</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-09T07:35:25.000Z" itemprop="datePublished">2019-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/09/(Java)继承与多态--2.抽象类/" class="title">(Java)继承与多态--2.抽象类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-09T05:06:59.000Z" itemprop="datePublished">2019-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/09/(Java)继承与多态--1.继承/" class="title">(Java)继承与多态--1.继承</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-09T03:16:06.000Z" itemprop="datePublished">2019-07-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/08/Java-常用API-8-Math类/" class="title">(Java)常用API--8.Math类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-08T08:47:15.000Z" itemprop="datePublished">2019-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/java/">java</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/08/Java-常用API-7-Arrays类/" class="title">(Java)常用API--7.Arrays类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-08T08:24:13.000Z" itemprop="datePublished">2019-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">实现（接口的使用）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">抽象方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">默认方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">静态方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">6.</span> <span class="toc-text">私有方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">7.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text">接口使用注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">9.</span> <span class="toc-text">接口的多继承</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Java-继承与多态-3-接口" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      (Java)继承与多态--3.接口
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/07/09/Java-继承与多态-3-接口/" class="article-date">
+	  <time datetime="2019-07-09T07:35:25.000Z" itemprop="datePublished">2019-07-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/继承与多态/">继承与多态</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/09/Java-继承与多态-3-接口/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <br>
+
+<p><strong>接口</strong>就是多个类的公共规范。</p>
+<p>接口，是Java语言中一种<strong>引用类型</strong>，是方法的集合。<br>如果说类的内部封装了成员变量、构造方法和成员方法，那么，接口的内部主要就是封装了方法，包含<strong>抽象方法</strong>(JDK 7及以前)，<strong>默认方法</strong>和<strong>静态方法</strong>(JDK 8)，<strong>私有方法</strong> (JDK 9)。</p>
+<h2><span id="ge-shi">格式</span></h2><blockquote>
+<p>public interface 接口名称 {<br>&emsp;&emsp;&emsp;&emsp;// 抽象方法<br>&emsp;&emsp;&emsp;&emsp;// 默认方法<br>&emsp;&emsp;&emsp;&emsp;// 静态方法<br>&emsp;&emsp;&emsp;&emsp;// 私有方法<br>}</p>
+</blockquote>
+<h2><span id="shi-xian-jie-kou-de-shi-yong">实现（接口的使用）</span></h2><p>实现格式：</p>
+<blockquote>
+<p>public class 实现类名称 implements 接口名称 {<br>&emsp;&emsp;&emsp;&emsp;// …<br>}</p>
+</blockquote>
+<ol>
+<li>接口不能直接使用，必须有一个“实现类”来“实现”该接口。  </li>
+<li>接口的实现类必须覆盖重写（实现）接口中所有的抽象方法。<br>实现：去掉abstract关键字，加上方法体大括号。</li>
+<li>创建实现类的对象，进行使用。</li>
+</ol>
+<p>接口 MyInterfaceAbstract</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceAbstract</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这是一个抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>实现类 MyInterfaceAbstractImpl</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceAbstractImpl</span> <span class="keyword">implements</span> <span class="title">MyInterfaceAbstract</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是一个方法！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01Interface</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 错误写法！不能直接new接口对象使用。</span></span><br><span class="line"><span class="comment">//        MyInterfaceAbstract inter = new MyInterfaceAbstract();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建实现类的对象使用</span></span><br><span class="line">        MyInterfaceAbstractImpl impl = <span class="keyword">new</span> MyInterfaceAbstractImpl();</span><br><span class="line">        impl.methodAbs()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意事项</strong>：
+如果实现类并没有覆盖重写接口中所有的抽象方法，那么这个实现类自己就必须是抽象类。</p>
+<br>
+
+<h2><span id="chou-xiang-fang-fa">抽象方法</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public abstract 返回值类型 方法名称(参数列表);</p>
+</blockquote>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>接口当中的抽象方法，修饰符必须是两个固定的关键字：public abstract</li>
+<li>这两个关键字修饰符，可以选择性地省略。（今天刚学，所以不推荐。）</li>
+<li>方法的三要素，可以随意定义</li>
+</ol>
+<br>
+
+<h2><span id="mo-ren-fang-fa">默认方法</span></h2><p>可以继承，可以重写，二选一，但是只能通过实现类的对象来调用。</p>
+<p><strong>格式</strong>：</p>
+<blockquote>
+<p>public default 返回值类型 方法名称(参数列表) {<br>&emsp;&emsp;&emsp;&emsp;方法体<br>}</p>
+</blockquote>
+<p>备注：接口当中的默认方法，可以解决接口升级的问题</p>
+<p>接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceDefault</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新添加了一个抽象方法</span></span><br><span class="line"><span class="comment">//    public abstract void methodAbs2();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新添加的方法，改成默认方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是新添加的默认方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现类A（未重写）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceDefaultA</span> <span class="keyword">implements</span> <span class="title">MyInterfaceDefault</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现了抽象方法，AAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现类B（重写）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceDefaultB</span> <span class="keyword">implements</span> <span class="title">MyInterfaceDefault</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现了抽象方法，BBB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现类B覆盖重写了接口的默认方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02Interface</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建了实现类对象</span></span><br><span class="line">        MyInterfaceDefaultA a = <span class="keyword">new</span> MyInterfaceDefaultA();</span><br><span class="line">        a.methodAbs(); <span class="comment">// 调用抽象方法，实际运行的是右侧实现类。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用默认方法，如果实现类当中没有，会向上找接口</span></span><br><span class="line">        a.methodDefault(); <span class="comment">// 这是新添加的默认方法</span></span><br><span class="line">        System.out.println(<span class="string">"=========="</span>);</span><br><span class="line"></span><br><span class="line">        MyInterfaceDefaultB b = <span class="keyword">new</span> MyInterfaceDefaultB();</span><br><span class="line">        b.methodAbs();</span><br><span class="line">        b.methodDefault(); <span class="comment">// 实现类B覆盖重写了接口的默认方法</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2><span id="jing-tai-fang-fa">静态方法</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public static 返回值类型 方法名称(参数列表) {<br>&emsp;&emsp;&emsp;&emsp;方法体<br>}</p>
+</blockquote>
+<ul>
+<li>只能使用接口名调用(直接在主代码中调用)  </li>
+<li>不可以通过实现类的类名或者实现类的对象调用</li>
+</ul>
+<p><strong>调用格式</strong>：</p>
+<blockquote>
+<p>接口名称.静态方法名(参数);</p>
+</blockquote>
+<br>
+
+<h2><span id="si-you-fang-fa">私有方法</span></h2><p>问题描述：<br>我们需要抽取一个共有方法，用来解决两个默认方法之间重复代码的问题。<br>但是这个共有方法不应该让实现类使用，应该是<strong>私有化</strong>的。</p>
+<ol>
+<li>普通私有方法</li>
+</ol>
+<p>解决多个<strong>默认方法</strong>之间重复代码问题<br>格式：</p>
+<blockquote>
+<p>private 返回值类型 方法名称(参数列表) {<br>&emsp;&emsp;&emsp;&emsp;方法体<br>}</p>
+</blockquote>
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfacePrivateA</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"默认方法1"</span>);</span><br><span class="line">        methodCommon();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"默认方法2"</span>);</span><br><span class="line">        methodCommon();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">methodCommon</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"AAA"</span>);</span><br><span class="line">        System.out.println(<span class="string">"BBB"</span>);</span><br><span class="line">        System.out.println(<span class="string">"CCC"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>静态私有方法</li>
+</ol>
+<p>解决多个<strong>静态方法</strong>之间重复代码问题<br>格式：  </p>
+<blockquote>
+<p>private static 返回值类型 方法名称(参数列表) {<br>&emsp;&emsp;&emsp;&emsp;方法体<br>}</p>
+</blockquote>
+<br>
+
+<h2><span id="chang-liang">常量</span></h2><p>接口当中也可以定义“成员变量”，但是必须使用<code>public static final</code>三个关键字进行修饰</p>
+<p>从效果上看，这其实就是接口的<strong>常量</strong>  </p>
+<p><strong>格式</strong>：</p>
+<blockquote>
+<p>public static final 数据类型 常量名称 = 数据值;</p>
+</blockquote>
+<br>
+
+<p>接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceConst</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这其实就是一个常量，一旦赋值，不可以修改</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NUM_OF_MY_CLASS = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo05Interface</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 访问接口当中的常量</span></span><br><span class="line">        System.out.println(MyInterfaceConst.NUM_OF_MY_CLASS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>一旦使用final关键字进行修饰，说明不可改变。</p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>接口当中的常量，可以省略<code>public static final</code>不写也一样。</li>
+<li>接口当中的常量，<strong>必须赋值</strong>；不能不赋值。</li>
+<li>接口中常量的名称，使用完全<strong>大写</strong>的字母，用下划线进行分隔。（推荐命名规则）</li>
+</ol>
+<br>
+
+<h2><span id="jie-kou-shi-yong-zhu-yi-shi-xiang">接口使用注意事项</span></h2><ol>
+<li><p>接口是没有静态代码块或者构造方法的。</p>
+</li>
+<li><p>一个类的直接父类是唯一的，但是一个类可以同时实现多个接口。<br>格式：</p>
+<blockquote>
+<p>public class MyInterfaceImpl implements MyInterfaceA, MyInterfaceB {<br>&emsp;&emsp;&emsp;&emsp;// 覆盖重写所有抽象方法<br>}</p>
+</blockquote>
+</li>
+<li><p>如果实现类所实现的多个接口当中，存在<strong>重复的抽象方法</strong>，那么只需要覆盖重写一次即可。</p>
+</li>
+<li><p>如果实现类没有覆盖重写所有接口当中的所有抽象方法，那么实现类就必须是一个抽象类。</p>
+</li>
+<li><p>如果实现类锁实现的多个接口当中，存在<strong>重复的默认方法</strong>，那么实现类一定要对冲突的默认方法进行覆盖重写。</p>
+</li>
+<li><p>一个类如果它的直接<strong>父类</strong>当中的方法，和接口当中的默认方法产生了冲突（重名），优先用父类当中的方法。</p>
+</li>
+</ol>
+<p>接口A：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceA</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodabs</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"默认方法AAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口B：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceB</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodabs</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"默认方法BBB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceImpl</span> /*<span class="keyword">extends</span> <span class="title">Object</span>*/ <span class="keyword">implements</span> <span class="title">MyInterfaceA</span>, <span class="title">MyInterfaceB</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"覆盖重写了A方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"覆盖重写了B方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"覆盖重写了AB接口都有的抽象方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"对多个接口当中冲突的默认方法进行了覆盖重写"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="jie-kou-de-duo-ji-cheng">接口的多继承</span></h2><ul>
+<li>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似</li>
+<li>接口的继承使用 extends 关键字，子接口继承父接口的方法</li>
+<li>如果父接口中的默认方法有重名的，那么子接口需要重写一次</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://mangosTeeN96.github.io/2019/07/09/Java-继承与多态-3-接口/" title="(Java)继承与多态--3.接口" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/09/Java-继承与多态-3-接口/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章若无特别声明，转载请注明出处
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/mangosTeeN96" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/mangosTeeN96" target="_blank"><span class="text-dark">MangosTeeN</span><small class="ml-1x">想养一只猫</small></a></h3>
+        <div>在这里做一些笔记</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/07/09/(Java)继承与多态--2.抽象类/" title="(Java)继承与多态--2.抽象类"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-09T07:09:09.901Z</updated>
+  <updated>2019-07-09T09:48:17.868Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(Java)继承与多态--3.接口</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/09/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81-3-%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/09/Java-继承与多态-3-接口/</id>
+    <published>2019-07-09T07:35:25.000Z</published>
+    <updated>2019-07-09T09:48:17.868Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;&lt;strong&gt;接口&lt;/strong&gt;就是多个类的公共规范。&lt;/p&gt;
+&lt;p&gt;接口，是Java语言中一种&lt;strong&gt;引用类型&lt;/strong&gt;，是方法的集合。&lt;br&gt;如果说类的内部封装了成员变量、构造方法和成员方法，那么，接口的内部主要就是封装了方法，包含&lt;s
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="继承与多态" scheme="http://mangosTeeN96.github.io/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/"/>
+    
+  </entry>
   
   <entry>
     <title>(Java)继承与多态--2.抽象类</title>
@@ -525,30 +551,6 @@
     
     
       <category term="hadoop" scheme="http://mangosTeeN96.github.io/tags/hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础--3.数据类型转换、运算符</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/29/Java%E5%9F%BA%E7%A1%80--3.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/29/Java基础--3.数据类型转换、运算符/</id>
-    <published>2019-06-29T05:40:35.000Z</published>
-    <updated>2019-06-29T08:51:36.966Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Java程序中要求参与的计算的数据，必须要保证数据类型的一致性（比如进行加法运算），如果数据类型不一致将发生类型的转换。&lt;/p&gt;
-&lt;h2&gt;&lt;span id=&quot;zi-dong-zhuan-huan&quot;&gt;自动转换&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;将 取值范围小的类型 自动提升为 取值
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
-    
-    
-      <category term="java基础" scheme="http://mangosTeeN96.github.io/tags/java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
