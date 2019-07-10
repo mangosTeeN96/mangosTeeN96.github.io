@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-07-09T09:48:17.868Z</updated>
+  <updated>2019-07-10T06:31:55.777Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(Java)继承与多态--4.多态</title>
+    <link href="http://mangosTeeN96.github.io/2019/07/10/(Java)%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81--4.%E5%A4%9A%E6%80%81/"/>
+    <id>http://mangosTeeN96.github.io/2019/07/10/(Java)继承与多态--4.多态/</id>
+    <published>2019-07-10T03:49:42.000Z</published>
+    <updated>2019-07-10T06:31:55.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;br&gt;
+
+&lt;p&gt;多态是继封装、继承之后，面向对象的第三大特性。&lt;/p&gt;
+&lt;p&gt;多态: 是指同一行为，具有多个不同表现形式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前提&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;继承或者实现&lt;/li&gt;
+&lt;li&gt;方法的重写(意义体现:不重写，无意义)&lt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="继承与多态" scheme="http://mangosTeeN96.github.io/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/"/>
+    
+  </entry>
   
   <entry>
     <title>(Java)继承与多态--3.接口</title>
@@ -527,30 +557,6 @@
     
     
       <category term="hexo" scheme="http://mangosTeeN96.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop安装与伪分布式搭建</title>
-    <link href="http://mangosTeeN96.github.io/2019/06/29/hadoop%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/"/>
-    <id>http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/</id>
-    <published>2019-06-29T09:30:52.000Z</published>
-    <updated>2019-07-04T12:47:55.604Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;&lt;span id=&quot;chuang-jian-hadoop-yong-hu&quot;&gt;创建Hadoop用户&lt;/span&gt;&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;创建新用户&lt;br&gt;用户名为hadoop，使用/bin/bash作为shell&lt;br&gt;&lt;code&gt;sudo useradd -m 
-      
-    
-    </summary>
-    
-      <category term="大数据环境搭建" scheme="http://mangosTeeN96.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-    
-      <category term="hadoop" scheme="http://mangosTeeN96.github.io/tags/hadoop/"/>
     
   </entry>
   
