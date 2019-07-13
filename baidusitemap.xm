@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/10/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81-6-%E5%86%85%E9%83%A8%E7%B1%BB/</loc>
+    <lastmod>2019-07-13</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/10/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81-5-final%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
+    <lastmod>2019-07-10</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--5.%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-07-10</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/10/(Java)%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81--4.%E5%A4%9A%E6%80%81/</loc>
     <lastmod>2019-07-10</lastmod>
   </url>  <url>
@@ -44,9 +53,6 @@
     <lastmod>2019-07-04</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--6.%E6%95%B0%E7%BB%84/</loc>
-    <lastmod>2019-07-04</lastmod>
-  </url>  <url>
-    <loc>http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80--5.%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2019-07-04</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/04/Java-%E5%B8%B8%E7%94%A8API-3-Random%E7%B1%BB/</loc>

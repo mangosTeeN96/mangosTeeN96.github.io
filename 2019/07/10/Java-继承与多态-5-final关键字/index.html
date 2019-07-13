@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>Java基础--7.数组-二 | MangosTeeN</title>
-  <meta name="description" content="数组遍历123456public static void main(String[] args) &amp;#123;     int[] arr = &amp;#123; 1, 2, 3, 4, 5 &amp;#125;;    for (int i = 0; i &amp;lt; arr.length; i++) &amp;#123;        System.out.println(arr[i]);     &amp;#125;&amp;#">
-<meta name="keywords" content="java基础">
+  <title>(Java)继承与多态--5.final关键字 | MangosTeeN</title>
+  <meta name="description" content="final: 不可改变。可以用于修饰类、方法和变量 类:被修饰的类，不能被继承 方法:被修饰的方法，不能被重写 变量:被修饰的变量，不能被重新赋值    修饰类格式：  public final class 类名{&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//}   当前这个类不能有任何的子类  注意：一个类如果是final的，那么其中所有的成员方法都无法进行覆盖重写（因为没子类） 修">
+<meta name="keywords" content="继承与多态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础--7.数组-二">
-<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/03/Java基础-7-数组-二/index.html">
+<meta property="og:title" content="(Java)继承与多态--5.final关键字">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/07/10/Java-继承与多态-5-final关键字/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数组遍历123456public static void main(String[] args) &amp;#123;     int[] arr = &amp;#123; 1, 2, 3, 4, 5 &amp;#125;;    for (int i = 0; i &amp;lt; arr.length; i++) &amp;#123;        System.out.println(arr[i]);     &amp;#125;&amp;#">
+<meta property="og:description" content="final: 不可改变。可以用于修饰类、方法和变量 类:被修饰的类，不能被继承 方法:被修饰的方法，不能被重写 变量:被修饰的变量，不能被重新赋值    修饰类格式：  public final class 类名{&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//}   当前这个类不能有任何的子类  注意：一个类如果是final的，那么其中所有的成员方法都无法进行覆盖重写（因为没子类） 修">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-04T12:50:52.354Z">
+<meta property="og:updated_time" content="2019-07-10T07:17:28.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础--7.数组-二">
-<meta name="twitter:description" content="数组遍历123456public static void main(String[] args) &amp;#123;     int[] arr = &amp;#123; 1, 2, 3, 4, 5 &amp;#125;;    for (int i = 0; i &amp;lt; arr.length; i++) &amp;#123;        System.out.println(arr[i]);     &amp;#125;&amp;#">
+<meta name="twitter:title" content="(Java)继承与多态--5.final关键字">
+<meta name="twitter:description" content="final: 不可改变。可以用于修饰类、方法和变量 类:被修饰的类，不能被继承 方法:被修饰的方法，不能被重写 变量:被修饰的变量，不能被重新赋值    修饰类格式：  public final class 类名{&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;//}   当前这个类不能有任何的子类  注意：一个类如果是final的，那么其中所有的成员方法都无法进行覆盖重写（因为没子类） 修">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/03/Java基础-7-数组-二/index.html">
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/07/10/Java-继承与多态-5-final关键字/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -283,7 +283,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">数组遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">数组获得最大值元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">数组反转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">数组作为方法参数和返回值</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">修饰类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">修饰方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">成员变量</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -291,14 +291,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java基础-7-数组-二" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Java-继承与多态-5-final关键字" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础--7.数组-二
+      (Java)继承与多态--5.final关键字
     </h1>
   
 
@@ -306,8 +306,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/03/Java基础-7-数组-二/" class="article-date">
-	  <time datetime="2019-07-03T11:43:45.000Z" itemprop="datePublished">2019-07-03</time>
+	<a href="/2019/07/10/Java-继承与多态-5-final关键字/" class="article-date">
+	  <time datetime="2019-07-10T06:36:39.000Z" itemprop="datePublished">2019-07-10</time>
 	</a>
 </span>
         
@@ -319,13 +319,13 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
+	<a class="article-tag-link" href="/tags/继承与多态/">继承与多态</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础-7-数组-二/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/10/Java-继承与多态-5-final关键字/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -333,28 +333,60 @@
       
         <br>
 
-<h2><span id="shu-zu-bian-li">数组遍历</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        System.out.println(arr[i]); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2><span id="shu-zu-huo-de-zui-da-zhi-yuan-su">数组获得最大值元素</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">5</span>, <span class="number">15</span>, <span class="number">2000</span>, <span class="number">10000</span>, <span class="number">100</span>, <span class="number">4000</span> &#125;;</span><br><span class="line">    <span class="comment">//定义变量，保存数组中0索引的元素</span></span><br><span class="line">    <span class="keyword">int</span> max = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//遍历数组，取出每个元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        <span class="comment">//遍历到的元素和变量max比较 </span></span><br><span class="line">        <span class="comment">//如果数组元素大于max</span></span><br><span class="line">        <span class="keyword">if</span> (arr[i] &gt; max) &#123;</span><br><span class="line">            <span class="comment">//max记录住大值</span></span><br><span class="line">            max = arr[i]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"数组最大值是: "</span> + max); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2><span id="shu-zu-fan-zhuan">数组反转</span></h2><p>数组中的元素颠倒顺序，例如原始数组为1,2,3,4,5，反转后的数组为5,4,3,2,1</p>
 <ul>
-<li>实现思想:数组最远端的元素互换位置。<ul>
-<li>实现反转，就需要将数组最远端元素位置交换 </li>
-<li>定义两个变量，保存数组的最小索引和最大索引 </li>
-<li>两个索引上的元素交换位置 </li>
-<li>最小索引++，最大索引–，再次交换位置 </li>
-<li>最小索引超过了最大索引，数组反转操作结束</li>
+<li>final: 不可改变。可以用于修饰类、方法和变量<ul>
+<li>类:被修饰的类，不能被继承</li>
+<li>方法:被修饰的方法，不能被重写</li>
+<li>变量:被修饰的变量，不能被重新赋值</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    循环中定义变量min=0最小索引 max=arr.length‐1最大索引 min++,max‐‐</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> min = <span class="number">0</span>, max = arr.length ‐ <span class="number">1</span>; min &lt;= max; min++, max‐‐) &#123;</span><br><span class="line">        <span class="comment">//利用第三方变量完成数组中的元素交换</span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[min];</span><br><span class="line">        arr[min] = arr[max];</span><br><span class="line">        arr[max] = temp; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 反转后，遍历数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        System.out.println(arr[i]); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2><span id="shu-zu-zuo-wei-fang-fa-can-shu-he-fan-hui-zhi">数组作为方法参数和返回值</span></h2><ul>
-<li>数组作为方法参数传递，传递的参数是数组内存的地址</li>
-<li>数组作为方法的返回值，返回的是数组的内存地址</li>
+<h2><span id="xiu-shi-lei">修饰类</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public final class 类名{<br>&emsp;&emsp;&emsp;&emsp;//<br>}</p>
+</blockquote>
+<ul>
+<li>当前这个类不能有任何的子类</li>
 </ul>
-<p>方法的参数为基本类型时，传递的是数据值。为引用类型时，传递的是地址值。</p>
+<p><strong>注意</strong>：一个类如果是final的，那么其中所有的成员方法都无法进行覆盖重写（因为没子类）</p>
+<h2><span id="xiu-shi-fang-fa">修饰方法</span></h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>修饰符 final 返回值类型 方法名(参数列表){<br>&emsp;&emsp;&emsp;&emsp;//方法体<br>}  
+例如：public final void method(){//}</p>
+</blockquote>
+<ul>
+<li>当final关键字用来修饰一个方法的时候，这个方法就是最终方法，也就是不能被覆盖重写。</li>
+</ul>
+<p><strong>注意事项</strong>：
+对于类、方法来说，abstract关键字和final关键字不能同时使用，因为矛盾。</p>
+<h2><span id="ju-bu-bian-liang">局部变量</span></h2><ul>
+<li><p><strong>基本类型</strong>的局部变量，被final修饰后，只能<strong>赋值一次</strong>，不能再更改</p>
+</li>
+<li><p><strong>引用类型</strong>的局部变量，被final修饰后，只能指向一个对象，<strong>地址</strong>不能再更改。但是不影响对象内部的成员<strong>变量值</strong>的修改</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// “一次赋值，终生不变”</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> num2 = <span class="number">200</span>;</span><br><span class="line">    System.out.println(num2); <span class="comment">// 200</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        num2 = 250; // 错误写法！不能改变！</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 正确写法！只要保证有唯一一次赋值即可</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> num3;</span><br><span class="line">    num3 = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对于引用类型来说，不可变说的是变量当中的地址值不可改变</span></span><br><span class="line">    <span class="comment">//未使用final</span></span><br><span class="line">    Student stu1 = <span class="keyword">new</span> Student(<span class="string">"赵丽颖"</span>);</span><br><span class="line">    System.out.println(stu1.getName()); <span class="comment">// 赵丽颖</span></span><br><span class="line">    stu1 = <span class="keyword">new</span> Student(<span class="string">"霍建华"</span>);</span><br><span class="line">    System.out.println(stu1.getName()); <span class="comment">// 霍建华</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用final</span></span><br><span class="line">    <span class="keyword">final</span> Student stu2 = <span class="keyword">new</span> Student(<span class="string">"高圆圆"</span>);</span><br><span class="line">    <span class="comment">// 错误写法！final的引用类型变量，其中的地址不可改变</span></span><br><span class="line"><span class="comment">//        stu2 = new Student("赵又廷");</span></span><br><span class="line">    System.out.println(stu2.getName()); <span class="comment">// 高圆圆</span></span><br><span class="line">    stu2.setName(<span class="string">"高圆圆圆圆圆圆"</span>);</span><br><span class="line">    System.out.println(stu2.getName()); <span class="comment">// 高圆圆圆圆圆圆</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="cheng-yuan-bian-liang">成员变量</span></h2><p>对于成员变量来说，如果使用final关键字修饰，那么这个变量也照样是不可变。</p>
+<ol>
+<li>由于成员变量具有默认值，所以用了final之后必须手动<strong>赋值</strong>，用了final不会再给默认值了。</li>
+<li>对于final的成员变量，要么使用<strong>直接赋值</strong>，要么通过<strong>构造方法</strong>赋值。二者选其一。</li>
+<li>必须保证类当中所有重载的构造方法，都最终会对final的成员变量进行赋值</li>
+</ol>
+<p>```java<br>public class Person {</p>
+<pre><code>private final String name/* = &quot;鹿晗&quot;*/;//直接赋值
+
+public Person() {
+    name = &quot;关晓彤&quot;; //构造方法赋值
+}
+
+public Person(String name) {
+    this.name = name;
+}
+
+public String getName() {
+    return name;
+}</code></pre><p>//    public void setName(String name) {<br>//        this.name = name;<br>//    }<br>}</p>
 
       
     </div>
@@ -364,7 +396,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://mangosTeeN96.github.io/2019/07/03/Java基础-7-数组-二/" title="Java基础--7.数组-二" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/03/Java基础-7-数组-二/</a>
+      <a href="http://mangosTeeN96.github.io/2019/07/10/Java-继承与多态-5-final关键字/" title="(Java)继承与多态--5.final关键字" target="_blank" rel="external">http://mangosTeeN96.github.io/2019/07/10/Java-继承与多态-5-final关键字/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -409,12 +441,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2019/07/04/Java基础-8-类与对象/" title="Java基础--8.类与对象"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2019/07/10/Java-继承与多态-6-内部类/" title="(Java)继承与多态--6.内部类"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2019/07/03/Java基础--6.数组/" title="Java基础--6.数组"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/07/10/(Java)继承与多态--4.多态/" title="(Java)继承与多态--4.多态"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
