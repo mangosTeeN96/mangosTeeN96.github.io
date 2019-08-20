@@ -1,733 +1,2944 @@
 <!DOCTYPE html>
-<html lang=zh>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000">
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top">
-  
-  
-  <title>MangosTeeN</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+
+
+
+
+  <meta name="description" content="想养一只猫">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MangosTeen">
 <meta property="og:url" content="http://mangosTeeN96.github.io/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="MangosTeen">
+<meta property="og:description" content="想养一只猫">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://mangosTeeN96.github.io/page/2/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:title" content="MangosTeen">
+<meta name="twitter:description" content="想养一只猫">
+
+
+
+
+
   
   
+  <link rel="canonical" href="http://mangosTeeN96.github.io/page/2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>MangosTeen</title>
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/mangosTeeN96" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">MangosTeeN</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">想养一只猫</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
+  
+  
+    
+  
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="搜索" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MangosTeen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-4-ArrayList类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java-常用API-4-ArrayList类/" class="post-title-link" itemprop="url">(Java)常用API--4.ArrayList类</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 19:58:43" itemprop="dateCreated datePublished" datetime="2019-07-04T19:58:43+08:00">2019-07-04</time>
             </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-08 13:33:40" itemprop="dateModified" datetime="2019-07-08T13:33:40+08:00">2019-07-08</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h2><p>数组类型选用对象，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 首先创建一个长度为3的数组，里面用来存放Person类型的对象</span></span><br><span class="line">        Person[] array = <span class="keyword">new</span> Person[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">        Person one = <span class="keyword">new</span> Person(<span class="string">"迪丽热巴"</span>, <span class="number">18</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将one当中的地址值赋值到数组的0号元素位置</span></span><br><span class="line">        array[<span class="number">0</span>] = one;</span><br><span class="line"></span><br><span class="line">        System.out.println(array[<span class="number">0</span>]); <span class="comment">// 地址值</span></span><br><span class="line">        System.out.println(array[<span class="number">0</span>].getName()); <span class="comment">// 迪丽热巴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而数组的长度是固定的，无法适应数据变化的需求</p>
+<h2 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h2><p>数组的长度不可以发生改变<br>但是ArrayList集合的长度是可以随意变化的</p>
+<h3 id="查看类"><a href="#查看类" class="headerlink" title="查看类"></a>查看类</h3><ul>
+<li><code>java.util.ArrayList &lt;E&gt;</code>:需要 import导入  <ul>
+<li><code>&lt;E&gt;</code> ，表示一种指定的数据类型，叫做泛型。  </li>
+<li>在出现 E 的地方，我们使用一种引用数据类型将其替换即可，表示我们将存储哪种引用类型的元素</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>ArrayList<string>，ArrayList<student></student></string></p>
+</blockquote>
+<h3 id="格式-查看构造方法"><a href="#格式-查看构造方法" class="headerlink" title="格式(查看构造方法)"></a>格式(查看构造方法)</h3><p>基本格式:</p>
+<blockquote>
+<p>ArrayList&lt; String&gt; list = new ArrayList&lt; String&gt;();</p>
+</blockquote>
+<p>在JDK 1.7后,右侧泛型的尖括号之内可以留空，但是&lt;&gt;仍然要写。<br>简化格式: </p>
+<blockquote>
+<p>ArrayList&lt; String&gt; list = new ArrayList&lt;&gt;();</p>
+</blockquote>
+<ul>
+<li>注意：对于ArrayList集合来说，未添加数据直接打印得到的不是地址值，而是内容。<br>如果内容是空，得到的是空的中括号：[]</li>
+</ul>
+<h3 id="常用方法及遍历"><a href="#常用方法及遍历" class="headerlink" title="常用方法及遍历"></a>常用方法及遍历</h3><ul>
+<li>对于元素的操作,基本体现在——增、删、查。常用的方法有:<ul>
+<li><code>public boolean add(E e)</code>：向集合当中添加元素，参数的类型和泛型一致。返回值代表添加是否成功。<br>备注：对于ArrayList集合来说，add添加动作一定是成功的，所以返回值可用可不用。<br>但是对于其他集合（后面会有）来说，add添加动作不一定成功。</li>
+<li><code>public E get(int index)</code>：从集合当中获取元素，参数是索引编号，返回值就是对应位置的元素。</li>
+<li><code>public E remove(int index)</code>：从集合当中删除元素，参数是索引编号，返回值就是被删除掉的元素。</li>
+<li><code>public int size()</code>：获取集合的尺寸长度，返回值是集合中包含的元素个数</li>
+</ul>
+</li>
+</ul>
+<p><strong>举例</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    System.out.println(list); <span class="comment">// []</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 向集合中添加元素：add</span></span><br><span class="line">    <span class="keyword">boolean</span> success = list.add(<span class="string">"柳岩"</span>);</span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩]</span></span><br><span class="line">    System.out.println(<span class="string">"添加的动作是否成功："</span> + success); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    list.add(<span class="string">"高圆圆"</span>);</span><br><span class="line">    list.add(<span class="string">"赵又廷"</span>);</span><br><span class="line">    list.add(<span class="string">"李小璐"</span>);</span><br><span class="line">    list.add(<span class="string">"贾乃亮"</span>);</span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩, 高圆圆, 赵又廷, 李小璐, 贾乃亮]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从集合中获取元素：get。索引值从0开始</span></span><br><span class="line">    String name = list.get(<span class="number">2</span>);</span><br><span class="line">    System.out.println(<span class="string">"第2号索引位置："</span> + name); <span class="comment">// 赵又廷</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从集合中删除元素：remove。索引值从0开始。</span></span><br><span class="line">    String whoRemoved = list.remove(<span class="number">3</span>);</span><br><span class="line">    System.out.println(<span class="string">"被删除的人是："</span> + whoRemoved); <span class="comment">// 李小璐</span></span><br><span class="line">    System.out.println(list); <span class="comment">// [柳岩, 高圆圆, 赵又廷, 贾乃亮]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取集合的长度尺寸，也就是其中元素的个数</span></span><br><span class="line">    <span class="keyword">int</span> size = list.size();</span><br><span class="line">    System.out.println(<span class="string">"集合的长度是："</span> + size);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">        System.out.println(list.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//idea中，list.fori可以自动生成这个循环</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="存储基本数据类型"><a href="#存储基本数据类型" class="headerlink" title="存储基本数据类型"></a>存储基本数据类型</h3><p>ArrayList对象不能存储基本类型，只能存储引用类型的数据。<br>类似 &lt; int&gt; 不能写，但是存储基本数据类型对应的 包装类型是可以的。</p>
+<table>
+<thead>
+<tr>
+<th align="left">基本类型</th>
+<th align="left">基本类型包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">byte</td>
+<td align="left">Byte</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">Short</td>
+</tr>
+<tr>
+<td align="left"><strong>int</strong></td>
+<td align="left"><strong>Integer</strong></td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">Long</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">Float</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Double</td>
+</tr>
+<tr>
+<td align="left"><strong>char</strong></td>
+<td align="left"><strong>Character</strong></td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">Boolean</td>
+</tr>
+</tbody></table>
+<br>
+
+<br>
+
+<p><strong>练习</strong>：</p>
+<ol>
+<li>生成6个1~33之间的随机整数,添加到集合,并遍历</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01ArrayList</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建Random 对象</span></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="comment">// 创建ArrayList 对象</span></span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">// 添加随机数到集合</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">int</span> r = random.nextInt(<span class="number">33</span>) + <span class="number">1</span>; </span><br><span class="line">      list.add(r); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历集合输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">      System.out.println(list.get(i)); </span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>自定义2个学生对象，添加到集合，并遍历</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02ArrayListStudent</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Student one = <span class="keyword">new</span> Student(<span class="string">"洪七公"</span>, <span class="number">20</span>);</span><br><span class="line">        Student two = <span class="keyword">new</span> Student(<span class="string">"欧阳锋"</span>, <span class="number">21</span>);</span><br><span class="line"></span><br><span class="line">        list.add(one);</span><br><span class="line">        list.add(two);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历集合</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">            Student stu = list.get(i);</span><br><span class="line">            System.out.println(<span class="string">"姓名："</span> + stu.getName() + <span class="string">"，年龄"</span> + stu.getAge());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对象可以作为集合元素</p>
+<ol start="3">
+<li><p>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。<br>格式参照 {元素@元素@元素}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo05ArrayListPrint</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三丰"</span>);</span><br><span class="line">        list.add(<span class="string">"宋远桥"</span>);</span><br><span class="line">        list.add(<span class="string">"张无忌"</span>);</span><br><span class="line">        list.add(<span class="string">"李连杰"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line"></span><br><span class="line">        printArrayList(list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArrayList</span><span class="params">(ArrayList&lt;String&gt; list)</span></span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"&#123;"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">            String name = list.get(i);</span><br><span class="line">            <span class="keyword">if</span> (i == list.size() - <span class="number">1</span>)&#123;</span><br><span class="line">                System.out.println(name + <span class="string">"&#125;"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.print(name + <span class="string">"@"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用一个大集合存入20个随机数字(1~100)，然后筛选其中的偶数元素，放到小集合当中。<br>要求使用自定义的方法来实现筛选</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo04ArrayListReturn</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; bigList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Random r = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> num = r.nextInt(<span class="number">100</span>) + <span class="number">1</span>; <span class="comment">// 1~100</span></span><br><span class="line">            bigList.add(num);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;Integer&gt; smallList = getSmallList(bigList);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"偶数总共有多少个："</span> + smallList.size());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; smallList.size(); i++) &#123;</span><br><span class="line">            System.out.println(smallList.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这个方法，接收大集合参数，返回小集合结果</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Integer&gt; <span class="title">getSmallList</span><span class="params">(ArrayList&lt;Integer&gt; bigList)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个小集合，用来装偶数结果</span></span><br><span class="line">        ArrayList&lt;Integer&gt; smallList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bigList.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> num = bigList.get(i);</span><br><span class="line">            <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                smallList.add(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> smallList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>ArrayList类型作为返回值</p>
+
+          
+        
+      
     </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-3-Random类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java-常用API-3-Random类/" class="post-title-link" itemprop="url">(Java)常用API--3.Random类</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 19:35:57 / 修改时间：20:49:20" itemprop="dateCreated datePublished" datetime="2019-07-04T19:35:57+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <br>
+
+<p>Random类：用来生成随机数字</p>
+<p><strong>使用步骤</strong>：</p>
+<ol>
+<li>导包</li>
+</ol>
+<blockquote>
+<p>import java.util.Random;</p>
+</blockquote>
+<p>idea可以自动生成</p>
+<ol start="2">
+<li>创建</li>
+</ol>
+<blockquote>
+<p>Random r = new Random(); // 小括号当中留空即可</p>
+</blockquote>
+<ol start="3">
+<li>使用</li>
+</ol>
+<p>获取一个随机的int数字（范围是int所有范围，有正负两种）：</p>
+<blockquote>
+<p>int num = r.nextInt()</p>
+</blockquote>
+<p>获取一个随机的int数字（参数代表了范围，左闭右开区间）：</p>
+<blockquote>
+<p>int num = r.nextInt(3)</p>
+</blockquote>
+<p>实际上代表的含义是：[0,3)，也就是0~2</p>
+<br>
+
+<p><strong>练习</strong>：  
+猜数字小游戏<br>游戏开始，随机生成一个1-100之间的整数 number 。<br>玩家猜测一个数字 guessNumber ，会与 number 作比较，系统提示大了或者小了，直到玩家猜中，游戏结束。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Random r = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">int</span> randomNum = r.nextInt(<span class="number">100</span>) + <span class="number">1</span>; <span class="comment">//[1:100]</span></span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        System.out.println(<span class="string">"请输入你猜测的数字："</span>);</span><br><span class="line">        <span class="keyword">int</span> guessNum = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (guessNum &gt; randomNum)&#123;</span><br><span class="line">            System.out.println(<span class="string">"太大了，请重试"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (guessNum &lt; randomNum)&#123;</span><br><span class="line">            System.out.println(<span class="string">"太小了，请重试"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"恭喜你，猜中啦"</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"游戏结束"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-2-匿名对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java-常用API-2-匿名对象/" class="post-title-link" itemprop="url">(Java)常用API--2.匿名对象</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 18:53:42 / 修改时间：20:49:05" itemprop="dateCreated datePublished" datetime="2019-07-04T18:53:42+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <br>
+
+<p>匿名对象：没有变量名的对象</p>
+<p>格式:</p>
+<blockquote>
+<p>new 类名(参数列表);</p>
+</blockquote>
+<p>应用场景:</p>
+<ol>
+<li>创建匿名对象直接调用方法，没有变量名</li>
+<li>匿名对象只能使用唯一的一次，下次再用不得不再创建一个新对象。一旦调用两次方法，就是创建了两个对象，造成浪费</li>
+<li>匿名对象可以作为方法的参数和返回值</li>
+</ol>
+<ul>
+<li><p>作为参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 普通方式</span></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in); </span><br><span class="line">        input(sc);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//匿名对象作为方法接收的参数</span></span><br><span class="line">        input(<span class="keyword">new</span> Scanner(System.in)); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">input</span><span class="params">(Scanner sc)</span></span>&#123;             System.out.println(sc);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>作为返回值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 普通方式</span></span><br><span class="line">        Scanner sc = getScanner(); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Scanner <span class="title">getScanner</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="comment">//普通方式</span></span><br><span class="line">        <span class="comment">//Scanner sc = new Scanner(System.in); </span></span><br><span class="line">        <span class="comment">//return sc;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//匿名对象作为方法返回值</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Scanner(System.in); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java-常用API-1-Scanner类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java-常用API-1-Scanner类/" class="post-title-link" itemprop="url">(Java)常用API--1.Scanner类</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 15:35:24 / 修改时间：20:48:49" itemprop="dateCreated datePublished" datetime="2019-07-04T15:35:24+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>API(Application Programming Interface)，应用程序编程接口<br>Java API是一本程序员的字典<br>是我们使用的类的说明文档</p>
+<p>API帮助文档（中文版）：<a href="https://github.com/mangosTeeN96/blog_file/blob/master/JDK_API_1_6_zh_CN.CHM" target="_blank" rel="noopener">JDK_API_1_6_zh_CN.CHM</a></p>
+<h2 id="引用类"><a href="#引用类" class="headerlink" title="引用类"></a>引用类</h2><p>一般步骤：</p>
+<ol>
+<li>导包<blockquote>
+<p>import 包路径.类名称;</p>
+</blockquote>
+</li>
+</ol>
+<p>如果需要使用的目标类，和当前类位于同一个包下，则可以省略导包语句不写。<br>只有java.lang包下的内容不需要导包（比如String），其他的包都需要import语句。</p>
+<ol start="2">
+<li><p>创建</p>
+<blockquote>
+<p>类名称 对象名 = new 类名称();</p>
+</blockquote>
+</li>
+<li><p>使用</p>
+<blockquote>
+<p>对象名.成员方法名()</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h2><ul>
+<li>Scanner类的功能：可以实现键盘输入数据，到程序当中</li>
+</ul>
+<p><strong>使用方法</strong>：</p>
+<ul>
+<li>查看类<ul>
+<li><code>java.util.Scanner</code> :该类需要import导入后使用。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>查看构造方法</p>
+<ul>
+<li><code>public Scanner(InputStream source)</code> : 构造一个新的 Scanner ，它生成的值是从指定的输入流扫描的。</li>
+</ul>
+</li>
+<li><p>查看成员方法</p>
+<ul>
+<li><code>public int nextInt()</code> :将输入信息的下一个标记扫描为一个 int 值。</li>
+<li>还有很多，比如next（），String值</li>
+</ul>
+</li>
+</ul>
+<p>使用Scanner类，完成接收键盘录入数据的操作，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01Scanner</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 2. 创建</span></span><br><span class="line">            <span class="comment">// 备注：System.in代表从键盘进行输入</span></span><br><span class="line">            Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3. 获取键盘输入的int数字</span></span><br><span class="line">            <span class="keyword">int</span> num = sc.nextInt();</span><br><span class="line">            System.out.println(<span class="string">"输入的int数字是："</span> + num);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. 获取键盘输入的字符串</span></span><br><span class="line">            String str = sc.next();</span><br><span class="line">            System.out.println(<span class="string">"输入的字符串是："</span> + str);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>练习题</strong>：</p>
+<p>键盘输入三个int数字，然后求出其中的最大值<br>```java<br>import java.util.Scanner;</p>
+<p>public class Demo03ScannerMax {</p>
+<pre><code>public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println(&quot;请输入第一个数字：&quot;);
+    int a = sc.nextInt();
+    System.out.println(&quot;请输入第二个数字：&quot;);
+    int b = sc.nextInt();
+    System.out.println(&quot;请输入第三个数字：&quot;);
+    int c = sc.nextInt();
+
+    // 首先得到前两个数字当中的最大值
+    int temp = a &gt; b ? a : b;
+    int max = temp &gt; c ? temp : c;
+    System.out.println(&quot;最大值是：&quot; + max);
+}</code></pre><p>}</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java基础-10-封装优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java基础-10-封装优化/" class="post-title-link" itemprop="url">Java基础--10.封装优化</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 14:01:09 / 修改时间：20:52:03" itemprop="dateCreated datePublished" datetime="2019-07-04T14:01:09+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><p>上一篇笔记中，setXxx 方法中形参名字并不符合见名知意的规定<br>如果修改与成员变量名一致，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        name = name; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123; </span><br><span class="line">        age = age;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当方法的局部变量和类的成员变量重名的时候，根据就近原则，优先使用局部变量<br>如果需要访问本类当中的成员变量，需要使用this关键字<br>通过谁调用的方法，谁就是this</p>
+<p><strong>格式</strong>：</p>
+<blockquote>
+<p>this.成员变量名;</p>
+</blockquote>
+<p>使用 this 修饰方法中的变量，解决成员变量被隐藏的问题，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">// 我自己的名字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 参数name是对方的名字</span></span><br><span class="line">    <span class="comment">// 成员变量name是自己的名字</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(name + <span class="string">"，你好。我是"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">        System.out.println(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        <span class="comment">// 设置我自己的名字</span></span><br><span class="line">        person.name = <span class="string">"王健林"</span>;</span><br><span class="line">        person.sayHello(<span class="string">"王思聪"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(person); <span class="comment">// 地址值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>王思聪，你好。我是王健林<br>cn.itcast.day06.demo04.Person@7852e922<br>cn.itcast.day06.demo04.Person@7852e922</p>
+</blockquote>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>构造方法是专门用来创建对象的方法，当我们通过关键字new来创建对象时，其实就是在调用构造方法。<br><strong>格式</strong>：</p>
+<blockquote>
+<p>public 类名称(参数类型 参数名称) {<br>&emsp;&emsp;&emsp;&emsp;方法体<br>}</p>
+</blockquote>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li>构造方法的名称必须和所在的类名称完全一样，就连大小写也要一样</li>
+<li>构造方法不要写返回值类型，连void都不写</li>
+<li>构造方法不能return一个具体的返回值</li>
+<li>如果没有编写任何构造方法，那么编译器将会默认赠送一个构造方法，没有参数、方法体什么事情都不做。<br>public Student() {}</li>
+<li>一旦编写了至少一个构造方法，那么编译器将不再赠送。</li>
+<li>构造方法也是可以进行重载的。</li>
+</ol>
+<p>使用构造方法后，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 无参数构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 有参数构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>全参数构造方法，方便我们在创建对象的把数据直接通过参数的形式设置进来，省去多次调用setget方法  </li>
+<li>但是当修改对象内容时set方法还是有用的。  </li>
+<li>获取数据时还是要用get方法</li>
+<li>要写全参数构造方法时，需要把无参数也写上，因为系统不会赠送了。</li>
+</ul>
+<h2 id="标准代码——JavaBean"><a href="#标准代码——JavaBean" class="headerlink" title="标准代码——JavaBean"></a>标准代码——JavaBean</h2><p>一个标准的类通常要拥有下面四个组成部分：</p>
+<ol>
+<li>所有的成员变量都要使用private关键字修饰</li>
+<li>为每一个成员变量编写一对儿Getter/Setter方法</li>
+<li>编写一个无参数的构造方法</li>
+<li>编写一个全参数的构造方法</li>
+</ol>
+<p>这样标准的类也叫做Java Bean</p>
+<p>编写符合 JavaBean 规范的类，以学生类为例，标准代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">// 姓名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age; <span class="comment">// 年龄</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    成员方法</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试类，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStudent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//无参构造使用</span></span><br><span class="line">        Student s= <span class="keyword">new</span> Student();</span><br><span class="line">        s.setName(<span class="string">"柳岩"</span>);</span><br><span class="line">        s.setAge(<span class="number">18</span>); </span><br><span class="line">        System.out.println(s.getName()+<span class="string">"‐‐‐"</span>+s.getAge());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//带参构造使用</span></span><br><span class="line">        Student s2= <span class="keyword">new</span> Student(<span class="string">"赵丽颖"</span>,<span class="number">18</span>); </span><br><span class="line">        System.out.println(s2.getName()+<span class="string">"‐‐‐"</span>+s2.getAge());</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java基础-9-封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java基础-9-封装/" class="post-title-link" itemprop="url">Java基础--9.封装</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 13:26:52 / 修改时间：20:51:34" itemprop="dateCreated datePublished" datetime="2019-07-04T13:26:52+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装可以被认为是一个保护屏障，防止该类的代码和数据被其他类随意访问。要访问该类的数据，必须通过指定的方式。适当的封装可以让代码更容易理解与维护，也加强了代码的安全性。<br>原则：将属性隐藏起来，若需要访问某个属性，提供公共方法对其访问。</p>
+<ul>
+<li>方法就是一种封装</li>
+<li>关键字private也是</li>
+</ul>
+<br>
+
+<h3 id="封装步骤"><a href="#封装步骤" class="headerlink" title="封装步骤"></a>封装步骤</h3><ol>
+<li>使用 private 关键字来修饰成员变量。</li>
+<li>对需要访问的成员变量，提供对应的一对<code>getXxx</code>方法 、<code>setXxx</code>方法。</li>
+</ol>
+<h3 id="封装的操作——private关键字"><a href="#封装的操作——private关键字" class="headerlink" title="封装的操作——private关键字"></a>封装的操作——private关键字</h3><ul>
+<li>private的含义<ul>
+<li>private是一个权限修饰符，代表最小权限。</li>
+<li>可以修饰成员变量和成员方法。</li>
+<li>被private修饰后的成员变量和成员方法，只在本类中才能访问。</li>
+</ul>
+</li>
+</ul>
+<p><strong>使用格式</strong></p>
+<blockquote>
+<p>private 数据类型 变量名 ;</p>
+</blockquote>
+<ol>
+<li><p>使用 private 修饰成员变量，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123; </span><br><span class="line">    <span class="keyword">private</span> String name; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提供 getXxx 方法 / setXxx 方法，可以访问成员变量</p>
+</li>
+</ol>
+<p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123; </span><br><span class="line">    <span class="keyword">private</span> String name; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String n)</span> </span>&#123; </span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123; </span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>set方法，用于向age设置数据</li>
+<li>get方法，用于获取age的数据</li>
+<li>可以用set约束设置的数据</li>
+</ul>
+<p><strong>注意</strong>：
+对于基本类型中的boolean值，getter方法要写成isxxx，而setxxx规则不变</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/04/Java基础-8-类与对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/04/Java基础-8-类与对象/" class="post-title-link" itemprop="url">Java基础--8.类与对象</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 12:48:39 / 修改时间：20:51:13" itemprop="dateCreated datePublished" datetime="2019-07-04T12:48:39+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <br>
+
+<ul>
+<li>类与对象的关系<ul>
+<li>类是对一类事物的描述，是抽象的。 </li>
+<li>对象是一类事物的实例，是具体的。 </li>
+<li>类是对象的模板，对象是类的实体。</li>
+</ul>
+</li>
+</ul>
+<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p><strong>格式</strong>：</p>
+<blockquote>
+<p>public class ClassName {<br>&emsp;&emsp;&emsp;&emsp;//成员变量(属性)<br>&emsp;&emsp;&emsp;&emsp;//成员方法(行为)<br>}</p>
+</blockquote>
+<ul>
+<li>成员变量:和以前定义变量几乎是一样的。只不过位置发生了改变。在类中，方法外。 </li>
+<li>成员方法:和以前定义方法几乎是一样的。只不过把static去掉。</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123; </span><br><span class="line">     <span class="comment">//成员变量</span></span><br><span class="line">    String name;<span class="comment">//姓名 </span></span><br><span class="line">    <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="comment">//学习的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"好好学习，天天向上"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//吃饭的方法 </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"学习饿了要吃饭"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h2><p><strong>格式</strong>：  </p>
+<ol>
+<li>导包<blockquote>
+<p>import 包名称.类名称；</p>
+</blockquote>
+</li>
+</ol>
+<p>（属于同一个包可以不写）</p>
+<ol start="2">
+<li>创建对象<blockquote>
+<p>类名 对象名 = new 类名();</p>
+</blockquote>
+</li>
+<li>使用对象访问类中的成员<blockquote>
+<p>对象名.成员变量;<br>对象名.成员方法();</p>
+</blockquote>
+</li>
+</ol>
+<br>
+
+<p><strong>成员变量的默认值</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">基本类型</td>
+<td align="left">整数(byte，short，int，long)</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">浮点数(float，double)</td>
+<td align="left">0.0</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">字符(char)</td>
+<td align="left">‘\u0000’</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">布尔(boolean)</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">引用类型</td>
+<td align="left">数组，类，接口</td>
+<td align="left">null</td>
+</tr>
+</tbody></table>
+<p><strong>类与对象举例</strong>：</p>
+<p>定义手机类:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Phone</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 成员变量</span></span><br><span class="line">    String brand; <span class="comment">//品牌 </span></span><br><span class="line">    <span class="keyword">int</span> price; <span class="comment">//价格 </span></span><br><span class="line">    String color; <span class="comment">//颜色</span></span><br><span class="line">    <span class="comment">// 成员方法</span></span><br><span class="line">    <span class="comment">//打电话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"给"</span>+name+<span class="string">"打电话"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//发短信</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"群发短信"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义测试类:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02Phone</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象</span></span><br><span class="line">        Phone p = <span class="keyword">new</span> Phone();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出成员变量值 </span></span><br><span class="line">        System.out.println(<span class="string">"品牌:"</span>+p.brand);<span class="comment">//null </span></span><br><span class="line">        System.out.println(<span class="string">"价格:"</span>+p.price);<span class="comment">//0 System.out.println("颜色:"+p.color);//null</span></span><br><span class="line">        System.out.println(<span class="string">"‐‐‐‐‐‐‐‐‐‐‐‐"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给成员变量赋值 </span></span><br><span class="line">        p.brand = <span class="string">"锤子"</span>; </span><br><span class="line">        p.price = <span class="number">2999</span>; </span><br><span class="line">        p.color = <span class="string">"棕色"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//再次输出成员变量值 </span></span><br><span class="line">        System.out.println(<span class="string">"品牌:"</span>+p.brand);<span class="comment">//锤子 </span></span><br><span class="line">        System.out.println(<span class="string">"价格:"</span>+p.price);<span class="comment">//2999 </span></span><br><span class="line">        System.out.println(<span class="string">"颜色:"</span>+p.color);<span class="comment">//棕色 </span></span><br><span class="line">        System.out.println(<span class="string">"‐‐‐‐‐‐‐‐‐‐‐‐"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//调用成员方法 </span></span><br><span class="line">        p.call(<span class="string">"紫霞"</span>); </span><br><span class="line">        p.sendMessage();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="成员变量和局部变量区别"><a href="#成员变量和局部变量区别" class="headerlink" title="成员变量和局部变量区别"></a>成员变量和局部变量区别</h3><ul>
+<li>在类中的位置不同<ul>
+<li>成员变量:类中，方法外</li>
+<li>局部变量:方法中或者方法声明上(形式参数) </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>作用范围不一样<ul>
+<li>成员变量:类中 </li>
+<li>局部变量:方法中</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>初始化值的不同<ul>
+<li>成员变量:有默认值 </li>
+<li>局部变量:没有默认值。必须先定义，赋值，最后使用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在内存中的位置不同<ul>
+<li>成员变量:堆内存 </li>
+<li>局部变量:栈内存</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>生命周期不同<ul>
+<li>成员变量:随着对象的创建而存在，随着对象的消失而消失 </li>
+<li>局部变量:随着方法的调用而存在，随着方法的调用完毕而消失</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/03/Java基础_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/03/Java基础_2/" class="post-title-link" itemprop="url">Java基础_2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 16:32:38" itemprop="dateCreated datePublished" datetime="2019-07-03T16:32:38+08:00">2019-07-03</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-20 14:29:33" itemprop="dateModified" datetime="2019-08-20T14:29:33+08:00">2019-08-20</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <br>
+
+<h1 id="第一章-方法"><a href="#第一章-方法" class="headerlink" title="第一章 方法"></a>第一章 方法</h1><p><strong><em>方法</em></strong>:  
+就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。</p>
+<h2 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h2><blockquote>
+<p>修饰符 返回值类型 方法名 (参数列表){<br>&emsp;&emsp;&emsp;&emsp;代码…<br>&emsp;&emsp;&emsp;&emsp;return 返回值;<br>}</p>
+</blockquote>
+<ul>
+<li>定义格式解释:<ul>
+<li>修饰符: 目前固定写法 public static </li>
+<li>返回值类型: 没有返回值时为&ensp;void</li>
+<li>方法名:满足标识符的规范，用来调用方法。</li>
+<li>参数列表: 参数</li>
+<li>return:方法结束。返回值类型是void，方法大括号内的return可以不写，有返回值时返回给调用者。</li>
+</ul>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span> </span>&#123; </span><br><span class="line">    System.out.println(<span class="string">"这是一个方法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法定义注意事项:<ul>
+<li>方法必须定义在一类中方法外 </li>
+<li>方法不能定义在另一个方法的里面</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-方法的调用"><a href="#1-2-方法的调用" class="headerlink" title="1.2 方法的调用"></a>1.2 方法的调用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="comment">//调用定义的方法method</span></span><br><span class="line">    method();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义方法，被main方法调用 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"自己定义的方法，需要被main调用运行"</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>上面方法为直接调用，有参数时括号内写入参数</p>
+</li>
+<li><p>还可以输出语句调用:  </p>
+<ul>
+<li>在输出语句中调用方法， System.out.println(方法名()) 。</li>
+<li>不能用输出语句调用 void 类型的方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-方法重载"><a href="#1-3-方法重载" class="headerlink" title="1.3 方法重载"></a>1.3 方法重载</h2><ul>
+<li>方法重载:指在同一个类中，允许存在一个以上的同名方法，只要它们的参数列表不同即可，与修饰符和返 回值类型无关。<ul>
+<li>参数列表:个数不同，数据类型不同，顺序不同。 </li>
+<li>重载方法调用:JVM通过方法的参数列表，调用不同的方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="重载练习"><a href="#重载练习" class="headerlink" title="重载练习"></a>重载练习</h3><p>比较两个数据是否相等。参数类型分别为两个 byte 类型，两个 short 类型，两个 int 类型，两个 long 类型，并在 main 方法中进行测试。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Method_Demo6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义不同数据类型的变量  </span></span><br><span class="line">        <span class="keyword">byte</span> a = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">byte</span> b = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">short</span> c = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">short</span> d = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> e = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> f = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">long</span> g = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">long</span> h = <span class="number">20</span>;</span><br><span class="line">        <span class="comment">// 调用 System.out.println(compare(a, b)); System.out.println(compare(c, d)); </span></span><br><span class="line">        System.out.println(compare(e, f)); </span><br><span class="line">        System.out.println(compare(g, h));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 两个byte类型的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(<span class="keyword">byte</span> a, <span class="keyword">byte</span> b)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"byte"</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 两个short类型的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(<span class="keyword">short</span> a, <span class="keyword">short</span> b)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"short"</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 两个int类型的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"int"</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 两个long类型的</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">compare</span><span class="params">(<span class="keyword">long</span> a, <span class="keyword">long</span> b)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"long"</span>); </span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-权限修饰符"><a href="#1-4-权限修饰符" class="headerlink" title="1.4 权限修饰符"></a>1.4 权限修饰符</h2><p>public:公共的<br>protected:受保护的<br>default:默认的（不写）<br>private:私有的  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">public</th>
+<th align="left">protected</th>
+<th align="left">default(空的)</th>
+<th align="left">private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一类中</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td>同一包中(子类与无关类)</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>不同包的子类</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>不同包中的无关类</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h1 id="第二章-数组"><a href="#第二章-数组" class="headerlink" title="第二章 数组"></a>第二章 数组</h1><p><strong>数组</strong>: 数组就是存储数据长度固定的容器，保证多个数据的数据类型要一致。</p>
+<ul>
+<li>数组的特点：<ul>
+<li>数组是一种引用数据类型</li>
+<li>数组当中的多个数据，类型必须统一</li>
+<li>数组的长度在程序运行期间不可改变</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h2><p>数组的初始化：在内存当中创建一个数组，并且向其中赋予一些默认值。</p>
+<p>两种常见的初始化方式：</p>
+<ul>
+<li>动态初始化（指定长度）</li>
+<li>静态初始化（指定内容）</li>
+</ul>
+<br>
+
+<ol>
+<li>动态初始化数组</li>
+</ol>
+<p>格式：  </p>
+<blockquote>
+<p>数据类型[] 数组名称 = new 数据类型[数组长度];</p>
+</blockquote>
+<p>解析含义：<br>数据类型：数组当中数据的统一类型<br>[]：代表我是一个数组<br>new：代表创建数组的动作<br>数组长度：指定长度</p>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>静态初始化</li>
+</ol>
+<p>标准格式：</p>
+<blockquote>
+<p>数据类型[] 数组名称 = new 数据类型[] { 元素1, 元素2, … };</p>
+</blockquote>
+<p>省略格式：</p>
+<blockquote>
+<p>数据类型[] 数组名称 = { 元素1, 元素2, … }</p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arrA = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] arrB = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<ul>
+<li>静态初始化没有直接指定长度，但是仍然会自动推算得到长度</li>
+<li>静态初始化标准格式、动态初始化，可以拆分成为两个步骤</li>
+<li>静态初始化省略格式不能拆分成为两个步骤</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arrayB;</span><br><span class="line">arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-数组的访问"><a href="#2-2-数组的访问" class="headerlink" title="2.2 数组的访问"></a>2.2 数组的访问</h2><p><strong>索引</strong>：从0开始，通过数组的索引访问到数组中的元素<br>格式：</p>
+<blockquote>
+<p>数组名[索引]</p>
+</blockquote>
+<p><strong>数组长度</strong><br>获得数组长度语句：<code>数组名.length</code><br>数组的最大索引值为：<code>数组名.length-1</code></p>
+<ul>
+<li>索引访问数组中的元素: <ul>
+<li><code>数组名[索引]=数值</code>，为数组中的元素赋值</li>
+<li><code>变量=数组名[索引]</code>，获取出数组中的元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-数组内存原理"><a href="#2-3-数组内存原理" class="headerlink" title="2.3 数组内存原理"></a>2.3 数组内存原理</h2><p><strong>Java虚拟机的内存划分</strong></p>
+<p><img src="//mangosTeeN96.github.io/2019/07/03/Java基础_2/1.png" alt></p>
+<p><strong>一个数组内存图</strong></p>
+<br>
+
+<p><img src="//mangosTeeN96.github.io/2019/07/03/Java基础_2/2.png" alt></p>
+<p><strong>两个独立数组内存图</strong></p>
+<br>
+
+<p><img src="//mangosTeeN96.github.io/2019/07/03/Java基础_2/3.png" alt></p>
+<p><strong>两个变量指向同一个数组内存图</strong></p>
+<br>
+
+<p><img src="//mangosTeeN96.github.io/2019/07/03/Java基础_2/4.png" alt></p>
+<h2 id="2-4-数组遍历"><a href="#2-4-数组遍历" class="headerlink" title="2.4 数组遍历"></a>2.4 数组遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        System.out.println(arr[i]); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-数组获得最大值元素"><a href="#2-5-数组获得最大值元素" class="headerlink" title="2.5 数组获得最大值元素"></a>2.5 数组获得最大值元素</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">5</span>, <span class="number">15</span>, <span class="number">2000</span>, <span class="number">10000</span>, <span class="number">100</span>, <span class="number">4000</span> &#125;;</span><br><span class="line">    <span class="comment">//定义变量，保存数组中0索引的元素</span></span><br><span class="line">    <span class="keyword">int</span> max = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//遍历数组，取出每个元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        <span class="comment">//遍历到的元素和变量max比较 </span></span><br><span class="line">        <span class="comment">//如果数组元素大于max</span></span><br><span class="line">        <span class="keyword">if</span> (arr[i] &gt; max) &#123;</span><br><span class="line">            <span class="comment">//max记录住大值</span></span><br><span class="line">            max = arr[i]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"数组最大值是: "</span> + max); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-6-数组反转"><a href="#2-6-数组反转" class="headerlink" title="2.6 数组反转"></a>2.6 数组反转</h2><p>数组中的元素颠倒顺序，例如原始数组为1,2,3,4,5，反转后的数组为5,4,3,2,1</p>
+<ul>
+<li>实现思想:数组最远端的元素互换位置。<ul>
+<li>实现反转，就需要将数组最远端元素位置交换 </li>
+<li>定义两个变量，保存数组的最小索引和最大索引 </li>
+<li>两个索引上的元素交换位置 </li>
+<li>最小索引++，最大索引–，再次交换位置 </li>
+<li>最小索引超过了最大索引，数组反转操作结束</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    循环中定义变量min=0最小索引 max=arr.length‐1最大索引 min++,max‐‐</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> min = <span class="number">0</span>, max = arr.length ‐ <span class="number">1</span>; min &lt;= max; min++, max‐‐) &#123;</span><br><span class="line">        <span class="comment">//利用第三方变量完成数组中的元素交换</span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[min];</span><br><span class="line">        arr[min] = arr[max];</span><br><span class="line">        arr[max] = temp; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 反转后，遍历数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        System.out.println(arr[i]); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-7-数组作为方法参数和返回值"><a href="#2-7-数组作为方法参数和返回值" class="headerlink" title="2.7 数组作为方法参数和返回值"></a>2.7 数组作为方法参数和返回值</h2><ul>
+<li>数组作为方法参数传递，传递的参数是数组内存的地址</li>
+<li>数组作为方法的返回值，返回的是数组的内存地址</li>
+</ul>
+<p>方法的参数为基本类型时，传递的是数据值。为引用类型时，传递的是地址值。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/07/03/Hexo博客导入图片/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/03/Hexo博客导入图片/" class="post-title-link" itemprop="url">Hexo博客导入图片</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 15:13:20" itemprop="dateCreated datePublished" datetime="2019-07-03T15:13:20+08:00">2019-07-03</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-08 14:07:00" itemprop="dateModified" datetime="2019-07-08T14:07:00+08:00">2019-07-08</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><ol>
+<li><p>站点配置文件_config.yml 里的post_asset_folder:这个选项设置为true</p>
+</li>
+<li><p><code>npm install hexo-asset-image --save</code> 安装一个可以上传本地图片的插件</p>
+</li>
+<li><p>安装插件后hexo new “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹</p>
+</li>
+<li><p>把图片复制到xxxx这个文件夹中，在xxxx.md中按照markdown的格式引入图片(此处为了不被识别为图片就先这么写了)：</p>
+<blockquote>
+<p>感叹号+[]括号内可输入替代文字+(xxxx/图片名.jpg)</p>
+</blockquote>
+</li>
+<li><p>最后检查一下，hexo g生成页面后，进入public\2017\02\26\index.html文件中查看，html标签内的语句是img src=”2017/02/26/xxxx/图片名.jpg”，必须要有日期。</p>
+</li>
+</ol>
+<h2 id="其它方法"><a href="#其它方法" class="headerlink" title="其它方法"></a>其它方法</h2><ol>
+<li><p>本地source中建立img文件夹<br>&lt;&gt; 内 img src=”img/图片名.jpg<br>（此方法未详细试验）</p>
+</li>
+<li><p>图床</p>
+</li>
+</ol>
+<h2 id="所遇问题"><a href="#所遇问题" class="headerlink" title="所遇问题"></a>所遇问题</h2><ol>
+<li><p>由于hexo3版本后对很多插件支持有问题，hexo-asset-image插件在处理链接时出现路径错误，没有年月，无法显示图片。<br>可直接安装已经修改过得插件<br><code>npm install https://github.com/7ym0n/hexo-asset-image --save</code></p>
+</li>
+<li><p>由于title中有一些符号（比如（）、–等）用<code>hexo new</code>命令创建博客时，出现文件名称与文章title不符的情况<br>在博客中没有图片时，并不产生影响，但当要插入图片时，在路径正确的情况下，依然显示不出图片<br>解决办法暂时只是把 1.文件夹名称、2.md文件名称、3.title 这三者统一</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/29/hadoop安装与伪分布式搭建/" class="post-title-link" itemprop="url">hadoop安装与伪分布式搭建</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 17:30:52" itemprop="dateCreated datePublished" datetime="2019-06-29T17:30:52+08:00">2019-06-29</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-04 20:47:55" itemprop="dateModified" datetime="2019-07-04T20:47:55+08:00">2019-07-04</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据环境搭建/" itemprop="url" rel="index"><span itemprop="name">大数据环境搭建</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建Hadoop用户"><a href="#创建Hadoop用户" class="headerlink" title="创建Hadoop用户"></a>创建Hadoop用户</h2><ol>
+<li><p>创建新用户<br>用户名为hadoop，使用/bin/bash作为shell<br><code>sudo useradd -m hadoop -s /bin/bash</code></p>
+</li>
+<li><p>修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd hadoop</span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为hadoop用户添加管理员权限<br><code>sudo adduser hadoop sudo</code></p>
+<h2 id="安装jdk1-7"><a href="#安装jdk1-7" class="headerlink" title="安装jdk1.7"></a>安装jdk1.7</h2><p>首先在oracle官网下载,接下来进行安装与环境变量配置，根据个人电脑系统选择对应版本，我选的是jdk-8u211-linux-x64.tar.gz </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /usr/lib/jvm                           #创建jvm文件夹</span><br><span class="line">$ sudo tar -zxvf jdk-8u211-linux-x64.tar.gz  -C /usr/lib/jvm   #/ 解压到/usr/lib/jvm目录下</span><br><span class="line">$ cd /usr/lib/jvm                                 #进入该目录</span><br><span class="line">$ mv  jdk1.8.0_211 java                         #重命名为java</span><br><span class="line">$ vim ~/.bashrc                               #给JDK配置环境变量</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>在.bashrc文件添加如下指令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>在文件修改完毕以后，输入代码：<br><code>$ source ~/.bashrc                       #使新配置的环境变量生效</code><br><code>$ java -version                          #检测是否安装成功，查看java版本</code></p>
+<p> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/1.png" alt></p>
+<h2 id="安装SSH服务端"><a href="#安装SSH服务端" class="headerlink" title="安装SSH服务端"></a>安装SSH服务端</h2><ol>
+<li>安装<br><code>$ sudo apt-get install openssh-server</code></li>
+<li>登录localhost<br><code>$ ssh localhost</code><br>之后会在~/文件夹下发现一个.ssh文件<ol start="3">
+<li>设置为无密码登录<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh/</span><br><span class="line">$ ssh-keygen -t rsa  #出现提示直接按enter</span><br><span class="line">$ cat ./id_rsa.pub &gt;&gt; ./authorized_keys  #加入授权</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<p>此时就直接使用$ ssh localhost，无密码登录了。</p>
+<h2 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h2><p>本文采用伪分布式模式：存储采用分布式文件系统HDFS，但是HDFS的节点和数据节点都在同一节点。</p>
+<ol>
+<li>下载安装<br>下载安装包后解压即可使用：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar -zxvf hadoop-<span class="number">2.7</span>.1.tar.gz -C /usr/local</span><br><span class="line">$ cd /usr/local/</span><br><span class="line">$ sudo mv ./hadoop-2.7.1/ ./hadoop      # 将文件夹名改为hadoop</span><br><span class="line">$ sudo chown -R hadoop ./hadoop       # 修改文件权限</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>查看Hadoop版本信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop/bin</span><br><span class="line">$ ./hadoop version</span><br></pre></td></tr></table></figure>
+
+<p> &lt;img src=”hadoop安装与伪分布式搭建/2.png&gt;</p>
+<ol start="2">
+<li>伪分布式模式配置<br>修改配置文件:<br>需要修改/usr/local/hadoop/etc/hadoop/文件夹下的core-site.xml和hdfs-site.xml文件。<br>core-site.xml文件:<br>将<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>修改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;</span><br><span class="line">        &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs:<span class="comment">//localhost:9000&lt;/value&gt;</span></span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>hdfs-site.xml文件修改如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/name&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/data&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将/hadoop/etc/hadoop/hadoop-env.sh文件的JAVA_HOME改为绝对路径。将export JAVA_HOME=$JAVA_HOME改为<br>export JAVA_HOME=/usr/lib/jvm/default-java</p>
+<p>注意：Hadoop的运行方式是由配置文件决定的，如果想从伪分布式模式切换回单机模式，只需删除core-site.xml文件中的配置项即可</p>
+<ol start="3">
+<li>执行名称节点格式化<br>执行如下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>出现如下错误</strong><br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/3.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/4.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/5.png" alt></p>
+<h2 id="启动Hadoop"><a href="#启动Hadoop" class="headerlink" title="启动Hadoop"></a>启动Hadoop</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/hadoop安装与伪分布式搭建/6.png" alt></p>
+<h2 id="使用浏览器查看HDFS信息"><a href="#使用浏览器查看HDFS信息" class="headerlink" title="使用浏览器查看HDFS信息"></a>使用浏览器查看HDFS信息</h2><p>在浏览器中打开链接：<a href="http://localhost:50070/dfshealth.html#tab-overview" target="_blank" rel="noopener">http://localhost:50070/dfshealth.html#tab-overview</a><br>即可查看</p>
+<h2 id="关闭Hadoop"><a href="#关闭Hadoop" class="headerlink" title="关闭Hadoop"></a>关闭Hadoop</h2><p>使用命令：<br><code>./sbin/stop-dfs.sh</code><br>下次启动时不需要再执行节点格式化命令（否则会报错），只需要直接运行start-dfs.sh命令即可。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="MangosTeen">
+            
+              <p class="site-author-name" itemprop="name">MangosTeen</p>
+              <div class="site-description motion-element" itemprop="description">想养一只猫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/mangosTeeN96" title="Git &rarr; https://github.com/mangosTeeN96" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>Git</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:mangosteen1996@gmail.com" title="Mail &rarr; mailto:mangosteen1996@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ashinzhang.github.io/" title="https://ashinzhang.github.io/" rel="noopener" target="_blank">AshinZ</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MangosTeen</span>
+
+  
+
+  
 </div>
 
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav ">
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+
+
+
+
         
+
+
+
+
+
+
+
+
         
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">首页</span>
-          </a>
-        </li>
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
         
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">归档</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">分类</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">标签</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">友链</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
-        
-    </ul>
-
-    </nav>
-  </div>
-</header>
-
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
+      </div>
     
-      
-  <div class="widget">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据环境搭建/">大数据环境搭建</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hadoop/">hadoop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用API/">常用API</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/继承与多态/">继承与多态</a><span class="tag-list-count">6</span></li></ul>
-    </div>
-  </div>
-
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/java/">java</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/10/Java-继承与多态-6-内部类/" class="title">(Java)继承与多态--6.内部类</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-10T07:18:23.000Z" itemprop="datePublished">2019-07-10</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/java/">java</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/10/Java-继承与多态-5-final关键字/" class="title">(Java)继承与多态--5.final关键字</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-10T06:36:39.000Z" itemprop="datePublished">2019-07-10</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/java/">java</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/10/(Java)继承与多态--4.多态/" class="title">(Java)继承与多态--4.多态</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-10T03:49:42.000Z" itemprop="datePublished">2019-07-10</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/java/">java</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/09/Java-继承与多态-3-接口/" class="title">(Java)继承与多态--3.接口</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-09T07:35:25.000Z" itemprop="datePublished">2019-07-09</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/java/">java</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/09/(Java)继承与多态--2.抽象类/" class="title">(Java)继承与多态--2.抽象类</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-09T05:06:59.000Z" itemprop="datePublished">2019-07-09</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
-
-    
-  </div>
-</aside>
-
-  
-  <main class="main" role="main">
-  
-  <div class="content article-list">
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java-常用API-4-ArrayList类/">(Java)常用API--4.ArrayList类</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java-常用API-4-ArrayList类/" class="article-date">
-	  <time datetime="2019-07-04T11:58:43.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/常用API/">常用API</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java-常用API-4-ArrayList类/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java-常用API-3-Random类/">(Java)常用API--3.Random类</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java-常用API-3-Random类/" class="article-date">
-	  <time datetime="2019-07-04T11:35:57.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/常用API/">常用API</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java-常用API-3-Random类/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java-常用API-2-匿名对象/">(Java)常用API--2.匿名对象</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java-常用API-2-匿名对象/" class="article-date">
-	  <time datetime="2019-07-04T10:53:42.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/常用API/">常用API</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java-常用API-2-匿名对象/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java-常用API-1-Scanner类/">(Java)常用API--1.Scanner类</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java-常用API-1-Scanner类/" class="article-date">
-	  <time datetime="2019-07-04T07:35:24.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/常用API/">常用API</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java-常用API-1-Scanner类/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java基础-10-封装优化/">Java基础--10.封装优化</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java基础-10-封装优化/" class="article-date">
-	  <time datetime="2019-07-04T06:01:09.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java基础-10-封装优化/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java基础-9-封装/">Java基础--9.封装</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java基础-9-封装/" class="article-date">
-	  <time datetime="2019-07-04T05:26:52.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java基础-9-封装/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/Java基础-8-类与对象/">Java基础--8.类与对象</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/04/Java基础-8-类与对象/" class="article-date">
-	  <time datetime="2019-07-04T04:48:39.000Z" itemprop="datePublished">7月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/04/Java基础-8-类与对象/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/Java基础-7-数组-二/">Java基础--7.数组-二</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/03/Java基础-7-数组-二/" class="article-date">
-	  <time datetime="2019-07-03T11:43:45.000Z" itemprop="datePublished">7月 3</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础-7-数组-二/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/Java基础--6.数组/">Java基础--6.数组</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/03/Java基础--6.数组/" class="article-date">
-	  <time datetime="2019-07-03T10:14:36.000Z" itemprop="datePublished">7月 3</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础--6.数组/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/Java基础--5.方法/">Java基础--5.方法</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/03/Java基础--5.方法/" class="article-date">
-	  <time datetime="2019-07-03T08:32:38.000Z" itemprop="datePublished">7月 3</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/java基础/">java基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/03/Java基础--5.方法/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
 
     
   </div>
 
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/3/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 2 of 3</div>
-        </div>
-    </nav>
-    
- 
-</main>
 
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/mangosTeeN96" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="https://www.weibo.com/5311979032/profile?topnav=1&wvr=6" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="/mangosteen1996@gmail.com" target="_blank" title="E-Mail" data-toggle=tooltip data-placement=top><i class="icon icon-e-mail"></i></a></li>
-        
-    </ul>
-
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
-    </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-<script src="/js/plugin.min.js"></script>
-<script src="/js/application.js"></script>
-
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-
-
-
-
-   
 
 
 
@@ -736,6 +2947,424 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
