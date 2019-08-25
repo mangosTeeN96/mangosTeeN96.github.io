@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-08-21T15:53:59.131Z</updated>
+  <updated>2019-08-25T12:38:10.399Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vim基本命令</title>
+    <link href="http://mangosTeeN96.github.io/2019/08/25/Vim%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+    <id>http://mangosTeeN96.github.io/2019/08/25/Vim基本命令/</id>
+    <published>2019-08-25T12:18:17.000Z</published>
+    <updated>2019-08-25T12:38:10.399Z</updated>
+    
+    <summary type="html">
+    
+      Vim是从 vi 发展出来的一个文本编辑器。代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+    
+    </summary>
+    
+      <category term="Vim" scheme="http://mangosTeeN96.github.io/categories/Vim/"/>
+    
+    
+      <category term="Vim" scheme="http://mangosTeeN96.github.io/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux以及命令.md</title>
+    <link href="http://mangosTeeN96.github.io/2019/08/25/Linux%E4%BB%A5%E5%8F%8A%E5%91%BD%E4%BB%A4/"/>
+    <id>http://mangosTeeN96.github.io/2019/08/25/Linux以及命令/</id>
+    <published>2019-08-25T11:24:06.000Z</published>
+    <updated>2019-08-25T12:15:14.767Z</updated>
+    
+    <summary type="html">
+    
+      操作系统OS的目的：控制硬件，支持应用程序的运行
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://mangosTeeN96.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://mangosTeeN96.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Java_继承与多态</title>
@@ -142,16 +182,11 @@
     <link href="http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/"/>
     <id>http://mangosTeeN96.github.io/2019/06/28/hexo-markdown/</id>
     <published>2019-06-28T10:24:45.000Z</published>
-    <updated>2019-08-21T15:02:40.695Z</updated>
+    <updated>2019-08-25T11:57:11.349Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;一些markdown记录&quot;&gt;&lt;a href=&quot;#一些markdown记录&quot; class=&quot;headerlink&quot; title=&quot;一些markdown记录&quot;&gt;&lt;/a&gt;一些markdown记录&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&amp;lt; br&amp;gt; 换行&lt;/p&gt;
-&lt;/
-      
+      一些markdown语法记录
     
     </summary>
     
