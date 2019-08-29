@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-08-29T05:26:21.712Z</updated>
+  <updated>2019-08-29T10:48:40.989Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Object类、常用API</title>
-    <link href="http://mangosTeeN96.github.io/2019/08/27/Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/"/>
-    <id>http://mangosTeeN96.github.io/2019/08/27/Object类、常用API/</id>
+    <title>Java_Collection集合、泛型</title>
+    <link href="http://mangosTeeN96.github.io/2019/08/29/Java_Collection%E3%80%81%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://mangosTeeN96.github.io/2019/08/29/Java_Collection、泛型/</id>
+    <published>2019-08-29T05:31:45.000Z</published>
+    <updated>2019-08-29T10:48:40.989Z</updated>
+    
+    <summary type="html">
+    
+      Collection集合，迭代器，增强for，泛型
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+      <category term="集合" scheme="http://mangosTeeN96.github.io/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java_Object类、常用API</title>
+    <link href="http://mangosTeeN96.github.io/2019/08/27/Java_Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/"/>
+    <id>http://mangosTeeN96.github.io/2019/08/27/Java_Object类、常用API/</id>
     <published>2019-08-26T22:00:06.000Z</published>
-    <updated>2019-08-29T05:26:21.712Z</updated>
+    <updated>2019-08-29T07:30:00.560Z</updated>
     
     <summary type="html">
     

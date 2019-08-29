@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://mangosTeeN96.github.io/2019/08/27/Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/</loc>
+    <loc>http://mangosTeeN96.github.io/2019/08/29/Java_Collection%E3%80%81%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/08/27/Java_Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/</loc>
     <lastmod>2019-08-29</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/07/09/Java_%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/</loc>
