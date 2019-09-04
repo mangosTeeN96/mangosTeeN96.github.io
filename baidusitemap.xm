@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://mangosTeeN96.github.io/2019/09/02/Java_%E5%BC%82%E5%B8%B8%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2019-09-03</lastmod>
+    <loc>http://mangosTeeN96.github.io/2019/09/04/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2019-09-04</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/09/02/Java_%E5%BC%82%E5%B8%B8/</loc>
+    <lastmod>2019-09-04</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/08/30/Java_List%E3%80%81Set%E3%80%81Map%E9%9B%86%E5%90%88/</loc>
     <lastmod>2019-09-02</lastmod>

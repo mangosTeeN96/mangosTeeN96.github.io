@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-09-03T09:33:54.700Z</updated>
+  <updated>2019-09-04T11:15:27.028Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -17,15 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Java_异常与多线程</title>
-    <link href="http://mangosTeeN96.github.io/2019/09/02/Java_%E5%BC%82%E5%B8%B8%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    <id>http://mangosTeeN96.github.io/2019/09/02/Java_异常与多线程/</id>
-    <published>2019-09-02T10:58:12.000Z</published>
-    <updated>2019-09-03T09:33:54.700Z</updated>
+    <title>Java_多线程</title>
+    <link href="http://mangosTeeN96.github.io/2019/09/04/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://mangosTeeN96.github.io/2019/09/04/Java_多线程/</id>
+    <published>2019-09-04T07:14:28.000Z</published>
+    <updated>2019-09-04T11:15:27.028Z</updated>
     
     <summary type="html">
     
-      异常、线程
+      线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序。
+    
+    </summary>
+    
+      <category term="java" scheme="http://mangosTeeN96.github.io/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java_异常</title>
+    <link href="http://mangosTeeN96.github.io/2019/09/02/Java_%E5%BC%82%E5%B8%B8/"/>
+    <id>http://mangosTeeN96.github.io/2019/09/02/Java_异常/</id>
+    <published>2019-09-02T10:58:12.000Z</published>
+    <updated>2019-09-04T07:16:10.147Z</updated>
+    
+    <summary type="html">
+    
+      异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止程
     
     </summary>
     
