@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://mangosTeeN96.github.io/2019/09/05/Java_File%E7%B1%BB%E4%B8%8EIO%E6%B5%81/</loc>
-    <lastmod>2019-09-09</lastmod>
+    <lastmod>2019-09-10</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/09/04/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2019-09-04</lastmod>
