@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mangosTeeN96.github.io/"/>
-  <updated>2019-09-10T08:57:14.452Z</updated>
+  <updated>2019-09-10T08:59:47.718Z</updated>
   <id>http://mangosTeeN96.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://mangosTeeN96.github.io/2019/09/05/Java_File%E7%B1%BB%E4%B8%8EIO%E6%B5%81/"/>
     <id>http://mangosTeeN96.github.io/2019/09/05/Java_File类与IO流/</id>
     <published>2019-09-05T08:03:55.000Z</published>
-    <updated>2019-09-10T08:57:14.452Z</updated>
+    <updated>2019-09-10T08:59:47.718Z</updated>
     
     <summary type="html">
     
-      File类、递归、IO流、字符流、字节流、Properties集合
+      File类、递归、IO流、字符流、字节流、Properties集合、属性集、缓冲流、转换流、序列化、打印流
     
     </summary>
     
@@ -39,11 +39,11 @@
     <link href="http://mangosTeeN96.github.io/2019/09/04/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://mangosTeeN96.github.io/2019/09/04/Java_多线程/</id>
     <published>2019-09-04T07:14:28.000Z</published>
-    <updated>2019-09-04T11:15:27.028Z</updated>
+    <updated>2019-09-10T09:03:51.234Z</updated>
     
     <summary type="html">
     
-      线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序。
+      多线程、线程安全、等待唤醒机制、线程池、Lambda表达式。线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序。
     
     </summary>
     
@@ -57,11 +57,11 @@
     <link href="http://mangosTeeN96.github.io/2019/09/02/Java_%E5%BC%82%E5%B8%B8/"/>
     <id>http://mangosTeeN96.github.io/2019/09/02/Java_异常/</id>
     <published>2019-09-02T10:58:12.000Z</published>
-    <updated>2019-09-04T07:16:10.147Z</updated>
+    <updated>2019-09-10T09:05:09.607Z</updated>
     
     <summary type="html">
     
-      异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止程
+      异常、异常的处理、自定义异常。异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止程
     
     </summary>
     
@@ -95,11 +95,11 @@
     <link href="http://mangosTeeN96.github.io/2019/08/29/Java_Collection%E9%9B%86%E5%90%88%E3%80%81%E6%B3%9B%E5%9E%8B/"/>
     <id>http://mangosTeeN96.github.io/2019/08/29/Java_Collection集合、泛型/</id>
     <published>2019-08-29T05:31:45.000Z</published>
-    <updated>2019-08-29T10:54:21.076Z</updated>
+    <updated>2019-09-10T09:05:48.476Z</updated>
     
     <summary type="html">
     
-      Collection集合，迭代器，增强for，泛型
+      Collection集合，Iterator迭代器，增强for，泛型
     
     </summary>
     
@@ -175,11 +175,11 @@
     <link href="http://mangosTeeN96.github.io/2019/07/09/Java_%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81/"/>
     <id>http://mangosTeeN96.github.io/2019/07/09/Java_继承与多态/</id>
     <published>2019-07-09T03:16:06.000Z</published>
-    <updated>2019-08-28T10:57:55.954Z</updated>
+    <updated>2019-09-10T09:08:12.336Z</updated>
     
     <summary type="html">
     
-      多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。多态是继封装、继承之后，面向对象的第三大特性。多态:是指同一行为，具有多个不同表现形式。
+      继承、抽象类、接口、多态、final关键字、内部类。多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。多态是继封装、继承之后，面向对象的第三大特性。多态:是指同一行为，具有多个不同表现形式。
     
     </summary>
     
@@ -197,12 +197,11 @@
     <link href="http://mangosTeeN96.github.io/2019/07/04/Java_%E5%B8%B8%E7%94%A8API/"/>
     <id>http://mangosTeeN96.github.io/2019/07/04/Java_常用API/</id>
     <published>2019-07-04T07:35:24.000Z</published>
-    <updated>2019-08-26T10:31:00.964Z</updated>
+    <updated>2019-09-10T10:06:53.206Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;API(Application Programming Interface)，应用程序编程接口&lt;br&gt;Java API是一本程序员的字典&lt;br&gt;是我们使用的&lt;strong&gt;类&lt;/strong&gt;的说明文档&lt;/p&gt;
+      Scanner类、匿名对象、Random类、ArrayList类、String类、static类、Arrays类、Math类
     
     </summary>
     
@@ -218,11 +217,11 @@
     <link href="http://mangosTeeN96.github.io/2019/07/04/Java%E5%9F%BA%E7%A1%80_3/"/>
     <id>http://mangosTeeN96.github.io/2019/07/04/Java基础_3/</id>
     <published>2019-07-04T04:48:39.000Z</published>
-    <updated>2019-08-26T06:21:07.827Z</updated>
+    <updated>2019-09-10T10:14:01.350Z</updated>
     
     <summary type="html">
     
-      类与对象的关系：类是对一类事物的描述，是抽象的；对象是一类事物的实例，是具体的；类是对象的模板，对象是类的实体。封装：可以被认为是一个保护屏障，防止该类的代码和数据被其他类随意访问。要访问该类的数据，必须通过指定的方式。适当的封装可以让代码更容易理解与维护，也加强了代码的安全性。
+      类与对象、封装。类与对象的关系：类是对一类事物的描述，是抽象的；对象是一类事物的实例，是具体的；类是对象的模板，对象是类的实体。封装：可以被认为是一个保护屏障，防止该类的代码和数据被其他类随意访问。要访问该类的数据，必须通过指定的方式。适当的封装可以让代码更容易理解与维护，也加强了代码的安全性。
     
     </summary>
     
@@ -238,11 +237,11 @@
     <link href="http://mangosTeeN96.github.io/2019/07/03/Java%E5%9F%BA%E7%A1%80_2/"/>
     <id>http://mangosTeeN96.github.io/2019/07/03/Java基础_2/</id>
     <published>2019-07-03T08:32:38.000Z</published>
-    <updated>2019-08-26T05:38:04.179Z</updated>
+    <updated>2019-09-10T10:13:20.357Z</updated>
     
     <summary type="html">
     
-      方法：就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。        数组：就是存储数据长度固定的容器，保证多个数据的数据类型要一致。
+      方法、数组。方法：就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。 当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。        数组：就是存储数据长度固定的容器，保证多个数据的数据类型要一致。
     
     </summary>
     
