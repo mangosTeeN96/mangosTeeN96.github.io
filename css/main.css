@@ -300,14 +300,14 @@ hr {
   margin: 40px 0;
   height: 3px;
   border: none;
-  background-color: #ddd;
+  background-color: #fff;
   background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
 }
 blockquote {
   margin: 0;
   padding: 0 15px;
   color: #666;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid #fff;
 }
 blockquote cite::before {
   content: "-";
@@ -428,8 +428,8 @@ td {
 }
 th,
 td {
-  border: 1px solid #ddd;
-  border-bottom: 3px solid #ddd;
+  border: 1px solid #fff;
+  border-bottom: 3px solid #fff;
 }
 th {
   padding-bottom: 10px;
@@ -916,15 +916,15 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active {
   border-top: 3px solid #fc6423;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #fff;
   border-bottom: 1px solid transparent;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #fff;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab.active {
-    border-top: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     border-left: 3px solid #fc6423;
   }
 }
@@ -933,7 +933,7 @@ pre .javascript .function {
   color: #000;
 }
 .post-body .tabs .tab-content .tab-pane {
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
   padding: 20px 20px 0 20px;
 }
 .post-body .tabs .tab-content .tab-pane:not(.active) {
@@ -1166,7 +1166,7 @@ pre .javascript .function {
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #fff;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1323,7 +1323,7 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: 0 auto 25px;
   padding: 3px;
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
 }
 @media (max-width: 767px) {
   .posts-collapse {
@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f434bb;
+  background: #fb2f99;
 }
 .feed-link,
 .chat {
