@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/12/20/Python%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/10/15/leetcode%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-05-28</lastmod>
   </url>  <url>
