@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2020/02/14/%E5%A4%A9%E6%B1%A0-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2020/01/08/python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/12/28/python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/12/20/Python%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2020-05-28</lastmod>
   </url>  <url>
