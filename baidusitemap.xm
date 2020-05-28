@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mangosTeeN96.github.io/2019/10/15/leetcode%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2020-05-28</lastmod>
+  </url>  <url>
+    <loc>http://mangosTeeN96.github.io/2019/08/30/Java_List%E3%80%81Set%E3%80%81Map%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2019-10-30</lastmod>
+  </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/09/11/Java_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2019-09-11</lastmod>
   </url>  <url>
@@ -27,9 +33,6 @@
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/09/05/Java_File%E7%B1%BB%E4%B8%8EIO%E6%B5%81/</loc>
     <lastmod>2019-09-10</lastmod>
-  </url>  <url>
-    <loc>http://mangosTeeN96.github.io/2019/08/30/Java_List%E3%80%81Set%E3%80%81Map%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2019-09-02</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/08/27/Java_Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/</loc>
     <lastmod>2019-08-29</lastmod>

@@ -156,7 +156,7 @@ body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
-  color: #555;
+  color: #000;
   background: #fff;
 }
 @media (max-width: 991px) {
@@ -273,7 +273,7 @@ span.exturl {
   overflow-wrap: break-word;
   word-wrap: break-word;
   background-color: transparent;
-  color: #555;
+  color: #000;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
@@ -510,7 +510,7 @@ code {
   overflow-wrap: break-word;
   word-wrap: break-word;
   padding: 2px 4px;
-  color: #555;
+  color: #000;
   background: #eee;
   border-radius: 3px;
   font-size: 14px;
@@ -930,7 +930,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: #000;
 }
 .post-body .tabs .tab-content .tab-pane {
   border: 1px solid #ddd;
@@ -946,7 +946,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #555;
+  color: #000;
   background: transparent;
   border: 2px solid #222;
   text-decoration: none;
@@ -973,7 +973,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #000;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1453,7 +1453,7 @@ pre .javascript .function {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #000;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1548,7 +1548,7 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #000;
   border-bottom: none;
 }
 .post-nav-item a:hover {
@@ -1638,7 +1638,7 @@ pre .javascript .function {
 .sidebar a,
 .sidebar span.exturl {
   color: #999;
-  border-bottom-color: #555;
+  border-bottom-color: #000;
 }
 .sidebar a:hover,
 .sidebar span.exturl:hover {
@@ -1747,7 +1747,7 @@ pre .javascript .function {
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 10px;
-  border-bottom-color: #555;
+  border-bottom-color: #000;
   font-size: 13px;
 }
 .links-of-author a:before,
@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffff87;
 }
 .feed-link,
 .chat {
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   font-size: 14px;
-  color: #555;
+  color: #000;
 }
 .sidebar-nav li:hover {
   color: #f5f5f5;
@@ -1902,7 +1902,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-property: all;
   color: #999;
-  border-bottom-color: #555;
+  border-bottom-color: #000;
 }
 .post-toc ol a:hover {
   color: #ccc;
@@ -2135,7 +2135,7 @@ pre .javascript .function {
   width: 10px;
   height: 10px;
   opacity: 0.5;
-  background: #555;
+  background: #000;
   border: 1px solid #fff;
   border-radius: 50%;
 }
@@ -2497,7 +2497,7 @@ hr {
   margin-left: 5px;
   font-weight: 700;
   line-height: 1;
-  color: #555;
+  color: #000;
   text-align: center;
   white-space: nowrap;
   background-color: #fff;
