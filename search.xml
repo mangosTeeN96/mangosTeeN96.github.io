@@ -8,7 +8,7 @@
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -106,9 +106,6 @@
       <categories>
         <category>java</category>
       </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java_List、Set、Map集合]]></title>
@@ -117,9 +114,6 @@
       <categories>
         <category>java</category>
       </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java_Collection集合、泛型]]></title>
@@ -128,9 +122,6 @@
       <categories>
         <category>java</category>
       </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java_Object类、常用API]]></title>
@@ -139,9 +130,6 @@
       <categories>
         <category>java</category>
       </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java_继承与多态]]></title>
@@ -150,9 +138,6 @@
       <categories>
         <category>java</category>
       </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java基础]]></title>

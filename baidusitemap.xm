@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://mangosTeeN96.github.io/2019/10/15/leetcode%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://mangosTeeN96.github.io/2019/05/17/Java_Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/</loc>
     <lastmod>2020-08-04</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/05/30/Java_List%E3%80%81Set%E3%80%81Map%E9%9B%86%E5%90%88/</loc>
@@ -19,7 +19,7 @@
     <loc>http://mangosTeeN96.github.io/2020/02/28/SQL/</loc>
     <lastmod>2020-08-04</lastmod>
   </url>  <url>
-    <loc>http://mangosTeeN96.github.io/2019/05/17/Java_Object%E7%B1%BB%E3%80%81%E5%B8%B8%E7%94%A8API/</loc>
+    <loc>http://mangosTeeN96.github.io/2019/10/15/leetcode%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-08-04</lastmod>
   </url>  <url>
     <loc>http://mangosTeeN96.github.io/2019/04/29/Java%E5%9F%BA%E7%A1%80/</loc>
