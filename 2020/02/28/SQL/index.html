@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.2',
+    sidebar: {"position":"left","width":280,"display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="SQL基础，增删改查，窗口函数">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2020/02/28/SQL/index.html">
+<meta property="og:site_name" content="MangosTeen">
+<meta property="og:description" content="SQL基础，增删改查，窗口函数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/2.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/4.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/5.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/6.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/7.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/8.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/9.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/10.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/11.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/12.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/13.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/14.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/15.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/02/28/SQL/16.png">
+<meta property="og:updated_time" content="2020-08-04T07:22:33.227Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL">
+<meta name="twitter:description" content="SQL基础，增删改查，窗口函数">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2020/02/28/SQL/1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2020/02/28/SQL/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SQL | MangosTeen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MangosTeen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2020/02/28/SQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-28 14:37:55" itemprop="dateCreated datePublished" datetime="2020-02-28T14:37:55+08:00">2020-02-28</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-08-04 15:22:33" itemprop="dateModified" datetime="2020-08-04T15:22:33+08:00">2020-08-04</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+            <div class="post-description">SQL基础，增删改查，窗口函数</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>SQL</p>
+<p>结构化查询语言</p>
+<p>用来操作RDBMS的数据库语言</p>
+<p>当前关系型数据库都支持使用SQL语言进行操作（oracle、sql server、mysql、sqlite..）</p>
+ <br>
+
+<p>SQL语句主要分为：</p>
+<p><strong>DQL：数据查询语言，用于对数据进行查询，如select</strong></p>
+<p><strong>DML：数据操作语言：对数据增加、修改、删除，如insert、update、delete</strong></p>
+<p>TPL：事务处理语言</p>
+<p>DCL：数据控制语言</p>
+<p>DDL：数据定义语言</p>
+<p>CCL：指针控制语言</p>
+ <br>
+
+<ul>
+<li>不区分大小写</li>
+<li>运行sql文件：在mysql命令行，source 绝对路径</li>
+<li>多数；可写可不写，规范代码写</li>
+</ul>
+<h3 id="SQL语言书写基本规则"><a href="#SQL语言书写基本规则" class="headerlink" title="SQL语言书写基本规则"></a>SQL语言书写基本规则</h3><ol>
+<li><p>SQL语句本身对大小写不敏感，但通常SQL内置函数和命令一般 采用大写，例如 SELECT FROM、函数 COUNT()等;数据库内的 表名、表别名、字段名、序列等通常采用小写。</p>
+</li>
+<li><p>变量名命名使用英文，不能超出 30 个字符，简洁易懂</p>
+</li>
+<li><p>每条 SQL 命令末端使用分号(;)结尾，关键词不能跨多行或者 简写</p>
+</li>
+<li><p>用空格和缩进来提高语句的可读性，语句通常缩进 4 个空格。</p>
+<ul>
+<li>SQL 语句内逻辑运算符(OR\IN\AND)、比较运算符号(=、 &lt;=、&gt;=、&gt;、&lt;、BETWEEN AND)、IN、LIKE 等使用时前 后加 1 个空格</li>
+<li>逗号之后必须添加 1 个空格</li>
+<li>同层次的 SQL 命令缩进应保持一致，纵向对齐。</li>
+</ul>
+</li>
+<li><p>SQL 语句可以折行操作，较长的语句可分多行编写。通常对于 SELECT/FROM/ORDER BY/GOUP BY/WHERE 等子句需要另起一 行书写。</p>
+<ul>
+<li>SELECT(FROM)子句内容多于一项可分行书写，只有一项 同行书写</li>
+<li>WHERE 子句条件有多项时每一个条件占一行，以 AND 或 OR 开头，在对应 WHERE 的基础上向右缩进 4 个空格。</li>
+</ul>
+<p>SQL 语句中间不允许出现空行</p>
+</li>
+<li><p>引用字符串类型数据时用单引号，例如引用姓名 name ‘xiaoming’</p>
+</li>
+<li><p>较为复杂的SQL语句需加上注释。单行注释采用符号 –，多行注 释采用符号 /**/</p>
+<p>注释单独成行，位于 SQL 命令前面，对于过长的命令语句，应按照函数实现的功能分段注释加以说明</p>
+</li>
+<li><p>多表连接时，使用表的别名以简化 SQL 命令，例如 sales.s 将表 sales 简化为 s 代称以进行接下来对表内数据引用</p>
+</li>
+<li><p>出于对 SQL 运行优化的考虑，对于数据量小的表可以使用 * 进 行全表扫描，数据量大的表应先进行索引加快数据查询</p>
+</li>
+</ol>
+<h3 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h3><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><p><strong>CREATE TABLE 语句</strong></p>
+<p>CREATE TABLE 语句用于创建数据库中的表。</p>
+<p>SQL CREATE TABLE 语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名称</span><br><span class="line">(</span><br><span class="line">列名称<span class="number">1</span> 数据类型,</span><br><span class="line">列名称<span class="number">2</span> 数据类型,</span><br><span class="line">列名称<span class="number">3</span> 数据类型,</span><br><span class="line">....</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>数据类型（data_type）规定了列可容纳何种数据类型。下面的表格包含了SQL中最常用的数据类型：</p>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">integer(size)<br>int(size)<br>smallint(size)<br>tinyint(size)</td>
+<td align="left">仅容纳整数。在括号内规定数字的最大位数。</td>
+</tr>
+<tr>
+<td align="left">decimal(size,d)<br>numeric(size,d)</td>
+<td align="left">容纳带有小数的数字。”size” 规定数字的最大位数。”d” 规定小数点右侧的最大位数。</td>
+</tr>
+<tr>
+<td align="left">char(size)</td>
+<td align="left">容纳固定长度的字符串（可容纳字母、数字以及特殊字符）。在括号中规定字符串的长度。</td>
+</tr>
+<tr>
+<td align="left">varchar(size)</td>
+<td align="left">容纳可变长度的字符串（可容纳字母、数字以及特殊的字符）。在括号中规定字符串的最大长度。</td>
+</tr>
+<tr>
+<td align="left">date(yyyymmdd)</td>
+<td align="left">容纳日期。</td>
+</tr>
+</tbody></table>
+<p><strong>SQL CREATE TABLE 实例</strong></p>
+<p>本例演示如何创建名为 “Person” 的表。</p>
+<p>该表包含 5 个列，列名分别是：”Id_P”、”LastName”、”FirstName”、”Address” 以及 “City”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Persons</span><br><span class="line">(</span><br><span class="line">Id_P int,</span><br><span class="line">LastName varchar(255),</span><br><span class="line">FirstName varchar(255),</span><br><span class="line">Address varchar(255),</span><br><span class="line">City varchar(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>Id_P 列的数据类型是 int，包含整数。其余 4 列的数据类型是 varchar，最大长度为 255 个字符。</p>
+<p>空的 “Persons” 表类似这样：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Id_P</th>
+<th align="left">LastName</th>
+<th align="left">FirstName</th>
+<th align="left">Address</th>
+<th align="left">City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>可使用 INSERT INTO 语句向空表写入数据。</p>
+<p><strong>SQL 约束</strong></p>
+<p>约束用于限制加入表的数据的类型。</p>
+<p>可以在创建表时规定约束（通过 CREATE TABLE 语句），或者在表创建之后也可以（通过 ALTER TABLE 语句）。</p>
+<p>主要探讨以下几种约束：</p>
+<table>
+<thead>
+<tr>
+<th>约束</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOT NULL</td>
+<td>约束强制列不接受 NULL 值。<br>NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或者更新记录。</td>
+</tr>
+<tr>
+<td>UNIQUE</td>
+<td>约束唯一标识数据库表中的每条记录。<br>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。<br>PRIMARY KEY 拥有自动定义的 UNIQUE 约束。<br>请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</td>
+</tr>
+<tr>
+<td>PRIMARY KEY</td>
+<td>约束唯一标识数据库表中的每条记录。<br>主键必须包含唯一的值。不能包含 NULL 值。<br>每个表都应该有一个主键，并且每个表只能有一个主键。</td>
+</tr>
+<tr>
+<td>FOREIGN KEY</td>
+<td>外键，一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。</td>
+</tr>
+<tr>
+<td>CHECK</td>
+<td>约束用于限制列中的值的范围。<br>如果对单个列定义 CHECK 约束，那么该列只允许特定的值。<br>如果对一个表定义 CHECK 约束，那么此约束会在特定的列中对值进行限制。</td>
+</tr>
+<tr>
+<td>DEFAULT</td>
+<td>约束用于向列中插入默认值。（NULL也可以）</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">Id_P <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">City <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line"><span class="keyword">UNIQUE</span> (Id_P)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">--内键、外键</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Orders</span><br><span class="line">(</span><br><span class="line">Id_O <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">OrderNo <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">Id_P <span class="built_in">int</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (Id_O),</span><br><span class="line"><span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (Id_P) <span class="keyword">REFERENCES</span> Persons(Id_P)</span><br><span class="line">)</span><br><span class="line"><span class="comment">--命名 PRIMARY KEY 约束，以及为多个列定义 PRIMARY KEY 约束</span></span><br><span class="line"><span class="keyword">CONSTRAINT</span> pk_PersonID PRIMARY <span class="keyword">KEY</span> (Id_P,LastName)</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">Id_P <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">City <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line"><span class="keyword">CHECK</span> (Id_P&gt;<span class="number">0</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Persons</span><br><span class="line">(</span><br><span class="line">Id_P <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">City <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="string">'Sandnes'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><p>ALTER TABLE 语句，用于在已有的表中添加、修改或删除列。</p>
+<p><strong>ALTER TABLE 语法</strong></p>
+<p>在表中<strong>添加列</strong>:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除</strong>表中的列：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name </span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name</span><br></pre></td></tr></table></figure>
+
+<p>某些数据库系统不允许这种在数据库表中删除列的方式 (DROP COLUMN column_name)。</p>
+<p>要<strong>改变</strong>表中列的数据类型：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQL增删改"><a href="#SQL增删改" class="headerlink" title="SQL增删改"></a>SQL增删改</h3><h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><p>INSERT INTO 语句用于向表格中<strong>插入新的行</strong>。（需要一一对应）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名称 <span class="keyword">VALUES</span> (值<span class="number">1</span>, 值<span class="number">2</span>,....)</span><br></pre></td></tr></table></figure>
+
+<p>也可以<strong>向指定的列插入数据</strong>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name (列<span class="number">1</span>, 列<span class="number">2</span>,...) <span class="keyword">VALUES</span> (值<span class="number">1</span>, 值<span class="number">2</span>,....)</span><br></pre></td></tr></table></figure>
+
+<h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><p>Update 语句用于修改表中的数据。（两个列名称可以不同）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表名称 <span class="keyword">SET</span> 列名称 = 新值 <span class="keyword">WHERE</span> 列名称 = 某值</span><br></pre></td></tr></table></figure>
+
+<p>update 表名 set 列1=值1，列2=值2… where 条件；</p>
+<p>（不写条件整列都改）</p>
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p>DELETE 语句用于<strong>删除表中的行</strong>。(删除列指定的行)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名称 <span class="keyword">WHERE</span> 列名称 = 值</span><br></pre></td></tr></table></figure>
+
+<p>不写where全部删除，在不删除表的情况下删除所有的行。这意味着表的结构、属性和索引都是完整的</p>
+<p>delete为物理删除</p>
+<table>
+<thead>
+<tr>
+<th>逻辑删除（用一个字段表示 这条信息已经不能使用 表示删除）</th>
+<th>alter table 表名 add is_delect bit default 0；（bit不到一个字节，看不见，只能存0、1）（改为1时可以看出来）可以在创建表的时候直接 is_delect bit default 0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="SQL基础查询"><a href="#SQL基础查询" class="headerlink" title="SQL基础查询"></a>SQL基础查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*查询数据 </span></span><br><span class="line"><span class="comment">  关键字SELECT  </span></span><br><span class="line"><span class="comment">	SELECT column_name(s) FROM table_name</span></span><br><span class="line"><span class="comment">  SELECT * FROM table_name</span></span><br><span class="line"><span class="comment">  * 代表所有字段</span></span><br><span class="line"><span class="comment">	*/</span> <span class="comment">-- /* demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*SQL 处理重复数据</span></span><br><span class="line"><span class="comment">	有时候，数据表中会存在相同的记录。在获取表中记录时，相较于取得重复记录来说，取得唯一的记录显然更有意义。</span></span><br><span class="line"><span class="comment">	SELECT DISTINCT column_name(s) FROM table_name</span></span><br><span class="line"><span class="comment">	*/</span><span class="comment">-- /*demo</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata <span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*排序返回结果</span></span><br><span class="line"><span class="comment">  将查询结果排序后展示：关键字ORDER BY … [ASC/DESC]</span></span><br><span class="line"><span class="comment">	SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">  ORDER BY column_name [ASC|DESC]</span></span><br><span class="line"><span class="comment">  ASC为正序</span></span><br><span class="line"><span class="comment">	DESC为倒序*/</span><span class="comment">-- /* demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time,</span><br><span class="line">	mileage </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	co_time <span class="keyword">DESC</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time,</span><br><span class="line">	mileage </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	co_time <span class="keyword">ASC</span>,</span><br><span class="line">	mileage <span class="keyword">DESC</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	class_id <span class="keyword">ASC</span>,</span><br><span class="line">	score <span class="keyword">DESC</span><span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*指定要返回的记录数量</span></span><br><span class="line"><span class="comment">  SQL SELECT TOP, LIMIT, ROWNUM 用于指定要返回的记录数量</span></span><br><span class="line"><span class="comment">	并不是所有的数据库系统都支持SELECT TOP子句。MySQL支持LIMIT子句来选择有限数量的记录，而Oracle使用ROWNUM。</span></span><br><span class="line"><span class="comment">  SELECT LIMIT子句在包含数千条记录的大型表上很有用。返回大量记录会影响性能。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	SELECT column_name(s) FROM table_name LIMIT NUMBER</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	1.想随便查看一下表中的数据；</span></span><br><span class="line"><span class="comment">  2.一般与ORDER BY关键字配合使用，返回按某些字段排序后的前几行</span></span><br><span class="line"><span class="comment">	*/</span><span class="comment">-- /* demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line">	<span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	co_time <span class="keyword">DESC</span> </span><br><span class="line">	<span class="keyword">LIMIT</span> <span class="number">10</span> <span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*指定要返回中间几行</span></span><br><span class="line"><span class="comment">  返回中间几行：关键字LIMIT M OFFSET N（从第N行开始，返回M行记录）</span></span><br><span class="line"><span class="comment">	两种写法：</span></span><br><span class="line"><span class="comment">	SELECT 字段列表 FROM 表名 LIMIT M OFFSET N;</span></span><br><span class="line"><span class="comment">	SELECT 字段列表 FROM 表名 LIMIT N,M;</span></span><br><span class="line"><span class="comment">	*/</span><span class="comment">-- /* demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	co_time <span class="keyword">DESC</span> </span><br><span class="line">	<span class="keyword">LIMIT</span> <span class="number">10</span> <span class="keyword">OFFSET</span> <span class="number">2</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	co_time <span class="keyword">DESC</span> </span><br><span class="line">	<span class="keyword">LIMIT</span> <span class="number">2</span>,<span class="number">10</span>;</span><br><span class="line">  <span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*过滤数据</span></span><br><span class="line"><span class="comment">	WHERE 子句用于过滤记录</span></span><br><span class="line"><span class="comment">	WHERE 子句用于提取满足指定标准的记录</span></span><br><span class="line"><span class="comment">	SELECT 字段列表 FROM 表名 WHERE 过滤条件</span></span><br><span class="line"><span class="comment">	过滤条件一般由 要过滤的字段、操作符、限定值三部分组成 </span></span><br><span class="line"><span class="comment">	SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE column_name operator value</span></span><br><span class="line"><span class="comment">	*/</span><span class="comment">-- /* demo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*常用操作符</span></span><br><span class="line"><span class="comment">  过滤单个值</span></span><br><span class="line"><span class="comment">	*/</span><span class="comment">-- /* demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	car_type = <span class="string">'海马爱尚EV'</span>;<span class="comment">-- */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	mileage </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	mileage &gt; <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	pu_point </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	pu_point = <span class="string">'天地软件园.金枫楼'</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	co_time &lt;= <span class="string">'2019-6-2'</span>;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*SQL NULL Values（空值）</span></span><br><span class="line"><span class="comment">  SQL中，NULL用于表示缺失的值。数据表中的 NULL值表示该值所处的字段为空。</span></span><br><span class="line"><span class="comment">　具有NULL值的字段是没有值的字段。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">	NULL值与零值或包含空格的字段是不同的</span></span><br><span class="line"><span class="comment">	具有NULL值的字段是在记录创建期间留空的字段</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	使用比较运算符（例如=，&lt;或&lt;&gt;）来测试NULL值是不可行的。</span></span><br><span class="line"><span class="comment">	我们使用IS NULL和IS NOT NULL运算符。</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /* demo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	token </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	token <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	token </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	token <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*过滤集合 SQL BETWEEN运算符</span></span><br><span class="line"><span class="comment">	BETWEEN运算符用于选取介于两个值之间的数据范围内的值。</span></span><br><span class="line"><span class="comment">	BETWEEN运算符选择给定范围内的值。值可以是数字，文本或日期。</span></span><br><span class="line"><span class="comment">	BETWEEN运算符是包含性的：包括开始和结束值，且开始值需小于结束值。</span></span><br><span class="line"><span class="comment">  SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE column_name</span></span><br><span class="line"><span class="comment">	BETWEEN value1 AND value2</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /*demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	pay_amount </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	pay_amount <span class="keyword">BETWEEN</span> <span class="number">10</span> </span><br><span class="line">	<span class="keyword">AND</span> <span class="number">15</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	co_time </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	co_time <span class="keyword">BETWEEN</span> <span class="string">'2019-08-01 00:00:00'</span> </span><br><span class="line">	<span class="keyword">AND</span> <span class="string">'2019-09-01 00:00:00'</span>;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*过滤集合 SQL AND, OR and NOT</span></span><br><span class="line"><span class="comment">	AND操作符满足所有条件</span></span><br><span class="line"><span class="comment">	OR操作符满足任一条件</span></span><br><span class="line"><span class="comment">	NOT操作符不满足条件</span></span><br><span class="line"><span class="comment">	SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE condition</span></span><br><span class="line"><span class="comment">	AND|OR condition</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /*demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	pu_point,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	pu_point = <span class="string">'天地软件园.金枫楼'</span> </span><br><span class="line">	<span class="keyword">AND</span> car_type = <span class="string">'海马爱尚EV'</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	pu_point,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	pu_point = <span class="string">'天地软件园.金枫楼'</span> </span><br><span class="line">	<span class="keyword">OR</span> car_type = <span class="string">'海马爱尚EV'</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	pu_point,</span><br><span class="line">	car_type,</span><br><span class="line">	mileage </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">NOT</span> mileage &gt; <span class="number">10</span>;</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	pu_point,</span><br><span class="line">	car_type,</span><br><span class="line">	mileage </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">NOT</span> mileage &gt; <span class="number">100</span> </span><br><span class="line">	<span class="keyword">AND</span> pu_point = <span class="string">'天地软件园.金枫楼'</span> </span><br><span class="line">	<span class="keyword">OR</span> car_type = <span class="string">'海马爱尚EV'</span>;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*过滤集合 SQL IN 运算符</span></span><br><span class="line"><span class="comment">	IN运算符允许您在WHERE子句中指定多个值。</span></span><br><span class="line"><span class="comment">	IN运算符是多个OR条件的简写。</span></span><br><span class="line"><span class="comment">	SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE column_name</span></span><br><span class="line"><span class="comment">	IN (value1,value2,..)</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /*demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	pu_point </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	pu_point <span class="keyword">IN</span> ( <span class="string">'天地软件园.金枫楼'</span>, <span class="string">'BAC公司'</span> );</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	car_no,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	car_type <span class="keyword">NOT</span> <span class="keyword">IN</span> ( <span class="string">'海马爱尚EV'</span>, <span class="string">'一汽新特EV'</span> );</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	teacher_id <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> teacher_id <span class="keyword">FROM</span> teacher );<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*过滤集合 SQL LIKE 及 通配符</span></span><br><span class="line"><span class="comment">  问题：</span></span><br><span class="line"><span class="comment">	我们想取出所有姓李的用户 </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  通配符：</span></span><br><span class="line"><span class="comment">	％ 百分号表示零个，一个或多个字符</span></span><br><span class="line"><span class="comment">	_ 下划线表示单个字符</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">  在WHERE子句中使用LIKE运算符来搜索列中的指定模式。 </span></span><br><span class="line"><span class="comment">  两个通配符与LIKE运算符一起使用</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	SELECT column_name(s)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE column_name LIKE pattern</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	'a%'	查找以“a”开头的任何值</span></span><br><span class="line"><span class="comment">	'%a'	查找以“a”结尾的任何值</span></span><br><span class="line"><span class="comment">	'%a%'在任何位置查找任何具有“a”的值</span></span><br><span class="line"><span class="comment">	'_a%'	在第二个位置查找任何具有“a”的值</span></span><br><span class="line"><span class="comment">	'a_%_%'	查找以“a”开头且长度至少为3个字符的值</span></span><br><span class="line"><span class="comment">	'a%o'	找到以"a"开头，以"o"结尾的值	</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /*demo</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	user_name <span class="keyword">LIKE</span> <span class="string">'李%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	user_name <span class="keyword">LIKE</span> <span class="string">'%飞'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	user_id,</span><br><span class="line">	user_name,</span><br><span class="line">	car_type </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	orderdata </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	user_name <span class="keyword">LIKE</span> <span class="string">'李_轩'</span>;<span class="comment">-- */</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/lixuefang69/p/10420186.html" target="_blank" rel="noopener">distinct函数</a></p>
+<h3 id="使用SQL进行数据分析"><a href="#使用SQL进行数据分析" class="headerlink" title="使用SQL进行数据分析"></a>使用SQL进行数据分析</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*SQL 子查询</span></span><br><span class="line"><span class="comment">  两个表，主键外键</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	问题 1</span></span><br><span class="line"><span class="comment">	我们想同时查出学生编号、学生姓名，和老师编号，老师姓名</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	问题 2 </span></span><br><span class="line"><span class="comment">	获取姓刘的老师教的年龄大于12岁的学生信息</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	子查询是一种嵌套在其他 SQL 查询的 WHERE 子句中的查询</span></span><br><span class="line"><span class="comment">	子查询用于为</span></span><br><span class="line"><span class="comment">	1 主查询返回其所需数据 （FROM）</span></span><br><span class="line"><span class="comment">	2 对检索数据进行进一步的限制（WHERE）</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	SELECT column_name</span></span><br><span class="line"><span class="comment">	FROM   table1 </span></span><br><span class="line"><span class="comment">				(SELECT  column_name</span></span><br><span class="line"><span class="comment">				FROM table2 )</span></span><br><span class="line"><span class="comment">	WHERE  column_name OPERATOR</span></span><br><span class="line"><span class="comment">				(SELECT  column_name</span></span><br><span class="line"><span class="comment">				FROM table2 )</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	1 子查询必须括在圆括号中</span></span><br><span class="line"><span class="comment">	2 子查询的 SELECT 子句中只能有一个列</span></span><br><span class="line"><span class="comment">	3 子查询不能使用 ORDER BY</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span><span class="comment">-- /*demo1	我们想同时查出学生编号、学生姓名，和老师编号，老师姓名（选择了两个表的内容）</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	student_id,</span><br><span class="line">	student_name,</span><br><span class="line">	teacher_id,</span><br><span class="line">	( <span class="keyword">SELECT</span> teacher_name <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.teacher_id = student.teacher_id ) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	student.teacher_id <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;<span class="comment">-- */</span></span><br><span class="line"><span class="comment">-- /*demo2  获取姓刘的老师教的年龄大于12岁的学生信息</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	student_id,</span><br><span class="line">	student_name,</span><br><span class="line">	age,</span><br><span class="line">	teacher_id,</span><br><span class="line">	( <span class="keyword">SELECT</span> teacher_name <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.teacher_id = student.teacher_id ) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	student.age &gt;= <span class="number">12</span> </span><br><span class="line">	<span class="keyword">AND</span> teacher_id <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> teacher_id <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher_name <span class="keyword">LIKE</span> <span class="string">'刘%'</span> );<span class="comment">-- */        </span></span><br><span class="line"><span class="comment">-- /*demo3</span></span><br><span class="line"><span class="comment">/*EXISTS子句的返回值是一个 BOOL值。 EXISTS内部有一个子查询语句 ( SELECT...FROM...)， 我将其称为 EXIST的内查询语句。其内查询语句返回一个结果集。 EXISTS子句根据其内查询语句的结果集空或者非空，返回一个布尔值。 一种通俗的可以理解为：将外查询表的每一行，代入内查询作为检验，如果内查询返回的结果取非空值，</span></span><br><span class="line"><span class="comment">则 EXISTS子句返回TRUE，这一行行可作为外查询的结果行，否则不能作为结果。 不建议使用 */</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">student_id,</span><br><span class="line">student_name,</span><br><span class="line">age,</span><br><span class="line">teacher_id,</span><br><span class="line">( <span class="keyword">SELECT</span> teacher_name <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.teacher_id = student.teacher_id ) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	student.age &gt;= <span class="number">12</span> </span><br><span class="line">	<span class="keyword">AND</span> <span class="keyword">EXISTS</span> ( <span class="keyword">SELECT</span> teacher_name <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> student.teacher_id = teacher.teacher_id <span class="keyword">AND</span> teacher.teacher_name <span class="keyword">LIKE</span> <span class="string">'刘%'</span> );<span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*组合查询 SQL UNION 子句</span></span><br><span class="line"><span class="comment">  （两个表没什么联系，就是要拼在一起，只要列数相同、相同数据类型，就硬拼接在后面，方便报表）</span></span><br><span class="line"><span class="comment">  问题</span></span><br><span class="line"><span class="comment">	我们想同时查出所有的学生编号加学生姓名，学生编号和学生姓名，再加上什么老师编号和老师姓名</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	SQL UNION 子句用于将两个或者更多的 SELECT 语句的运算结果组合起来。</span></span><br><span class="line"><span class="comment">	在使用 UNION 的时候，每个 SELECT 语句必须有相同数量的选中列、相同数量的列表达式、相同的数据类型，并且它们出现的次序要一致，不过长度不一定要相同。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">	UNION ALL合并结果集后不去除重复记录；</span></span><br><span class="line"><span class="comment">  UNION合并结果集后去除重复记录；</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  合并来源于不同的表的结果集，注意合并后的结果集的title与第一个结果集保持一致。待合并的结果集的字段顺序、数据类型及字段值的含义尽量保持一致。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="comment">-- /*demo</span></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> age = <span class="number">10</span></span><br><span class="line">	<span class="keyword">UNION</span></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> class_id = <span class="string">'G0101'</span></span><br><span class="line">	<span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> gender = <span class="string">'男'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> student_id,student_name <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">UNION</span></span><br><span class="line">	<span class="keyword">SELECT</span> teacher_id,teacher_name <span class="keyword">FROM</span> teacher;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> student_id,student_name,age <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">UNION</span></span><br><span class="line">	<span class="keyword">SELECT</span> teacher_id,teacher_name,gender <span class="keyword">FROM</span> teacher;</span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*统计函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	问题</span></span><br><span class="line"><span class="comment">	总共有多少名学生？所有学生的成绩总和？所有学生的成绩最高分？所有学生的成绩最低分？所有学生的成绩平均分？</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	AVG() - 返回平均值</span></span><br><span class="line"><span class="comment">	COUNT() - 返回行数</span></span><br><span class="line"><span class="comment">	FIRST() - 返回第一个记录的值</span></span><br><span class="line"><span class="comment">	LAST() - 返回最后一个记录的值</span></span><br><span class="line"><span class="comment">	MAX() - 返回最大值</span></span><br><span class="line"><span class="comment">	MIN() - 返回最小值</span></span><br><span class="line"><span class="comment">	SUM() - 返回总和</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	abs(n) 返回n的绝对值</span></span><br><span class="line"><span class="comment">	round(n,d) 返回n的四舍五入值，保留d位小数</span></span><br><span class="line"><span class="comment">	rand() 返回0~1之间的随机数</span></span><br><span class="line"><span class="comment">	pow(x,y) 返回x的y次幂</span></span><br><span class="line"><span class="comment">	mod(m,n) 返回m除以n的余数</span></span><br><span class="line"><span class="comment">	三角函数 实现三角运算的函数。如sin,cos,tan等</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	DATE_FORMAT(date,format)</span></span><br><span class="line"><span class="comment">	date 参数是合法的日期。format 规定日期/时间的输出格式，比如%Y-%m-%d %H:%i:%s</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">-- /*demo</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> student;</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">SUM</span>(score) <span class="keyword">FROM</span> student;</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(score) <span class="keyword">FROM</span> student;</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">MIN</span>(score) <span class="keyword">FROM</span> student;</span><br><span class="line">	<span class="keyword">SELECT</span>  <span class="keyword">COUNT</span>(*),<span class="keyword">SUM</span>(score),<span class="keyword">MAX</span>(score),<span class="keyword">MIN</span>(score),<span class="keyword">AVG</span>(score) <span class="keyword">FROM</span> student;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">rand</span>();</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">pow</span>(<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">SELECT</span> pay_amount,<span class="keyword">round</span>(pay_amount,<span class="number">1</span>) <span class="keyword">FROM</span> orderdata;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> od_time,</span><br><span class="line">	<span class="keyword">date_format</span>(od_time,<span class="string">'%Y-%m-%d'</span>),co_time,<span class="keyword">date_format</span>(co_time,<span class="string">'%Y-%m-%d'</span>)</span><br><span class="line">	<span class="keyword">FROM</span> orderdata;</span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*分组汇总统计 </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	GROUP BY</span></span><br><span class="line"><span class="comment">	GROUP BY语句通常与集合函数（COUNT，MAX，MIN，SUM，AVG）一起使用，以按一个或多个列对结果集进行分组。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	SELECT column_name, aggregate_function(column_name)</span></span><br><span class="line"><span class="comment">	FROM table_name</span></span><br><span class="line"><span class="comment">	WHERE column_name operator value</span></span><br><span class="line"><span class="comment">	GROUP BY column_name</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	问题</span></span><br><span class="line"><span class="comment">  获取每一个班级的成绩的平均分</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="comment">-- /*demo1</span></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">					gender,<span class="keyword">avg</span>(score)</span><br><span class="line">	<span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> gender</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">					class_id,<span class="keyword">COUNT</span>(*)</span><br><span class="line">	<span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> class_id</span><br><span class="line"></span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*demo2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  问题</span></span><br><span class="line"><span class="comment">	那么如果我们想获取教授15名以上学生的老师有哪些</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	SQL HAVING 子句</span></span><br><span class="line"><span class="comment">	HAVING 子句使你能够指定过滤条件，从而控制查询结果中哪些组可以出现在最终结果里面。</span></span><br><span class="line"><span class="comment">					过滤分组，在group by后面执行</span></span><br><span class="line"><span class="comment">	WHERE 子句对被选择的列施加条件，</span></span><br><span class="line"><span class="comment">				过滤行，在group by前面执行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">-- /*demo</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> teacher_id,<span class="keyword">count</span>(*) </span><br><span class="line">	<span class="keyword">FROM</span> student </span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> teacher_id </span><br><span class="line">	<span class="keyword">HAVING</span> <span class="keyword">count</span>(*) &gt; <span class="number">15</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	问题</span></span><br><span class="line"><span class="comment">	我们这个时候有这么一个需求，就是说我们想获取每个班级的数学的平均分的时候，</span></span><br><span class="line"><span class="comment">	我们有两个限制条件，一个是我们不要成绩在80分以下的学生，而且我们还需要过滤掉平均分在90分以下的班级</span></span><br><span class="line"><span class="comment">  然后我们还要以平均分从高到低来排</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">					class_id,<span class="keyword">avg</span>(score)</span><br><span class="line">	<span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> score &gt; <span class="number">80</span></span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> class_id</span><br><span class="line">	<span class="keyword">HAVING</span> <span class="keyword">avg</span>(score) &gt; <span class="number">90</span></span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">avg</span>(score) <span class="keyword">DESC</span>;</span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">CASE WHEN 语句</span></span><br><span class="line"><span class="comment">CASE WHEN 语句主要是根据是否满足语句中的判断条件会落入不同的取值，对数据进行重新分类整理和命名。</span></span><br><span class="line"><span class="comment">CASE WHEN 语句在结尾部分必须有个 END，来提示系统整个循环语句已经结束了。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> UV,</span><br><span class="line">	   <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> PV,</span><br><span class="line">	   <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'buy'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Buy,</span><br><span class="line">	   <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'cart'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Cart,</span><br><span class="line">	   <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'fav'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Fav,</span><br><span class="line">	   <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>)/<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> <span class="string">'PV/UV'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*连接表</span></span><br><span class="line"><span class="comment">SQL 连接（JOIN） 子句用于将数据库中两个或者两个以上表中的记录组合起来。连接通过共有值将不同表中的字段组合在一起。</span></span><br><span class="line"><span class="comment">内连接（INNER JOIN）：当两个表中都存在匹配时，才返回行。</span></span><br><span class="line"><span class="comment">左连接（LEFT JOIN）：返回左表中的所有行，即使右表中没有匹配的行。</span></span><br><span class="line"><span class="comment">右连接（RIGHT JOIN）：返回右表中的所有行，即使左表中没有匹配的行。</span></span><br><span class="line"><span class="comment">全连接（FULL JOIN）：只要某一个表存在匹配，就返回行。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Oracle数据库支持full join，</span></span><br><span class="line"><span class="comment">mysql是不支持full join的，但仍然可以同过左外连接+ union+右外连接实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	student_id,</span><br><span class="line">	student_name,</span><br><span class="line">	teacher_id,</span><br><span class="line">	( <span class="keyword">SELECT</span> teacher_name <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.teacher_id = student.teacher_id ) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student</span><br><span class="line"></span><br><span class="line"><span class="comment">-- /*demo</span></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">from</span> student</span><br><span class="line">	<span class="keyword">INNER</span> <span class="keyword">JOIN</span> teacher <span class="keyword">ON</span> student.teacher_id = teacher.teacher_id; </span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">from</span> student</span><br><span class="line">	<span class="keyword">LEFT</span> <span class="keyword">JOIN</span> teacher <span class="keyword">ON</span> student.teacher_id = teacher.teacher_id; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">from</span> student</span><br><span class="line">	<span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> teacher <span class="keyword">ON</span> student.teacher_id = teacher.teacher_id;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"><span class="comment">/*视图</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	不存储数据，所以不占用物理存储 来源于表及其他视图 查，不适合增、删、改</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	视图是一种虚拟的表，允许用户执行以下操作：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	以用户或者某些类型的用户感觉自然或者直观的方式来组织数据；</span></span><br><span class="line"><span class="comment">	限制对数据的访问，从而使得用户仅能够看到或者修改（某些情况下）他们需要的数据；</span></span><br><span class="line"><span class="comment">	从多个表中汇总数据，以产生报表。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	创建视图:使用CREATE VIEW关键字。语法如下:</span></span><br><span class="line"><span class="comment">					CREATE VIEW 视图名 </span></span><br><span class="line"><span class="comment">					AS</span></span><br><span class="line"><span class="comment">					SELECT子句;</span></span><br><span class="line"><span class="comment">					</span></span><br><span class="line"><span class="comment">	查询视图:与查询表一样，使用SELECT子句。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">-- /*demo1查询学生信息时，同时查询出老师姓名:</span></span><br><span class="line">	<span class="keyword">CREATE</span> <span class="keyword">VIEW</span> v_student</span><br><span class="line">	<span class="keyword">AS</span></span><br><span class="line">	<span class="keyword">SELECT</span> </span><br><span class="line">		a.*,b.teacher_name</span><br><span class="line">	<span class="keyword">FROM</span> student a</span><br><span class="line">	<span class="keyword">LEFT</span> <span class="keyword">JOIN</span> teacher b</span><br><span class="line">	<span class="keyword">ON</span> a.teacher_id = b.teacher_id;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> v_student;</span><br><span class="line"><span class="comment">-- 	*/</span></span><br><span class="line"><span class="comment">-- /*demo2视图的嵌套:查询所有考试及格的学生信息:</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">CREATE</span> <span class="keyword">VIEW</span> v_student_nesting</span><br><span class="line">	<span class="keyword">AS</span></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> v_student</span><br><span class="line">	<span class="keyword">WHERE</span> score &gt;= <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> v_student_nesting;</span><br><span class="line"><span class="comment">-- */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*常见的使用场景</span></span><br><span class="line"><span class="comment">场景一:仅提供需要的数据; 场景二:对特定的用户仅开放特定的数据，达到保护敏感数据的目的，提升了数据安全性; 场景三:仅筛选需要的数据</span></span><br><span class="line"><span class="comment">场景四:简化复杂的操作</span></span><br><span class="line"><span class="comment">场景五:重新格式化出新的字段</span></span><br><span class="line"><span class="comment">场景六:使用计算表达式生成新的字段</span></span><br><span class="line"><span class="comment">场景七:屏蔽底层实现逻辑及频繁的变更</span></span><br><span class="line"><span class="comment">场景八:合并多个分离的子表*/</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="//mangosTeeN96.github.io/2020/02/28/SQL/1.png" alt></p>
+<p><img src="//mangosTeeN96.github.io/2020/02/28/SQL/2.png" alt><img src="//mangosTeeN96.github.io/2020/02/28/SQL/3.png" alt><img src="//mangosTeeN96.github.io/2020/02/28/SQL/4.png" alt></p>
+<p>常见日期和时间函数</p>
+<p><img src="//mangosTeeN96.github.io/2020/02/28/SQL/5.png" alt></p>
+<h3 id="SQL窗口函数"><a href="#SQL窗口函数" class="headerlink" title="SQL窗口函数"></a>SQL窗口函数</h3><p>开窗函数简介:与聚合函数一样，开窗函数也是对行集组进行聚合计算，但是它不像普通聚合函数那样每组只返回一个值，开窗函数可以为每组返回多个值，因为开窗函数所执行聚合计算的行集组是窗口。</p>
+<p>建表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> T_Person (FName <span class="built_in">VARCHAR</span>(<span class="number">20</span>),FCity <span class="built_in">VARCHAR</span>(<span class="number">20</span>),FAge <span class="built_in">INT</span>,FSalary <span class="built_in">INT</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Tom'</span>,<span class="string">'BeiJing'</span>,<span class="number">20</span>,<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Tim'</span>,<span class="string">'ChengDu'</span>,<span class="number">21</span>,<span class="number">4000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Jim'</span>,<span class="string">'BeiJing'</span>,<span class="number">22</span>,<span class="number">3500</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Lily'</span>,<span class="string">'London'</span>,<span class="number">21</span>,<span class="number">2000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'John'</span>,<span class="string">'NewYork'</span>,<span class="number">22</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'YaoMing'</span>,<span class="string">'BeiJing'</span>,<span class="number">20</span>,<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Swing'</span>,<span class="string">'London'</span>,<span class="number">22</span>,<span class="number">2000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Guo'</span>,<span class="string">'NewYork'</span>,<span class="number">20</span>,<span class="number">2800</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'YuQian'</span>,<span class="string">'BeiJing'</span>,<span class="number">24</span>,<span class="number">8000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Ketty'</span>,<span class="string">'London'</span>,<span class="number">25</span>,<span class="number">8500</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Kitty'</span>,<span class="string">'ChengDu'</span>,<span class="number">25</span>,<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Merry'</span>,<span class="string">'BeiJing'</span>,<span class="number">23</span>,<span class="number">3500</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Smith'</span>,<span class="string">'ChengDu'</span>,<span class="number">30</span>,<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Bill'</span>,<span class="string">'BeiJing'</span>,<span class="number">25</span>,<span class="number">2000</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> T_Person(FName,FCity,FAge,FSalary)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">'Jerry'</span>,<span class="string">'NewYork'</span>,<span class="number">24</span>,<span class="number">3300</span>);</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/6.png" style="zoom:50%;">
+
+<p>要计算所有人员的总数，我们可以执行下面的 SQL 语句：SELECT COUNT(*) FROM T_Person</p>
+<p>除了这种较简单的使用方式，有时需要从不在聚合函数中的行中访问这些聚合计算的值。比如我们想查询每个工资小于 5000 元的员工信息（城市以及年龄），并且在每行中都显示所有工资小于 5000 元的员工个数：</p>
+<p>子查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname,</span><br><span class="line">       fcity,</span><br><span class="line">       fsalary,</span><br><span class="line">       (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> t_person <span class="keyword">where</span> fsalary &lt; <span class="number">5000</span>) <span class="keyword">as</span> 工资少于<span class="number">5000</span>员工总数</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br><span class="line"><span class="keyword">where</span> fsalary &lt; <span class="number">5000</span></span><br></pre></td></tr></table></figure>
+
+<p>虽然使用子查询能够解决这个问题，但是子查询的使用非常麻烦，使用<strong>窗口函数</strong>则可以大大简化实现，下面的 SQL 语句展示了如果使用开窗函数来实现同样的效果：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname, fcity, fsalary, <span class="keyword">count</span>(*) <span class="keyword">over</span>() <span class="keyword">as</span> 工资小于<span class="number">5000</span>员工数</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br><span class="line"><span class="keyword">where</span> fsalary &lt; <span class="number">5000</span></span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/7.png" style="zoom:50%;">
+
+<p>可以看到与聚合函数不同的是，开窗函数在聚合函数后增加了一个 OVER 关键字。</p>
+<p><strong>开窗函数格式： 函数名(列) OVER(选项)</strong></p>
+<p>OVER 关键字表示把函数当成开窗函数而不是聚合函数。SQL 标准允许将所有聚合函数用做开窗函数，使用 OVER 关键字来区分这两种用法。</p>
+<p>在上边的例子中，开窗函数 COUNT(*) OVER()对于查询结果的每一行都返回所有符合条件的行的条数。OVER 关键字后的括号中还经常添加选项用以改变进行聚合运算的窗口范围。如果 OVER 关键字后的括号中的选项为空，则开窗函数会对结果集中的所有行进行聚合运算。</p>
+<h4 id="PARTITION-BY-子句："><a href="#PARTITION-BY-子句：" class="headerlink" title="PARTITION BY 子句："></a>PARTITION BY 子句：</h4><p>开窗函数的 OVER 关键字后括号中的可以使用 PARTITION BY 子句来定义行的分区来供进行聚合计算。与 GROUP BY 子句不同，PARTITION BY 子句创建的分区是独<br>立于结果集的，创建的分区只是供进行聚合计算的，而且不同的开窗函数所创建的分区也不互相影响。下面的 SQL 语句用于显示每一个人员的信息以及所属城市的人员数：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname,fcity,fage,fsalary,<span class="keyword">count</span>(*) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> fcity) <span class="keyword">as</span> 所在城市人数 <span class="keyword">from</span> t_person</span><br></pre></td></tr></table></figure>
+
+<p>COUNT(<em>) OVER(PARTITION BY FCITY)表示对结果集按照FCITY进行*</em>分区**，并且计算当前行所属的组的聚合计算结果。比如对于FName等于 Tom的行，它所属的城市是BeiJing，同<br>属于BeiJing的人员一共有6个，所以对于这一列的显示结果为6。</p>
+<p>这就不需要先对fcity分组求和，然后再和t_person表连接查询了，省事儿。</p>
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/8.png" style="zoom:50%;">
+
+<p>在同一个SELECT语句中可以<strong>同时使用多个开窗函数</strong>，而且这些开窗函数并不会相互干<br>扰。比如下面的SQL语句用于显示每一个人员的信息、所属城市的人员数以及同龄人的人数：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--显示每一个人员的信息、所属城市的人员数以及同龄人的人数：</span></span><br><span class="line"><span class="keyword">select</span> fname,</span><br><span class="line">       fcity,</span><br><span class="line">       fage,</span><br><span class="line">       fsalary,</span><br><span class="line">       <span class="keyword">count</span>(*) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> fcity) <span class="keyword">as</span> 所属城市的人个数,</span><br><span class="line">       <span class="keyword">count</span>(*) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> fage) <span class="keyword">as</span> 同龄人个数</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br></pre></td></tr></table></figure>
+
+<h4 id="ORDER-BY子句："><a href="#ORDER-BY子句：" class="headerlink" title="ORDER BY子句："></a>ORDER BY子句：</h4><p>开窗函数中可以在OVER关键字后的选项中使用ORDER BY子句来指定排序规则，而且有的开窗函数还要求必须指定排序规则。使用ORDER BY子句可以对结果集<strong>按照指定的排序规则进行排序</strong>，并且<strong>在一个指定的范围内进行聚合运算</strong>。ORDER BY子句的语法为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ORDER BY 字段名 RANGE|ROWS BETWEEN 边界规则1 AND 边界规则2</span><br></pre></td></tr></table></figure>
+
+<p>RANGE表示按照值的范围进行范围的定义，而ROWS表示按照行的范围进行范围的定义；边界规则的可取值见下表：</p>
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/9.png">
+
+<p>“RANGE|ROWS BETWEEN 边界规则1 AND 边界规则2”部分用来定位聚合计算范围，这个子句又被称为定位框架。</p>
+<p>例子程序一：查询从第一行到当前行的工资总和：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname,</span><br><span class="line">       fcity,</span><br><span class="line">       fage,</span><br><span class="line">       fsalary,</span><br><span class="line">       <span class="keyword">sum</span>(fsalary) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> fsalary <span class="keyword">rows</span> <span class="keyword">between</span> <span class="keyword">unbounded</span> <span class="keyword">preceding</span> <span class="keyword">and</span> <span class="keyword">current</span> <span class="keyword">row</span>) <span class="keyword">as</span> 到当前行工资求和</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/10.png" style="zoom:50%;">
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里的开窗函数“SUM(FSalary) OVER(ORDER BY FSalary ROWS BETWEEN</span><br><span class="line">UNBOUNDED PRECEDING AND CURRENT ROW)”表示按照FSalary进行排序，然后计算从第</span><br><span class="line">一行（UNBOUNDED PRECEDING）到当前行（CURRENT ROW）的和，这样的计算结果就是按照</span><br><span class="line">工资进行排序的工资值的累积和。</span><br></pre></td></tr></table></figure>
+
+<p>“RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW”是开窗函数中最常使用的定位框架，为了简化使用，如果使用的是这种定位框架，则可以省略定位框架声明部分，<br>也就是说上边的sql可以简化成：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname,</span><br><span class="line">       fcity,</span><br><span class="line">       fage,</span><br><span class="line">       fsalary,</span><br><span class="line">       <span class="keyword">sum</span>(fsalary) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> fsalary) <span class="keyword">as</span> 到当前行工资求和</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br></pre></td></tr></table></figure>
+
+<p>例子程序二：把例子程序一的row换成了range，是按照范围进行定位的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> fname,</span><br><span class="line">       fcity,</span><br><span class="line">       fage,</span><br><span class="line">       fsalary,</span><br><span class="line">       <span class="keyword">sum</span>(fsalary) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> fsalary <span class="keyword">range</span> <span class="keyword">between</span> <span class="keyword">unbounded</span> <span class="keyword">preceding</span> <span class="keyword">and</span> <span class="keyword">current</span> <span class="keyword">row</span>) <span class="keyword">as</span> 到当前行工资求和</span><br><span class="line">  <span class="keyword">from</span> t_person</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/11.png" style="zoom:50%;">
+
+<p><em>区别：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">这个SQL语句与例1中的SQL语句唯一不同的就是“ROWS”被替换成了“RANGE”。“ROWS”</span><br><span class="line">是按照行数进行范围定位的，而“RANGE”则是按照值范围进行定位的，这两个不同的定位方式</span><br><span class="line">主要用来处理并列排序的情况。比如 Lily、Swing、Bill这三个人的工资都是2000元，如果按照</span><br><span class="line">“ROWS”进行范围定位，则计算从第一条到当前行的累积和，而如果 如果按照 “RANGE”进行</span><br><span class="line">范围定位，则仍然计算从第一条到当前行的累积和，不过由于等于2000元的工资有三个人，所</span><br><span class="line">以计算的累积和为从第一条到2000元工资的人员结，所以对 Lily、Swing、Bill这三个人进行开</span><br><span class="line">窗函数聚合计算的时候得到的都是7000（ “ 1000+2000+2000+2000 ”）。</span><br></pre></td></tr></table></figure>
+
+<p>下边这的估计不常用：</p>
+<p>例子程序三：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName,</span><br><span class="line">       FSalary,</span><br><span class="line">       <span class="keyword">SUM</span>(FSalary) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> FSalary <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">PRECEDING</span> <span class="keyword">AND</span> <span class="number">2</span> <span class="keyword">FOLLOWING</span>) <span class="keyword">as</span> 前二后二和</span><br><span class="line">  <span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/12.png" style="zoom:50%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这里的开窗函数“SUM(FSalary) OVER(ORDER BY FSalary ROWS BETWEEN 2</span><br><span class="line">PRECEDING AND 2 FOLLOWING)”表示按照FSalary进行排序，然后计算从当前行前两行（2</span><br><span class="line">PRECEDING）到当前行后两行（2 FOLLOWING）的工资和，注意对于第一条和第二条而言它们</span><br><span class="line">的“前两行”是不存在或者不完整的，因此计算的时候也是要按照前两行是不存在或者不完整进</span><br><span class="line">行计算，同样对于最后两行数据而言它们的“后两行”也不存在或者不完整的，同样要进行类似</span><br><span class="line">的处理。</span><br></pre></td></tr></table></figure>
+
+<p>例子程序四：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName, FSalary,</span><br><span class="line"><span class="keyword">SUM</span>(FSalary) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> FSalary <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">FOLLOWING</span> <span class="keyword">AND</span> <span class="number">3</span> <span class="keyword">FOLLOWING</span>) 后面一到三之和</span><br><span class="line"><span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里的开窗函数“SUM(FSalary) OVER(ORDER BY FSalary ROWS BETWEEN 1</span><br><span class="line">FOLLOWING AND 3 FOLLOWING)”表示按照FSalary进行排序，然后计算从当前行后一行（1</span><br><span class="line">FOLLOWING）到后三行（3 FOLLOWING）的工资和。注意最后一行没有后续行，其计算结果为</span><br><span class="line">空值NULL而非0。</span><br></pre></td></tr></table></figure>
+
+<p>例子程序五：算工资排名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName, FSalary,</span><br><span class="line"><span class="keyword">COUNT</span>(*) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> FSalary <span class="keyword">ROWS</span> <span class="keyword">BETWEEN</span> <span class="keyword">UNBOUNDED</span> <span class="keyword">PRECEDING</span> <span class="keyword">AND</span> <span class="keyword">CURRENT</span> <span class="keyword">ROW</span>) <span class="keyword">as</span> 工资排名</span><br><span class="line"><span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/13.png" style="zoom:50%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里的开窗函数“COUNT(*) OVER(ORDER BY FSalary RANGE BETWEEN UNBOUNDED</span><br><span class="line">PRECEDING AND CURRENT ROW)”表示按照FSalary进行排序，然后计算从第一行</span><br><span class="line">（UNBOUNDED PRECEDING）到当前行（CURRENT ROW）的人员的个数，这个可以看作是计算</span><br><span class="line">人员的工资水平排名。</span><br></pre></td></tr></table></figure>
+
+<p>不再用ROWNUM 了  省事了。这个over简写就会出错。</p>
+<p>例子程序6：结合max求到目前行的最大值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName, FSalary,FAge,</span><br><span class="line"><span class="keyword">MAX</span>(FSalary) <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> FAge) <span class="keyword">as</span> 此行之前最大值</span><br><span class="line"><span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/14.png" style="zoom:50%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里的开窗函数“MAX(FSalary) OVER(ORDER BY FAge)”是“MAX(FSalary)</span><br><span class="line">OVER(ORDER BY FAge RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)”</span><br><span class="line">的简化写法，它表示按照FSalary进行排序，然后计算从第一行（UNBOUNDED PRECEDING）</span><br><span class="line">到当前行（CURRENT ROW）的人员的最大工资值。</span><br></pre></td></tr></table></figure>
+
+<p> 例子程序6：over(partition by XX  order by XX)  partition by和order by 结合</p>
+<p>员工信息+同龄人最高工资，按工资排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName, FSalary,FAge,</span><br><span class="line"><span class="keyword">MAX</span>(FSalary) <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> FAge <span class="keyword">ORDER</span> <span class="keyword">BY</span> fsalary <span class="keyword">rows</span> <span class="keyword">BETWEEN</span> <span class="keyword">unbounded</span> <span class="keyword">preceding</span> <span class="keyword">and</span> <span class="keyword">unbounded</span> <span class="keyword">following</span>) 同龄人最高工资</span><br><span class="line"><span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/15.png" style="zoom:50%;">
+
+<p>此处范围要注意，已经分区，所以是第一条到最后一条记录的max，默认到目前行为止是不行的</p>
+<h4 id="高级开窗函数-排名的实现ROW-NUMBER-rank-dense-rank"><a href="#高级开窗函数-排名的实现ROW-NUMBER-rank-dense-rank" class="headerlink" title="高级开窗函数/ 排名的实现ROW_NUMBER();rank() ,dense_rank()"></a>高级开窗函数/ 排名的实现ROW_NUMBER();rank() ,dense_rank()</h4><p>除了可以在开窗函数中使用COUNT()、SUM()、MIN()、MAX()、AVG()等这些聚合函数，<br>还可以在开窗函数中使用一些高级的函数，有些函数同时被DB2和Oracle同时支持，比如<br>RANK()、DENSE_RANK()、ROW_NUMBER()，而有些函数只被Oracle支持，比如<br>RATIO_TO_REPORT()、NTILE()、LEAD()、LAG()、FIRST_VALUE()、LAST_VALUE()。<br>下面对这几个函数进行详细介绍。</p>
+<p>RANK()和DENSE_RANK()函数都可以用于计算一行的排名，不过对于并列排名的处理方式<br>不同；ROW_NUMBER()函数计算一行在结果集中的行号，同样可以将其当成排名函数。这三个<br>函数的功能存在一定的差异，举例如下：工资从高到低排名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FName, FSalary,FAge,</span><br><span class="line"><span class="keyword">RANK</span>() <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> fsalary <span class="keyword">desc</span>) f_RANK,</span><br><span class="line"><span class="keyword">DENSE_RANK</span>() <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> fsalary <span class="keyword">desc</span>) f_DENSE_RANK,</span><br><span class="line">ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">ORDER</span> <span class="keyword">BY</span> fsalary <span class="keyword">desc</span>) f_ROW_NUMBER</span><br><span class="line"><span class="keyword">FROM</span> T_Person;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/02/28/SQL/16.png" style="zoom:50%;">
+
+<p><strong>rank(),dense_rank()语法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RANK()</span><br><span class="line">dense_rank()</span><br><span class="line">【语法】RANK ( ) OVER ( [query_partition_clause] order_by_clause )</span><br><span class="line">    dense_RANK ( ) OVER ( [query_partition_clause] order_by_clause )</span><br><span class="line"></span><br><span class="line">【功能】聚合函数RANK 和 dense_rank 主要的功能是计算一组数值中的排序值。</span><br></pre></td></tr></table></figure>
+
+<p><strong>row_number() 函数语法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ROW_NUMBER()</span><br><span class="line">【语法】ROW_NUMBER() OVER (PARTITION BY COL1 ORDER BY COL2) </span><br><span class="line"></span><br><span class="line">主要功能：用于取前几名，或者最后几名等</span><br></pre></td></tr></table></figure>
+
+<p>专用函数的种类：</p>
+<p>1.rank函数：计算排序时，如果存在相同位次的记录，则会跳过之后的位次。</p>
+<p>2.dense_rank函数：同样是计算排序，即使存在相同位次的记录，也不会跳过之后的位次。</p>
+<p>3.row_number函数：赋予唯一的连续位次。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/SQL/" rel="tag"><i class="fa fa-tags"></i> SQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/14/天池-数据分析/" rel="next" title="天池-数据分析">
+                <i class="fa fa-chevron-left"></i> 天池-数据分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="MangosTeen">
+            
+              <p class="site-author-name" itemprop="name">MangosTeen</p>
+              <div class="site-description motion-element" itemprop="description">想养一只猫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/mangosTeeN96" title="Git &rarr; https://github.com/mangosTeeN96" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="mailto:tiansj0810@163.com" title="Mail &rarr; mailto:tiansj0810@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                作品链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" title="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" rel="noopener" target="_blank">tianchi</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL语言书写基本规则"><span class="nav-text">SQL语言书写基本规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表操作"><span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表"><span class="nav-text">修改表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL增删改"><span class="nav-text">SQL增删改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增"><span class="nav-text">增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改"><span class="nav-text">改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删"><span class="nav-text">删</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL基础查询"><span class="nav-text">SQL基础查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SQL进行数据分析"><span class="nav-text">使用SQL进行数据分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL窗口函数"><span class="nav-text">SQL窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PARTITION-BY-子句："><span class="nav-text">PARTITION BY 子句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ORDER-BY子句："><span class="nav-text">ORDER BY子句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级开窗函数-排名的实现ROW-NUMBER-rank-dense-rank"><span class="nav-text">高级开窗函数/ 排名的实现ROW_NUMBER();rank() ,dense_rank()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MangosTeen</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+</body>
+</html>

@@ -153,7 +153,7 @@
 <meta property="og:image" content="http://mangosteen96.github.io/2019/12/28/python数据分析/48.png">
 <meta property="og:image" content="http://mangosteen96.github.io/2019/12/28/python数据分析/50.png">
 <meta property="og:image" content="http://mangosteen96.github.io/2019/12/28/python数据分析/41.png">
-<meta property="og:updated_time" content="2020-05-28T06:03:42.464Z">
+<meta property="og:updated_time" content="2020-07-05T10:51:20.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python数据分析">
 <meta name="twitter:description" content="python数据分析基础，Numpy、Pandas、数据采集清洗集成变换、数据可视化">
@@ -473,7 +473,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-28 14:03:42" itemprop="dateModified" datetime="2020-05-28T14:03:42+08:00">2020-05-28</time>
+                <time title="修改时间：2020-07-05 18:51:20" itemprop="dateModified" datetime="2020-07-05T18:51:20+08:00">2020-07-05</time>
               </span>
             
           
@@ -1499,7 +1499,7 @@
 </tr>
 <tr>
 <td></td>
-<td>method：可选值为{‘pearson’, ‘kendall’, ‘spearman’}<br>pearson：Pearson相关系数来衡量两个数据集合是否在一条线上面，即针对线性数据的相关系数计算，针对非线性数据便会有误差。<br>kendall：用于反映分类变量相关性的指标，即针对无序序列的相关系数，非正太分布的数据<br>spearman：非线性的，非正太分析的数据的相关系数<br>min_periods：样本最少的数据量</td>
+<td>method：可选值为{‘pearson’, ‘kendall’, ‘spearman’}，默认pearson<br>pearson：Pearson相关系数来衡量两个数据集合是否在一条线上面，即针对线性数据的相关系数计算，针对非线性数据便会有误差。线性关系、连续变量、正态分布<br>spearman：非线性的，非正态分析的连续数据的相关系数<br>kendall：用于反映分类变量相关性的指标，即针对有序分类序列的相关系数，非正态分布的数据<br>min_periods：样本最少的数据量</td>
 </tr>
 <tr>
 <td></td>
@@ -2933,6 +2933,10 @@
 
 <img src="//mangosTeeN96.github.io/2019/12/28/python数据分析/43.png" alt="43" style="zoom:50%;">
 
+<p>关于箱线图检测异常值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">catering_sale = <span class="string">'../data/catering_sale.xls'</span> <span class="comment"># 餐饮数据</span></span><br><span class="line">data = pd.read_excel(catering_sale, index_col = <span class="string">u'日期'</span>) <span class="comment"># 读取数据，指定“日期”列为索引列</span></span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt <span class="comment"># 导入图像库</span></span><br><span class="line"><span class="comment"># plt.rcParams['font.sans-serif'] = ['SimHei'] # 用来正常显示中文标签</span></span><br><span class="line"><span class="comment"># plt.rcParams['axes.unicode_minus'] = False # 用来正常显示负号</span></span><br><span class="line"></span><br><span class="line">plt.figure() <span class="comment"># 建立图像</span></span><br><span class="line">p = data.boxplot(return_type=<span class="string">'dict'</span>) <span class="comment"># 画箱线图，直接使用DataFrame的方法</span></span><br><span class="line">x = p[<span class="string">'fliers'</span>][<span class="number">0</span>].get_xdata() <span class="comment"># 'flies'即为异常值的标签</span></span><br><span class="line">y = p[<span class="string">'fliers'</span>][<span class="number">0</span>].get_ydata()</span><br><span class="line">y.sort() <span class="comment"># 从小到大排序，该方法直接改变原对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#用annotate添加注释</span></span><br><span class="line"><span class="comment">#其中有些相近的点，注解会出现重叠，难以看清，需要一些技巧来控制。</span></span><br><span class="line"><span class="comment">#以下参数都是经过调试的，需要具体问题具体调试。</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(x)):</span><br><span class="line">  <span class="keyword">if</span> i&gt;<span class="number">0</span>:</span><br><span class="line">    plt.annotate(y[i], xy = (x[i],y[i]), xytext=(x[i]+<span class="number">0.05</span> <span class="number">-0.8</span>/(y[i]-y[i<span class="number">-1</span>]),y[i]))</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    plt.annotate(y[i], xy = (x[i],y[i]), xytext=(x[i]+<span class="number">0.08</span>,y[i]))</span><br><span class="line"></span><br><span class="line">plt.show() <span class="comment">#展示箱线图</span></span><br></pre></td></tr></table></figure>
+
+<p>1</p>
 <h4 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h4><p>饼图是常用的统计学模块，可以显示每个部分大小与总和之间的比例。在Python数据可视化中，它用的不算多。我们主要采用Matplotlib的pie函数实现它。</p>
 <table>
 <thead>
@@ -3145,7 +3149,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3174,7 +3178,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3215,9 +3221,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3247,16 +3251,7 @@
                   
                     
                   
-                  <a href="mailto:mangosteen1996@gmail.com" title="Mail &rarr; mailto:mangosteen1996@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.weibo.com/u/5311979032?topnav=1&wvr=6&topsug=1" title="Weibo &rarr; https://www.weibo.com/u/5311979032?topnav=1&wvr=6&topsug=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                  <a href="mailto:tiansj0810@163.com" title="Mail &rarr; mailto:tiansj0810@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
                 </span>
               
             </div>
@@ -3265,6 +3260,20 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                作品链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" title="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" rel="noopener" target="_blank">tianchi</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
