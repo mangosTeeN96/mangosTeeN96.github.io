@@ -63,7 +63,7 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>面试</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -106,6 +106,9 @@
       <categories>
         <category>java</category>
       </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java_List、Set、Map集合]]></title>
@@ -115,7 +118,7 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>集合</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -126,7 +129,7 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>集合</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -148,8 +151,7 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>继承与多态</tag>
-        <tag>接口</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
