@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.2',
+    sidebar: {"position":"left","width":280,"display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="利用sql对淘宝用户行为数据进行分析，通过用户行为分析业务问题，提供针对性的运营策略。">
+<meta name="keywords" content="数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL分析电商用户行为">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/index.html">
+<meta property="og:site_name" content="MangosTeen">
+<meta property="og:description" content="利用sql对淘宝用户行为数据进行分析，通过用户行为分析业务问题，提供针对性的运营策略。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/%E5%AF%BC%E5%9B%BE.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/uv.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/behavior.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/复购率.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/漏斗.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/漏斗模型.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/漏斗模型2.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/每日行为.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/每日行为图.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/日历.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/每时用户行为表.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/每时用户行为.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/销量.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/浏览次数.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/拼接.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/浏览购买.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/购买数商品量.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/购买量.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/R.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/F.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/用户分层.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/用户占比.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/高价值.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/高价值图.png">
+<meta property="og:updated_time" content="2020-08-10T06:12:17.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL分析电商用户行为">
+<meta name="twitter:description" content="利用sql对淘宝用户行为数据进行分析，通过用户行为分析业务问题，提供针对性的运营策略。">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2020/03/29/SQL分析电商用户行为/1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SQL分析电商用户行为 | MangosTeen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MangosTeen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL分析电商用户行为
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-29 14:04:27" itemprop="dateCreated datePublished" datetime="2020-03-29T14:04:27+08:00">2020-03-29</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-08-10 14:12:17" itemprop="dateModified" datetime="2020-08-10T14:12:17+08:00">2020-08-10</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+            <div class="post-description">利用sql对淘宝用户行为数据进行分析，通过用户行为分析业务问题，提供针对性的运营策略。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="数据分析：SQL分析淘宝用户行为"><a href="#数据分析：SQL分析淘宝用户行为" class="headerlink" title="数据分析：SQL分析淘宝用户行为"></a>数据分析：SQL分析淘宝用户行为</h1><h2 id="一、项目背景及目的"><a href="#一、项目背景及目的" class="headerlink" title="一、项目背景及目的"></a>一、项目背景及目的</h2><h3 id="1-1-项目背景"><a href="#1-1-项目背景" class="headerlink" title="1.1 项目背景"></a>1.1 项目背景</h3><p>移动互联网企业从粗放式到精细化运营管理过程中，需要结合市场、渠道、用户行为等数据分析，对用户开展有针对性的运营活动，提供个性化、差异化的运营策略，以实现运营业务指标。</p>
+<p>本项目利用sql对淘宝用户行为数据进行分析，通过用户行为分析业务问题，提供针对性的运营策略。</p>
+<h3 id="1-2-项目目的"><a href="#1-2-项目目的" class="headerlink" title="1.2 项目目的"></a>1.2 项目目的</h3><p>本次分析的目的是想通过对淘宝用户行为数据分析，为以下问题提供解释和改进建议：</p>
+<ol>
+<li>（常见指标）分析用户使用APP过程中的<strong>常见电商分析指标</strong>，建立用户行为转化漏斗模型，确定各个环节的流失率，找到需要改进的环节</li>
+<li>（时间维度）研究用户在<strong>不同时间尺度下</strong>的行为规律，找到用户在不同时间周期下的活跃规律，在用户活跃时间点推出相应营销策略</li>
+<li>（商品维度）找到用户对<strong>不同种类商品</strong>的偏好，找到针对不同商品的营销策略</li>
+<li>（用户维度）找出最具价值的<strong>核心付费用户群</strong>，对这部分用户的行为进行分析</li>
+</ol>
+<h3 id="1-3-数据集来源与介绍"><a href="#1-3-数据集来源与介绍" class="headerlink" title="1.3 数据集来源与介绍"></a>1.3 数据集来源与介绍</h3><ul>
+<li><p>数据集来自阿里云天池：<a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=649&userId=1" target="_blank" rel="noopener">数据链接</a></p>
+</li>
+<li><p>本数据集包含了2017年11月25日至2017年12月3日之间，有行为的约一百万随机用户的所有行为（行为包括点击、购买、加购、喜欢）。数据集的组织形式和MovieLens-20M类似，即数据集的每一行表示一条用户行为，由用户ID、商品ID、商品类目ID、行为类型和时间戳组成，并以逗号分隔。关于数据集中每一列的详细描述如下：</p>
+<table>
+<thead>
+<tr>
+<th>列名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户ID</td>
+<td>整数类型，序列化后的用户ID</td>
+</tr>
+<tr>
+<td>商品ID</td>
+<td>整数类型，序列化后的商品ID</td>
+</tr>
+<tr>
+<td>商品类目ID</td>
+<td>整数类型，序列化后的商品所属类目ID</td>
+</tr>
+<tr>
+<td>行为类型</td>
+<td>字符串，枚举类型，包括(‘pv’, ‘buy’, ‘cart’, ‘fav’)</td>
+</tr>
+<tr>
+<td>时间戳</td>
+<td>行为发生的时间戳</td>
+</tr>
+</tbody></table>
+<p>注意到，用户行为类型共有四种，它们分别是</p>
+<table>
+<thead>
+<tr>
+<th>行为类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pv</td>
+<td>商品详情页pv，等价于点击</td>
+</tr>
+<tr>
+<td>buy</td>
+<td>商品购买</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>将商品加入购物车</td>
+</tr>
+<tr>
+<td>fav</td>
+<td>收藏商品</td>
+</tr>
+</tbody></table>
+<p>关于数据集大小的一些说明如下</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户数量</td>
+<td>987,994</td>
+</tr>
+<tr>
+<td>商品数量</td>
+<td>4,162,024</td>
+</tr>
+<tr>
+<td>商品类目数量</td>
+<td>9,439</td>
+</tr>
+<tr>
+<td>所有行为数量</td>
+<td>100,150,807</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="二、数据导入"><a href="#二、数据导入" class="headerlink" title="二、数据导入"></a>二、数据导入</h2><p>两种导入方式：</p>
+<ul>
+<li>1、使用图形界面工具导入，例如Navicat（操作简单）</li>
+<li>2、cmd中以系统命令行导入（速度更快)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> taobao <span class="keyword">charset</span>=utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> taobao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>( </span><br><span class="line">  user_id <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, </span><br><span class="line">  item <span class="built_in">int</span>, </span><br><span class="line">  <span class="keyword">category</span> <span class="built_in">int</span>, </span><br><span class="line">  behavior <span class="built_in">varchar</span>(<span class="number">20</span>), </span><br><span class="line">  <span class="built_in">time</span> <span class="built_in">int</span>);</span><br><span class="line">  </span><br><span class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">infile</span> <span class="string">"/Users/tiansaijun/UserBehavior.csv"</span> </span><br><span class="line"><span class="keyword">into</span> <span class="keyword">table</span> <span class="keyword">user</span> </span><br><span class="line"><span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">","</span> </span><br><span class="line"><span class="keyword">lines</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">"\n"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>导入时报错，解决办法：</p>
+<p><a href="https://blog.csdn.net/m0_46668245/article/details/106544383?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase" target="_blank" rel="noopener">ERROR 3948 (42000)</a></p>
+<p><a href="https://blog.csdn.net/qq_43827595/article/details/104573032" target="_blank" rel="noopener">Mac mysql8.0版本添加配置文件my.cnf</a></p>
+<p>数据有100150807条，选取1000000进行实验</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> userbehavior(<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">limit</span> <span class="number">1000000</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、数据清洗"><a href="#三、数据清洗" class="headerlink" title="三、数据清洗"></a>三、数据清洗</h2><h3 id="3-1-删除重复值"><a href="#3-1-删除重复值" class="headerlink" title="3.1 删除重复值"></a>3.1 删除重复值</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计重复值</span></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id,item,<span class="keyword">category</span>,<span class="built_in">time</span></span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">count</span>(user_id)&gt;<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Empty set</p>
+<p>从查询结果可知，数据中不存在重复记录。</p>
+<h3 id="3-2-查看缺失值"><a href="#3-2-查看缺失值" class="headerlink" title="3.2 查看缺失值"></a>3.2 查看缺失值</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计缺失值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(user_id),<span class="keyword">count</span>(item),<span class="keyword">count</span>(<span class="keyword">category</span>),<span class="keyword">count</span>(behavior),<span class="keyword">count</span>(<span class="built_in">time</span>)</span><br><span class="line"><span class="keyword">FROM</span> userbehavior;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+----------------+-------------+-----------------+-----------------+-------------+</span><br><span class="line">| count(user_id) | count(item) | count(category) | count(behavior) | count(time) |</span><br><span class="line">+----------------+-------------+-----------------+-----------------+-------------+</span><br><span class="line">|        1000000 |     1000000 |         1000000 |         1000000 |     1000000 |</span><br><span class="line">+----------------+-------------+-----------------+-----------------+------------</span><br></pre></td></tr></table></figure>
+
+<p>从查询结果来看，不存在缺失值，数据质量高。</p>
+<h3 id="3-3-时间格式转换"><a href="#3-3-时间格式转换" class="headerlink" title="3.3 时间格式转换"></a>3.3 时间格式转换</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 新增date、hour时间字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> userbehavior</span><br><span class="line"><span class="keyword">ADD</span> <span class="built_in">date</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">hour</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>); </span><br><span class="line"><span class="comment">-- 时间格式转换(此处time存储值是时间戳)</span></span><br><span class="line"><span class="keyword">UPDATE</span> userbehavior <span class="keyword">SET</span> <span class="built_in">date</span> = FROM_UNIXTIME(<span class="built_in">time</span>,<span class="string">"%Y-%m-%d"</span>);</span><br><span class="line"><span class="keyword">UPDATE</span> userbehavior <span class="keyword">SET</span> <span class="keyword">hour</span> = FROM_UNIXTIME(<span class="built_in">time</span>,<span class="string">"%H"</span>);</span><br><span class="line"><span class="keyword">UPDATE</span> userbehavior <span class="keyword">SET</span> <span class="built_in">time</span> = FROM_UNIXTIME(<span class="built_in">time</span>);</span><br></pre></td></tr></table></figure>
+
+<p>最后一句报错，因为创建表的时候time为int，超出长度了，改为bigint，再转换</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`taobao`</span>.<span class="string">`userbehavior`</span> </span><br><span class="line"><span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> <span class="string">`time`</span> <span class="built_in">bigint</span>(<span class="number">0</span>) <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">AFTER</span> <span class="string">`behavior`</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 调整一下time字段数据的样式</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`taobao`</span>.<span class="string">`userbehavior`</span> </span><br><span class="line"><span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> <span class="string">`time`</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">AFTER</span> <span class="string">`behavior`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> userbehavior <span class="keyword">SET</span> <span class="built_in">time</span> = <span class="keyword">DATE_FORMAT</span>(<span class="built_in">time</span>,<span class="string">"%Y-%m-%d %H:%i:%s"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/1.png" alt="1"></p>
+<h3 id="3-4-过滤异常值"><a href="#3-4-过滤异常值" class="headerlink" title="3.4 过滤异常值"></a>3.4 过滤异常值</h3><p>由于数据集时间范围为2017-11-25至2017-12-3，因此需要对不在该时间范围内的异常数据进行过滤。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 筛选异常数据</span></span><br><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">date</span> &lt; <span class="string">'2017-11-25'</span> <span class="keyword">or</span> <span class="built_in">date</span> &gt; <span class="string">'2017-12-03'</span>;</span><br><span class="line"><span class="comment"># 过滤异常数据</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">date</span> &lt; <span class="string">'2017-11-25'</span> <span class="keyword">or</span> <span class="built_in">date</span> &gt; <span class="string">'2017-12-03'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>过滤掉470条数据</p>
+<h2 id="四、数据分析"><a href="#四、数据分析" class="headerlink" title="四、数据分析"></a>四、数据分析</h2><ul>
+<li>分析框架</li>
+</ul>
+<p><img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/%E5%AF%BC%E5%9B%BE.png" alt="导图"></p>
+<h3 id="4-1-基于用户行为转化漏斗模型分析用户行为"><a href="#4-1-基于用户行为转化漏斗模型分析用户行为" class="headerlink" title="4.1 基于用户行为转化漏斗模型分析用户行为"></a>4.1 基于用户行为转化漏斗模型分析用户行为</h3><h4 id="4-1-1-常见电商指标分析"><a href="#4-1-1-常见电商指标分析" class="headerlink" title="4.1.1 常见电商指标分析"></a>4.1.1 常见电商指标分析</h4><h5 id="UV、PV、PV-UV"><a href="#UV、PV、PV-UV" class="headerlink" title="UV、PV、PV/UV"></a>UV、PV、PV/UV</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- UV、PV、UV/PV指标统计</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> UV,</span><br><span class="line">	   	 <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> PV,</span><br><span class="line">	     <span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>)/<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> <span class="string">'PV/UV'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> behavior,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> userbehavior <span class="keyword">GROUP</span> <span class="keyword">BY</span> behavior;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/uv.png" alt="uv" style="zoom: 67%;">
+
+<p>访问用户总数（UV，user view）：9739<br>页面总访问量（PV，page view）：895636<br>9天时间内平均每人页面访问量（PV/UV）：约为92次</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/behavior.png" alt="uv" style="zoom: 67%;">
+
+<h5 id="复购率"><a href="#复购率" class="headerlink" title="复购率"></a>复购率</h5><ul>
+<li><p>复购率定义：在某时间窗口内重复消费用户（消费两次及以上的用户）在总消费用户中占比</p>
+<p>重复消费用户的定义，又分为两种：</p>
+<p>（1）按天非去重，即一个用户一天产生多笔付款交易，则算重复消费用户。</p>
+<p>（2）按天去重，即一个用户一天产生多笔交易付款，只算一次消费，除非在统计周期内另外一天也有消费，才算重复消费用户。</p>
+<p>按天非去重，是目前b2c网站统计数据常用计算方法，相对计算出来的重复购买率要高于第二种</p>
+</li>
+</ul>
+<p>复购率与回购率不同</p>
+<ul>
+<li>回购率定义：是某一个时间窗口内消费的用户，在下一个时间窗口仍旧消费的占比。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 复购率，先计算每个用户的购买次数buy_amount，所有人为购买总人数，buy_amount&gt;1的是复购人数</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="keyword">SUM</span>(<span class="keyword">case</span> <span class="keyword">when</span> buy_amount &gt; <span class="number">1</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'复购总人数'</span>,</span><br><span class="line"><span class="keyword">COUNT</span>(user_id) <span class="keyword">as</span> <span class="string">'消费人数'</span>,</span><br><span class="line"><span class="keyword">SUM</span>(<span class="keyword">case</span> <span class="keyword">when</span> buy_amount &gt; <span class="number">1</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>)/<span class="keyword">COUNT</span>(user_id) <span class="keyword">as</span> <span class="string">'复购率'</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> user_id,behavior,<span class="keyword">COUNT</span>(behavior) <span class="keyword">as</span> buy_amount</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior = <span class="string">'buy'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id) a;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/复购率.png" alt="复购率" style="zoom:67%;">
+
+<p>从结果来看，复购率高达66.21%，反映淘宝的用户忠诚度较高。</p>
+<h5 id="跳失率"><a href="#跳失率" class="headerlink" title="跳失率"></a>跳失率</h5><ul>
+<li>跳失率定义：仅仅访问了单个页面的用户占全部访问用户的百分比，或者指从首页离开网站的用户占所有访问用户的百分比。</li>
+<li>跳出率可以反映用户对APP/网站内容的认可程度，或者说网站/APP是否对用户有吸引力。网站/APP的内容是否能够对用户有所帮助留住用户也直接可以在跳出率中看出来，所以跳出率是衡量网站/APP内容质量的重要标准。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 跳出率</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">as</span> <span class="string">"仅访问页面一次的人数"</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> user_id,<span class="keyword">COUNT</span>(behavior)</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(behavior)=<span class="number">1</span></span><br><span class="line">) a;</span><br></pre></td></tr></table></figure>
+
+<p>结果为0</p>
+<p>统计结果表明，9天时间内，没有一名用户仅浏览一次页面就离开淘宝，跳失率为0。反映出商品或者商品详情页的内容对于用户具有足够的吸引力，让用户在淘宝驻留。</p>
+<h4 id="4-1-2-用户行为转化漏斗模型分析"><a href="#4-1-2-用户行为转化漏斗模型分析" class="headerlink" title="4.1.2 用户行为转化漏斗模型分析"></a>4.1.2 用户行为转化漏斗模型分析</h4><p>漏斗分析模型已经广泛应用于各行业的数据分析工作中，用以评估总体<strong>转化率</strong>、各个环节的转化率，以科学评估促销专题活动效果等，通过与其他数据分析模型结合进行深度用户行为分析，从而找到用户流失的原因，以提升用户量、活跃度、留存率，并提升数据分析与决策的科学性等。</p>
+<ul>
+<li>AARRR模型（海盗模型、漏斗模型）：Acquisition(获取)、Activation(活跃)、Retention(留存)、Revenue(收益)、Refer(传播)</li>
+<li>电商行业转化率算法</li>
+</ul>
+<blockquote>
+<p>电商行业转化率算法</p>
+<p>利润=销售额                                                              X净利润率<br>     =购买人数                                           X客单价 X净利润率<br>     =进店人数                      X购买转化率X客单价 X净利润率<br>        =广告展现X广告转化率X购买转化率X客单价 X净利润率<br>        =推广展现X推广转化率X购买转化率X客单价 X净利润率<br>        =搜索展现X搜索转化率X购买转化率X客单价 X净利润率<br>        =*<strong><strong>X*</strong></strong>转化率  X购买转化率X客单价 X净利润率</p>
+</blockquote>
+<ul>
+<li>常用漏斗模型：<strong>首页—商品详情页—加入购物车—提交订单—支付订单</strong></li>
+<li>本数据集只包含商品详情页（pv）、加入购物车（cart）、支付订单（buy）数据，因此将漏斗模型简化为：<strong>商品详情页—加入购物车—支付订单</strong>。</li>
+</ul>
+<p>用户总行为（PV）的转化漏斗</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 用户总行为漏斗</span></span><br><span class="line"><span class="keyword">SELECT</span> behavior,<span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> behavior</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> behavior <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/漏斗.png" alt="漏斗" style="zoom:67%;">
+
+<p>用户总行为转化漏斗图：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/漏斗模型.png" alt="漏斗" style="zoom: 40%;">
+
+<p>独立访客（UV）的转化漏斗</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 独立访客转化漏斗</span></span><br><span class="line"><span class="keyword">SELECT</span> behavior,<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id)</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> behavior</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> behavior <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/漏斗模型2.png" alt="漏斗" style="zoom: 40%;">
+
+<p>综合用户总行为转化漏斗图与独立访客转化漏斗图，可以发现：</p>
+<ul>
+<li>（1）从浏览商品详情页PV到有购买意向只有6.19%的转化率，但从浏览商品详情页UV到有购买意向有75.46%的转化率，说明用户在购买商品前会大量的去点击浏览商品详情页（pv/buy=895636/20359=44次）进行对比筛选，这一环节是指标提升的重点环节，尽量做到精准推荐，减少用户寻找信息的成本。</li>
+<li>（2）支付订单用户数占浏览商品详情页用户数的68.92%，反映淘宝APP用户购买转化率较高，即淘宝APP上的商品能满足绝大部分用户的购买需求。</li>
+</ul>
+<p>针对上述环节改善转化率的建议：</p>
+<ul>
+<li>（1）优化电商平台的搜索匹配度和推荐策略，主动根据用户喜好推荐相关的商品，优化商品搜索的准确度和聚合能力，对搜索结果排序优先级进行优化。</li>
+<li>（2）在商品详情页的展示上突出用户关注的重点信息，精简信息流的呈现方式，减少用户寻找信息的成本。</li>
+</ul>
+<h3 id="4-2-从时间维度分析用户行为"><a href="#4-2-从时间维度分析用户行为" class="headerlink" title="4.2 从时间维度分析用户行为"></a>4.2 从时间维度分析用户行为</h3><h4 id="4-2-1-每天的用户行为分析"><a href="#4-2-1-每天的用户行为分析" class="headerlink" title="4.2.1 每天的用户行为分析"></a>4.2.1 每天的用户行为分析</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 每天的用户行为分析</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="built_in">date</span>,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> <span class="string">'每日用户数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'浏览数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'cart'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'加购数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'fav'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'收藏数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'buy'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'购买数'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/每日行为.png" alt="每日行为" style="zoom:50%;">
+
+<p>每日用户行为数据变化：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/每日行为图.png" alt="每日行为图" style="zoom:50%;">
+
+<p>在2017年11月25日-2017年12月3日统计窗口内，11月25-26日与12月2-3日为周末。</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/日历.png" alt="日历" style="zoom: 67%;">
+
+<p>通过每日用户行为数据变化曲线可以分析：11月25日至12月1日，数据波动变化范围很小，在12月2-3日（周末），各项数据指标明显上涨，高于前7天的各项数据指标。由于在上一个周末（11月25-26日）的各项数据指标并未存在明显涨幅，因此推测在12月2-3日数据指标上涨可能与淘宝双12预热活动相关。</p>
+<h4 id="4-2-2-每时的用户行为分析"><a href="#4-2-2-每时的用户行为分析" class="headerlink" title="4.2.2 每时的用户行为分析"></a>4.2.2 每时的用户行为分析</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 每时的用户行为分析</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">hour</span>,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> user_id) <span class="keyword">as</span> <span class="string">'每时用户数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'浏览数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'cart'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'加购数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'fav'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'收藏数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'buy'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'购买数'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">hour</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/每时用户行为表.png" alt="每时用户行为表" style="zoom:50%;">
+
+<p>每时用户行为数据变化：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/每时用户行为.png" alt="每时用户行为表" style="zoom:40%;">
+
+<p>结果显示：在凌晨2-5点左右，各项数据指标进入低谷期；在9-18点之间，数据呈现一个小高峰，波动变化较小；在20-23点间，各数据指标呈现一个大高峰，并且在21点左右达到每日数据最大峰值，数据的变化趋势比较符合正常用户的作息规律。在制定运营策略时，可以利用这个规律来进行创收，选择在每天用户最活跃的时间段推出各种网店直播、直播带货等互动营销手段。</p>
+<h3 id="4-3-从商品维度分析用户行为"><a href="#4-3-从商品维度分析用户行为" class="headerlink" title="4.3 从商品维度分析用户行为"></a>4.3 从商品维度分析用户行为</h3><p>关于“受欢迎”的商品，可以从销量与浏览量两个维度（用户行为）去分析。但有的浏览量高的商品可能是因为被页面或广告等吸引而来，或者只是感兴趣，用户并不一定会购买；而销量高的产品有可能是用户真正需要的，搜索和点击购买的目标也比较明确。因此需要同时结合销量与浏览量两个维度去进行分析。</p>
+<h4 id="4-3-1-商品排行榜分析"><a href="#4-3-1-商品排行榜分析" class="headerlink" title="4.3.1 商品排行榜分析"></a>4.3.1 商品排行榜分析</h4><h5 id="商品销量排行榜前10"><a href="#商品销量排行榜前10" class="headerlink" title="商品销量排行榜前10"></a>商品销量排行榜前10</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 商品销量排行榜前10</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">item,</span><br><span class="line"><span class="keyword">count</span>(behavior) <span class="keyword">as</span> <span class="string">'销量'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'buy'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> item</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> 销量 <span class="keyword">desc</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/销量.png" alt="销量" style="zoom:50%;">
+
+<p>从商品销量排行榜可以发现，在被下单的17565件商品中，单个商品销量最多不超过17次，且仅有5件商品销量超过10次，反映出在分析的数据集中，并没有出现卖的比较火爆的商品。</p>
+<h5 id="商品浏览量排行榜前10"><a href="#商品浏览量排行榜前10" class="headerlink" title="商品浏览量排行榜前10"></a>商品浏览量排行榜前10</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 商品浏览量排行榜前10</span></span><br><span class="line"><span class="keyword">SELECT</span> item, <span class="keyword">count</span>(behavior) <span class="keyword">as</span> <span class="string">'浏览次数'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'pv'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> item </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">count</span>(behavior) <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">limit</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/浏览次数.png" alt style="zoom:50%;">
+
+<p>对销量前10与浏览量前10的商品进行表连接：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 商品销量top10</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> a <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">item,</span><br><span class="line"><span class="keyword">count</span>(behavior) <span class="keyword">as</span> <span class="string">'销量'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'buy'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> item</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> 销量 <span class="keyword">desc</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 商品浏览量排行榜前10</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> b <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> item, <span class="keyword">count</span>(behavior) <span class="keyword">as</span> <span class="string">'浏览次数'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'pv'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> item </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">count</span>(behavior) <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">limit</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.item,a.销量,b.浏览次数 <span class="keyword">FROM</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> b <span class="keyword">ON</span> a.item=b.item;</span><br><span class="line"><span class="comment">-- 这里用的视图，不使用直接子查询也是可以的</span></span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/拼接.png" alt="拼接" style="zoom: 67%;">
+
+<p>结果显示：商品销量榜单与商品浏览量榜单之间对应性差（仅有2件商品销量与浏览量同时进入前20榜单），反映浏览量高的商品其销量不一定高，销量高的商品其浏览量不一定高，因此需要同时结合销量与浏览量两个维度去进行分析。下面将以商品浏览量和销量两个维度指标来对商品进行四象限划分，分析不同类型商品对应的用户行为，并提出相应的改进措施。</p>
+<h4 id="4-3-2-商品四象限划分"><a href="#4-3-2-商品四象限划分" class="headerlink" title="4.3.2 商品四象限划分"></a>4.3.2 商品四象限划分</h4><p>商品销量与浏览量两个维度的界限值分别选取3、20（需要根据实际业务场景来确定界限值），将商品按照销量与浏览量划分为四个象限：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/浏览购买.png" alt="浏览购买" style="zoom: 45%;">
+
+<p><strong>第Ⅰ象限：</strong> 商品浏览量与销量都高，说明商品购买转化率高，属于受用户欢迎的商品。</p>
+<ul>
+<li>改进措施：由于该象限内的商品有对应的市场，电商平台应该重点进行推送，并且可以多做活动，吸引更多的潜在用户。</li>
+</ul>
+<p><strong>第Ⅱ象限：</strong> 商品的销量高，但是浏览量较低。产生这种现象可能有以下两种原因（B端与C端两个角度）：<strong>一是</strong> 该象限内的商品可能属于某类特定群体的刚需产品，这类特定群体搜索和浏览的目标比较明确；<strong>二是</strong> 该象限内的商品受众广，但是引流入口数量少。</p>
+<ul>
+<li>改进措施：收集目前购买与浏览该象限内商品的用户信息，分析用户画像，并结合商品的特点，核实产品是否存在某类特征明显的消费群体。如果存在，则电商平台可以集中向该类特征消费用户进行定向推送、精准推送；如果不存在，则可以对该象限内商品的多做推广，提高曝光率，并增加引流入口，流量上来了，销量可能会有提升。</li>
+</ul>
+<p><strong>第Ⅲ象限：</strong> 商品的浏览量低，销量也低。原因主要需要从B端进行分析：<strong>一是</strong> 该象限内商品的引流入口数量；<strong>二是</strong> 该象限内商品是否符合用户的需求？对用户的吸引力如何？</p>
+<ul>
+<li>改进措施：需要根据具体原因对症下药。</li>
+</ul>
+<p><strong>第Ⅳ象限：</strong> 商品的浏览量高，但是销量偏低，商品购买转化率低。其原因也可以分为B/C端进行分析：<strong>在B端方面</strong>，是否是广告的投放人群或者商品的推送目标有问题，并没有获取到对应商品的目标用户；是否是商品的定价与定位的原因，价格太贵且不符合主流消费群体的胃口；是否是商品详情页的图片、描述以及商品的评价较差；是否是客服的服务不到位、APP操作更新流程复杂等因素。<strong>在C端方面</strong>，用户的消费能力可能会对商品的销量有影响。</p>
+<ul>
+<li>改进措施：需要根据具体原因对症下药。</li>
+</ul>
+<h4 id="4-3-4-“二八定律”or“长尾理论”分析"><a href="#4-3-4-“二八定律”or“长尾理论”分析" class="headerlink" title="4.3.4 “二八定律”or“长尾理论”分析"></a>4.3.4 “二八定律”or“长尾理论”分析</h4><p><strong>知识点：</strong></p>
+<p>（1）所谓的长尾商业模式，指的就是企业只要储备和营销渠道足够强大，那么那些销量不佳或需求不旺盛的产品所占据的市场份额，完全可以和大家眼中所认为的热卖品所占据的市场份额相媲美，甚至可以远远超越后者。这一商业模式的提出，同时也对传统的“二八定律”这一企业市场营销分析的理论造成了重大的冲击。</p>
+<p>在传统企业的营销理念中，“二八定律”曾长期作为“正统”的经济理论思想存在。从概念上讲，“二八定律”是指20%的客户能够占有80%的市场份额；或者也可以说是20%法品牌产品占据了80%的市场份额。因此在这一市场营销定律的指导下，人们常常认为企业80%的利润来自于20%的客户或者是20%的品牌产品。如此一来，企业的经营重点就放在了20%的客户或者是20%的品牌产品上面。</p>
+<p>长尾商业模式是在移动互联网时代所兴起的一种新颖商业营销方式，它在打破传统营销理念的同时，也能够很好地适应当今时代消费者“个性化、多元化”的市场需求。尤其是在产品产能广泛过剩的今天，过去那种认为只有通过标准化生产就能够抓住消费者消费需求的时代已经成为了历史，谁能够在“多元化、个性化”上下足功夫，把握住这一市场发展趋势，那么谁就可以抢占市场的商业先机，从而稳中求胜，实现企业发展的良好业绩。</p>
+<p>（2）<a href="https://www.zgbywl.com/news/351.html" target="_blank" rel="noopener">什么是互联网长尾效应</a></p>
+<p>按照商品销量对商品分类统计，即 统计不同购买次数的商品各有多少个（购买次数为1的商品有多少个、2有多少个……）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按照商品销量对商品进行分类统计</span></span><br><span class="line"><span class="keyword">SELECT</span> 购买数,<span class="keyword">count</span>(item) <span class="keyword">AS</span> <span class="string">'商品量'</span></span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line"><span class="keyword">SELECT</span> item,<span class="keyword">COUNT</span>(behavior) <span class="keyword">AS</span> <span class="string">'购买数'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'buy'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> item</span><br><span class="line">)c</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 购买数</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> 商品量 <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/购买数商品量.png" alt="购买数商品量" style="zoom: 50%;">
+
+<p>绘制不同销量对应商品量柱状图：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/购买量.png" alt="购买量" style="zoom:50%;">
+
+<p>根据不同销量对应商品量数据，在被下单的17565件商品中，只购买一次的商品有15536件，占下单总商品的88.45%，说明在互联网环境下，以淘宝为代表的电商平台，其商品售卖主要是依靠长尾商品的累计效应，并非爆款商品的带动。</p>
+<h3 id="4-4-基于RFM用户分层模型分析用户行为"><a href="#4-4-基于RFM用户分层模型分析用户行为" class="headerlink" title="4.4 基于RFM用户分层模型分析用户行为"></a>4.4 基于RFM用户分层模型分析用户行为</h3><h4 id="4-4-1-基于RFM模型的用户分层"><a href="#4-4-1-基于RFM模型的用户分层" class="headerlink" title="4.4.1 基于RFM模型的用户分层"></a>4.4.1 基于RFM模型的用户分层</h4><p>RFM模型：最近购买时间、消费频次、消费金额</p>
+<p>基于RFM模型进行用户分层分析，由于数据集中不包含订单金额，故本次分析中不考虑M维度，只分析R、F两个维度，对两个维度的指标进行分级打分,最终按照综合得分对用户分层。</p>
+<h5 id="R维度分析"><a href="#R维度分析" class="headerlink" title="R维度分析"></a>R维度分析</h5><p>计算用户的最近消费时间间隔R值（R值越小，说明用户最后消费时间越近），并对R值进行打分。根据R值结果，将其分为三个区间[0:2]，[3:5]以及[6:8]，分别赋予R_Score值3、2、1分。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- RFM模型——R维度分析</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> r_value <span class="keyword">as</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, <span class="keyword">min</span>(时间间隔) <span class="keyword">as</span> R</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(<span class="keyword">SELECT</span> user_id, <span class="keyword">DATEDIFF</span>(<span class="string">'2017-12-03'</span>,<span class="built_in">date</span>) <span class="keyword">as</span> <span class="string">'时间间隔'</span></span><br><span class="line">	<span class="keyword">FROM</span> userbehavior</span><br><span class="line">	<span class="keyword">WHERE</span> behavior=<span class="string">'buy'</span>) a </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 进行R维度打分</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, R,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">0</span> <span class="keyword">and</span> <span class="number">2</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">5</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">1</span> <span class="keyword">end</span> <span class="keyword">as</span> R_Score</span><br><span class="line"><span class="keyword">FROM</span> r_value</span><br><span class="line"><span class="comment">-- 得到user_id、R、R_Score表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 统计各分数人数</span></span><br><span class="line"><span class="keyword">SELECT</span> R_Score,<span class="keyword">count</span>(user_id)</span><br><span class="line"><span class="keyword">FROM</span>(</span><br><span class="line"><span class="keyword">SELECT</span> user_id, R,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">0</span> <span class="keyword">and</span> <span class="number">2</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">5</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">1</span> <span class="keyword">end</span> <span class="keyword">as</span> R_Score</span><br><span class="line"><span class="keyword">FROM</span> r_value</span><br><span class="line">)d</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> R_Score;</span><br></pre></td></tr></table></figure>
+
+<p>统计不同R_Score占比：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/R.png" alt="R" style="zoom:50%;">
+
+<p>从R_Score占比中可以发现，超过半数用户会在购物当天的后两天内就再次购买，可以看出淘宝已经成为人们的日常购物习惯。</p>
+<h5 id="F-维度分析"><a href="#F-维度分析" class="headerlink" title="F 维度分析"></a>F 维度分析</h5><p>计算用户的消费频率F值，并对F值进行打分。根据F值结果（最大值72次），将其分为6个区间[1:9]，[10:19]，[20:29]，[30:39]，[40:49]以及[50:72]，分别赋予F_Score值1、2、3、4、5、6分。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- RFM模型——F维度分析</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> f_value <span class="keyword">as</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, <span class="keyword">count</span>(behavior) <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> behavior=<span class="string">'buy'</span> </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">count</span>(behavior) <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 进行F维度打分</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, F,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">9</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">19</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">20</span> <span class="keyword">and</span> <span class="number">29</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">30</span> <span class="keyword">and</span> <span class="number">39</span> <span class="keyword">then</span> <span class="number">4</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">40</span> <span class="keyword">and</span> <span class="number">49</span> <span class="keyword">then</span> <span class="number">5</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">6</span> <span class="keyword">end</span> <span class="keyword">as</span> F_Score</span><br><span class="line"><span class="keyword">FROM</span> f_value</span><br><span class="line"></span><br><span class="line"><span class="comment">--统计不同F_Score占比</span></span><br><span class="line"><span class="keyword">SELECT</span> F_Score,<span class="keyword">count</span>(user_id)</span><br><span class="line"><span class="keyword">FROM</span>(</span><br><span class="line"><span class="keyword">SELECT</span> user_id, F,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">9</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">19</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">20</span> <span class="keyword">and</span> <span class="number">29</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">30</span> <span class="keyword">and</span> <span class="number">39</span> <span class="keyword">then</span> <span class="number">4</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">40</span> <span class="keyword">and</span> <span class="number">49</span> <span class="keyword">then</span> <span class="number">5</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">6</span> <span class="keyword">end</span> <span class="keyword">as</span> F_Score</span><br><span class="line"><span class="keyword">FROM</span> f_value</span><br><span class="line">)e</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> F_Score;</span><br></pre></td></tr></table></figure>
+
+<p>统计不同F_Score占比：</p>
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/F.png" alt="F" style="zoom:50%;">
+
+<p>从R_Score占比中可以发现，在统计窗口的9天时间内，96.76%的用户在淘宝平台消费1-9次。</p>
+<h5 id="用户分层"><a href="#用户分层" class="headerlink" title="用户分层"></a>用户分层</h5><p>RF综合打分：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 进行R维度打分</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> r_score <span class="keyword">as</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, R,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">0</span> <span class="keyword">and</span> <span class="number">2</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> R <span class="keyword">BETWEEN</span> <span class="number">3</span> <span class="keyword">and</span> <span class="number">5</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">1</span> <span class="keyword">end</span> <span class="keyword">as</span> R_Score</span><br><span class="line"><span class="keyword">FROM</span> r_value</span><br><span class="line"><span class="comment">-- 进行F维度打分</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> f_score <span class="keyword">as</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, F,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">9</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">19</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">20</span> <span class="keyword">and</span> <span class="number">29</span> <span class="keyword">then</span> <span class="number">3</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">30</span> <span class="keyword">and</span> <span class="number">39</span> <span class="keyword">then</span> <span class="number">4</span></span><br><span class="line">	<span class="keyword">when</span> F <span class="keyword">BETWEEN</span> <span class="number">40</span> <span class="keyword">and</span> <span class="number">49</span> <span class="keyword">then</span> <span class="number">5</span></span><br><span class="line">	<span class="keyword">else</span> <span class="number">6</span> <span class="keyword">end</span> <span class="keyword">as</span> F_Score</span><br><span class="line"><span class="keyword">FROM</span> f_value</span><br><span class="line"><span class="comment">-- RF综合打分</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> rf_score <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">SELECT</span> a.user_id, a.R_Score, b.F_Score, a.R_Score+b.F_Score <span class="keyword">as</span> RF_Score</span><br><span class="line"><span class="keyword">FROM</span> r_score a <span class="keyword">JOIN</span> f_score b <span class="keyword">on</span> a.user_id=b.user_id</span><br></pre></td></tr></table></figure>
+
+<p>根据RF_Score值，对用户进行分层：划分为2-3分，4-5分，6-7分，8-9分四个等级，分别对应易流失用户、挽留用户、发展用户、忠诚用户。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 用户分层</span></span><br><span class="line"><span class="keyword">SELECT</span> *,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">and</span> <span class="number">3</span> <span class="keyword">then</span> <span class="string">'易流失用户'</span></span><br><span class="line">	<span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">4</span> <span class="keyword">and</span> <span class="number">5</span> <span class="keyword">then</span> <span class="string">'挽留用户'</span></span><br><span class="line">	<span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">6</span> <span class="keyword">and</span> <span class="number">7</span> <span class="keyword">then</span> <span class="string">'发展用户'</span></span><br><span class="line">	<span class="keyword">else</span> <span class="string">'忠诚用户'</span> <span class="keyword">end</span> <span class="keyword">as</span> <span class="string">'用户分层'</span></span><br><span class="line"><span class="keyword">FROM</span> rf_score</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 统计不同类型用户占比</span></span><br><span class="line"><span class="keyword">SELECT</span> 用户分层,<span class="keyword">count</span>(user_id)</span><br><span class="line"><span class="keyword">FROM</span>(</span><br><span class="line"><span class="keyword">SELECT</span> *,</span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">and</span> <span class="number">3</span> <span class="keyword">then</span> <span class="string">'易流失用户'</span></span><br><span class="line">	<span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">4</span> <span class="keyword">and</span> <span class="number">5</span> <span class="keyword">then</span> <span class="string">'挽留用户'</span></span><br><span class="line">	<span class="keyword">when</span> RF_Score <span class="keyword">BETWEEN</span> <span class="number">6</span> <span class="keyword">and</span> <span class="number">7</span> <span class="keyword">then</span> <span class="string">'发展用户'</span></span><br><span class="line">	<span class="keyword">else</span> <span class="string">'忠诚用户'</span> <span class="keyword">end</span> <span class="keyword">as</span> <span class="string">'用户分层'</span></span><br><span class="line"><span class="keyword">FROM</span> rf_score</span><br><span class="line">)g</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> 用户分层;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/用户分层.png" alt="用户分层" style="zoom:50%;">
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/用户占比.png" alt="用户占比" style="zoom: 67%;">
+
+<p>用户分层结果：</p>
+<ul>
+<li>重点挽留用户的比例最高，而且这部分客户给平台带来的潜在价值也很大，应该对这部分用户进行定期上新提醒、价格激励、订单搭配推荐等措施，留住用户并提高其消费频次；</li>
+<li>易流失用户占比也相对较高，这部分客户可能已经找到替代品或对该公司产品不感兴趣了，可采取价格激励、发放优惠券等方式进行流失召回；</li>
+<li>忠诚用户占比最少，这部分用户属于平台的 <strong>高价值用户</strong>，需要制定相应的运营策略来保持用户粘性；</li>
+<li>重点发展用户占比也较低，对这部分用户发送提醒或促销活动邮件、促进其消费频次。</li>
+</ul>
+<p><strong>用户分层效果分析：</strong> 从不同用户占比上来看，本次用户分层的效果不佳，可能有以下两个方面原因：1、两个维度的打分区间划分的不合理，并没有用户很好的分开，应该在做区间划分时提前看一下各维度的用户分布情况，结合实际业务场景需求，去确定区间界限值；2、两个维度划分的区间数不一致，且赋予的分值区间差异较大，这种操作其实相当于给两个维度赋予了不同的比重。<br>在本次用户分层中，可能采取RF两个维度的四象限划分更简单明了，且效果会更好。</p>
+<h4 id="4-4-2-高价值用户行为分析"><a href="#4-4-2-高价值用户行为分析" class="headerlink" title="4.4.2 高价值用户行为分析"></a>4.4.2 高价值用户行为分析</h4><p>以user_id为107932的用户为例，对其进行深入分析：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user_id为107932用户行为分析</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="built_in">date</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'浏览数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'cart'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'加购数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'fav'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'收藏数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'buy'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'购买数'</span>,</span><br><span class="line">	<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'buy'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>)/<span class="keyword">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> behavior=<span class="string">'pv'</span> <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> <span class="string">'购买转化率'</span></span><br><span class="line"><span class="keyword">FROM</span> userbehavior</span><br><span class="line"><span class="keyword">WHERE</span> user_id = <span class="number">107932</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="built_in">date</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/高价值.png" alt="高价值" style="zoom:50%;">
+
+
+
+<img src="//mangosTeeN96.github.io/2020/03/29/SQL分析电商用户行为/高价值图.png" alt="高价值图" style="zoom: 67%;">
+
+<p>结果表明：该用户几乎每天都有消费，购买转化率也很高，但从未使用过收藏功能，购物车的使用频率也极低。对于高价值用户，可以分析其常购买的商品类型，再进行相关的商品推荐。由于商品种类数据为脱敏数据，本文无法分析该用户购买的商品类型。</p>
+<h2 id="五、结论与建议"><a href="#五、结论与建议" class="headerlink" title="五、结论与建议"></a>五、结论与建议</h2><p>本文从4个维度分析了淘宝用户行为数据共100万条，结论和建议如下：</p>
+<ul>
+<li>1、淘宝平台的商品对用户具有足够的吸引力（跳失率），且能够满足绝大部分用户的需求（购买转化率）。淘宝用户的忠诚度较高，复购率高达66.21%。从浏览商品详情页PV到有购买意向仅有6.19%的转化率，这一环节是指标提升的重点环节，尽量做到精准推荐，减少用户寻找信息的成本。<br>针对上述环节改善转化率的建议：<br>（1）优化电商平台的搜索匹配度和推荐策略，主动根据用户喜好推荐相关的商品，优化商品搜索的准确度和聚合能力，对搜索结果排序优先级进行优化。<br>（2）在商品详情页的展示上突出用户关注的重点信息，精简信息流的呈现方式，减少用户寻找信息的成本。</li>
+<li>2、用户的各种行为数据指标在周末和工作日的差别不大，但是受双12等大型平台活动影响较大。每天晚上的20-23点间是用户活跃度最高的时间段，各数据指标呈现一个大高峰，并且在21点左右达到每日数据最大峰值。在制定运营策略时，可以利用这个规律来进行创收，选择在每天用户最活跃的时间段推出各种网店直播、直播带货等互动营销手段。</li>
+<li>3、商品销量与商品浏览量之间相关性较差，浏览量高的商品其销量不一定高，销量高的商品其浏览量不一定高，结合商品四象限划分结果，各象限商品都可从B端与C端两个角度去分析原因，并针对性的进行改善。</li>
+<li>4、淘宝平台商品售卖主要是依靠长尾商品的累计效应，并非爆款商品的带动。<br>建议：长尾效应的确能带来一部分收益，但是，繁多的种类对于商家来说其实是一种经营负担，成本也较高。二八定律告诉我们，商家其实可以通过打造爆款商品来获利。打造爆款商品具体的建议是：品控上提高产品质量，宣传上增大力度（直播、微淘、引流到其他平台），展现上突出产品优势等（主图、详情页、评论）。</li>
+<li>5、通过RFM模型对用户进行分层，找出RF评分高的作为高价值用户，并对不同类型的用户采取不用的运行策略。</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/数据分析/" rel="tag"><i class="fa fa-tags"></i> 数据分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/15/天池-数据分析/" rel="next" title="天池-数据分析">
+                <i class="fa fa-chevron-left"></i> 天池-数据分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="MangosTeen">
+            
+              <p class="site-author-name" itemprop="name">MangosTeen</p>
+              <div class="site-description motion-element" itemprop="description">想养一只猫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/mangosTeeN96" title="Git &rarr; https://github.com/mangosTeeN96" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="mailto:tiansj0810@163.com" title="Mail &rarr; mailto:tiansj0810@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                作品链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" title="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" rel="noopener" target="_blank">tianchi</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据分析：SQL分析淘宝用户行为"><span class="nav-text">数据分析：SQL分析淘宝用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、项目背景及目的"><span class="nav-text">一、项目背景及目的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-项目背景"><span class="nav-text">1.1 项目背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-项目目的"><span class="nav-text">1.2 项目目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-数据集来源与介绍"><span class="nav-text">1.3 数据集来源与介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据导入"><span class="nav-text">二、数据导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、数据清洗"><span class="nav-text">三、数据清洗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-删除重复值"><span class="nav-text">3.1 删除重复值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-查看缺失值"><span class="nav-text">3.2 查看缺失值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-时间格式转换"><span class="nav-text">3.3 时间格式转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-过滤异常值"><span class="nav-text">3.4 过滤异常值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、数据分析"><span class="nav-text">四、数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-基于用户行为转化漏斗模型分析用户行为"><span class="nav-text">4.1 基于用户行为转化漏斗模型分析用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-常见电商指标分析"><span class="nav-text">4.1.1 常见电商指标分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UV、PV、PV-UV"><span class="nav-text">UV、PV、PV/UV</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复购率"><span class="nav-text">复购率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#跳失率"><span class="nav-text">跳失率</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-用户行为转化漏斗模型分析"><span class="nav-text">4.1.2 用户行为转化漏斗模型分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-从时间维度分析用户行为"><span class="nav-text">4.2 从时间维度分析用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-每天的用户行为分析"><span class="nav-text">4.2.1 每天的用户行为分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-每时的用户行为分析"><span class="nav-text">4.2.2 每时的用户行为分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-从商品维度分析用户行为"><span class="nav-text">4.3 从商品维度分析用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-1-商品排行榜分析"><span class="nav-text">4.3.1 商品排行榜分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#商品销量排行榜前10"><span class="nav-text">商品销量排行榜前10</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#商品浏览量排行榜前10"><span class="nav-text">商品浏览量排行榜前10</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-2-商品四象限划分"><span class="nav-text">4.3.2 商品四象限划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-4-“二八定律”or“长尾理论”分析"><span class="nav-text">4.3.4 “二八定律”or“长尾理论”分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-基于RFM用户分层模型分析用户行为"><span class="nav-text">4.4 基于RFM用户分层模型分析用户行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-1-基于RFM模型的用户分层"><span class="nav-text">4.4.1 基于RFM模型的用户分层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#R维度分析"><span class="nav-text">R维度分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#F-维度分析"><span class="nav-text">F 维度分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户分层"><span class="nav-text">用户分层</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-2-高价值用户行为分析"><span class="nav-text">4.4.2 高价值用户行为分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、结论与建议"><span class="nav-text">五、结论与建议</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MangosTeen</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+</body>
+</html>
