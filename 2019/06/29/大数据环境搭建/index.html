@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.2',
+    sidebar: {"position":"left","width":280,"display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Hadoop、hive、scala、spark、hbase、sqoop">
+<meta name="keywords" content="hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据环境搭建">
+<meta property="og:url" content="http://mangosTeeN96.github.io/2019/06/29/大数据环境搭建/index.html">
+<meta property="og:site_name" content="MangosTeen">
+<meta property="og:description" content="Hadoop、hive、scala、spark、hbase、sqoop">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/4.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/5.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/6.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hive1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hive2.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hive3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/scala1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/spark1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/spark2.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/spark3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hbase1.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hbase2.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hbase3.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/hbase4.png">
+<meta property="og:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/sqoop1.png">
+<meta property="og:updated_time" content="2020-08-10T08:44:51.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大数据环境搭建">
+<meta name="twitter:description" content="Hadoop、hive、scala、spark、hbase、sqoop">
+<meta name="twitter:image" content="http://mangosteen96.github.io/2019/06/29/大数据环境搭建/1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://mangosTeeN96.github.io/2019/06/29/大数据环境搭建/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>大数据环境搭建 | MangosTeen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MangosTeen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mangosTeeN96.github.io/2019/06/29/大数据环境搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MangosTeen">
+      <meta itemprop="description" content="想养一只猫">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MangosTeen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">大数据环境搭建
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 17:30:52" itemprop="dateCreated datePublished" datetime="2019-06-29T17:30:52+08:00">2019-06-29</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-08-10 16:44:51" itemprop="dateModified" datetime="2020-08-10T16:44:51+08:00">2020-08-10</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+            <div class="post-description">Hadoop、hive、scala、spark、hbase、sqoop</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、hadoop安装与伪分布式搭建"><a href="#一、hadoop安装与伪分布式搭建" class="headerlink" title="一、hadoop安装与伪分布式搭建"></a>一、hadoop安装与伪分布式搭建</h2><h3 id="创建Hadoop用户"><a href="#创建Hadoop用户" class="headerlink" title="创建Hadoop用户"></a>创建Hadoop用户</h3><ol>
+<li>创建新用户<br>用户名为hadoop，使用/bin/bash作为shell<br><code>sudo useradd -m hadoop -s /bin/bash</code></li>
+<li>修改密码</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd hadoop</span><br><span class="line">Enter <span class="keyword">new</span> UNIX password: </span><br><span class="line">Retype <span class="keyword">new</span> UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>为hadoop用户添加管理员权限<br><code>sudo adduser hadoop sudo</code></li>
+</ol>
+<h3 id="安装jdk1-7"><a href="#安装jdk1-7" class="headerlink" title="安装jdk1.7"></a>安装jdk1.7</h3><p>首先在oracle官网下载,接下来进行安装与环境变量配置，根据个人电脑系统选择对应版本，我选的是jdk-8u211-linux-x64.tar.gz </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /usr/lib/jvm                           #创建jvm文件夹</span><br><span class="line">$ sudo tar -zxvf jdk-8u211-linux-x64.tar.gz  -C /usr/lib/jvm   #/ 解压到/usr/lib/jvm目录下</span><br><span class="line">$ cd /usr/lib/jvm                                 #进入该目录</span><br><span class="line">$ mv  jdk1.8.0_211 java                         #重命名为java</span><br><span class="line">$ vim ~/.bashrc                               #给JDK配置环境变量</span><br></pre></td></tr></table></figure>
+
+<p>在.bashrc文件添加如下指令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>在文件修改完毕以后，输入代码：<br><code>$ source ~/.bashrc                       #使新配置的环境变量生效</code><br><code>$ java -version                          #检测是否安装成功，查看java版本</code></p>
+<p> <img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/1.png" alt></p>
+<h3 id="安装SSH服务端"><a href="#安装SSH服务端" class="headerlink" title="安装SSH服务端"></a>安装SSH服务端</h3><ol>
+<li>安装<br><code>$ sudo apt-get install openssh-server</code></li>
+<li>登录localhost<br><code>$ ssh localhost</code><br> 之后会在~/文件夹下发现一个.ssh文件</li>
+<li>设置为无密码登录</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh/</span><br><span class="line">$ ssh-keygen -t rsa  #出现提示直接按enter</span><br><span class="line">$ cat ./id_rsa.pub &gt;&gt; ./authorized_keys  #加入授权</span><br></pre></td></tr></table></figure>
+
+<p>此时就直接使用$ ssh localhost，无密码登录了。</p>
+<h3 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h3><p>本文采用伪分布式模式：存储采用分布式文件系统HDFS，但是HDFS的节点和数据节点都在同一节点。</p>
+<ol>
+<li>下载安装<br>下载安装包后解压即可使用：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar -zxvf hadoop-<span class="number">2.7</span>.1.tar.gz -C /usr/local</span><br><span class="line">$ cd /usr/local/</span><br><span class="line">$ sudo mv ./hadoop-2.7.1/ ./hadoop      # 将文件夹名改为hadoop</span><br><span class="line">$ sudo chown -R hadoop ./hadoop       # 修改文件权限</span><br></pre></td></tr></table></figure>
+
+<p>查看Hadoop版本信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop/bin</span><br><span class="line">$ ./hadoop version</span><br></pre></td></tr></table></figure>
+
+<p> &lt;img src=”大数据环境搭建/2.png&gt;</p>
+<ol start="2">
+<li>伪分布式模式配置<br>修改配置文件:<br>需要修改/usr/local/hadoop/etc/hadoop/文件夹下的core-site.xml和hdfs-site.xml文件。<br>core-site.xml文件:<br>将</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;</span><br><span class="line">        &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs:<span class="comment">//localhost:9000&lt;/value&gt;</span></span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>hdfs-site.xml文件修改如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/name&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;file:/usr/local/hadoop/tmp/dfs/data&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将/hadoop/etc/hadoop/hadoop-env.sh文件的JAVA_HOME改为绝对路径。将export JAVA_HOME=$JAVA_HOME改为<br>export JAVA_HOME=/usr/lib/jvm/default-java</p>
+<p>注意：Hadoop的运行方式是由配置文件决定的，如果想从伪分布式模式切换回单机模式，只需删除core-site.xml文件中的配置项即可</p>
+<ol start="3">
+<li>执行名称节点格式化<br>执行如下命令：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+<p><strong>出现如下错误</strong><br> <img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/3.png" alt><br>原因应该是权限不够无法再目录内新建文件。<br>解决方案是：先输入命令：sudo su转为root身份<br>输入命令：<br><code>sudo chmod -R a+w /opt/hadoop-1.2.1/</code>注意修改自己的安装路径。<br>输入命令exit回到用户身份<br> <img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/4.png" alt><br>再执行格式化成功。<br>如果出现/usr/local/hadoop/tmp/dfs/name has been successfully formatted.和 Exiting with status 0，表示格式化成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/5.png" alt></p>
+<h3 id="启动Hadoop"><a href="#启动Hadoop" class="headerlink" title="启动Hadoop"></a>启动Hadoop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/hadoop</span><br><span class="line">$ ./sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<p>用jps命令查看Hadoop是否启动成功，如果出现DataNode、NameNode、SecondaryNameNode的进程说明启动成功。<br> <img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/6.png" alt></p>
+<h3 id="使用浏览器查看HDFS信息"><a href="#使用浏览器查看HDFS信息" class="headerlink" title="使用浏览器查看HDFS信息"></a>使用浏览器查看HDFS信息</h3><p>在浏览器中打开链接：<a href="http://localhost:50070/dfshealth.html#tab-overview" target="_blank" rel="noopener">http://localhost:50070/dfshealth.html#tab-overview</a><br>即可查看</p>
+<h3 id="关闭Hadoop"><a href="#关闭Hadoop" class="headerlink" title="关闭Hadoop"></a>关闭Hadoop</h3><p>使用命令：<br><code>./sbin/stop-dfs.sh</code><br>下次启动时不需要再执行节点格式化命令（否则会报错），只需要直接运行start-dfs.sh命令即可。</p>
+<h2 id="二、hive安装"><a href="#二、hive安装" class="headerlink" title="二、hive安装"></a>二、hive安装</h2><h3 id="2-1-hive的安装"><a href="#2-1-hive的安装" class="headerlink" title="2.1 hive的安装"></a>2.1 hive的安装</h3><p>下载hive2.3.5，使用以下命令安装到/usr/local</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar -xzf apache-hive-<span class="number">2.3</span>.5-bin.tar.gz -C /usr/local/bigdata/</span><br><span class="line">$ cd /usr/local/bigdata/</span><br><span class="line">$ sudo mv apache-hive-<span class="number">2.3</span>.5-bin/ hive</span><br><span class="line">$ sudo chown -R hadoop hive</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-配置环境变量"><a href="#2-2-配置环境变量" class="headerlink" title="2.2 配置环境变量"></a>2.2 配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>添加以下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/usr/local/hive</span><br><span class="line">export HCAT_HOME=$HIVE_HOME/hcatalog</span><br><span class="line">export HIVE_CONF=$HIVE_HOME/conf</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure>
+
+<p>保存source ~/.bashrc </p>
+<h3 id="2-3-配置hive-site-xml"><a href="#2-3-配置hive-site-xml" class="headerlink" title="2.3 配置hive-site.xml"></a>2.3 配置hive-site.xml</h3><p>以下操作默认是再hive安装目录/usr/local/hive下进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp conf/hive-default.xml.template conf/hive-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>然后修改hive-site.xml中的部分内容<br>将对应的name修改成下面的value:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;jdbc:mysql:<span class="comment">//localhost:3306/hive?characterEncoding=UTF-8&amp;amp;createDatabaseIfNotExist=true&lt;/value&gt;</span></span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;hive&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;hive&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：此处name和password是后面mysql里面创建的hive用户和by hive密码，不要写错，否则后面初始化会报权限错误</p>
+<p>在/usr/local/bigdata/hive/bin/修改hive-config.sh添加下面的3个export语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/bigdata/java/java</span><br><span class="line">export HADOOP_HOME=/usr/local/bigdata/hadoop</span><br><span class="line">export HIVE_HOME=/usr/local/bigdata/hive</span><br></pre></td></tr></table></figure>
+
+<p>1.4 安装MySQL (之前就安装了)<br>运行 sudo apt-get install mysql-server mysql-client ,安装mysql</p>
+<p>启动mysql服务 service mysql start</p>
+<p>下载mysql-jdbc包，我下载的是mysql-connector-java-5.1.40.tar.gz，然后<br>tar -xzf mysql-connector-java-5.1.40.tar.gz<br>cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/local/bigdata/hive/lib/</p>
+<h3 id="2-4-创建hive用户"><a href="#2-4-创建hive用户" class="headerlink" title="2.4 创建hive用户"></a>2.4 创建hive用户</h3><p>没安装MySQL的安装MySQL </p>
+<p>运行 sudo apt-get install mysql-server mysql-client ,安装mysql</p>
+<p>启动mysql服务 service mysql start</p>
+<p>下载mysql-jdbc包，我下载的是mysql-connector-java-5.1.40.tar.gz，然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf mysql-connector-java-5.1.40.tar.gz</span><br><span class="line">cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/local/bigdata/hive/lib/</span><br></pre></td></tr></table></figure>
+
+<p>创建hive用户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot</span><br><span class="line">create user ‘hive‘ identified by ‘hive‘;</span><br><span class="line">grant all privileges on *.* to ‘hive‘@‘localhost‘ identified by ‘hive‘;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-使用hive用户再在mysql中创建名为hive的数据库"><a href="#2-5-使用hive用户再在mysql中创建名为hive的数据库" class="headerlink" title="2.5 使用hive用户再在mysql中创建名为hive的数据库"></a>2.5 使用hive用户再在mysql中创建名为hive的数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uhive -phive</span><br><span class="line">mysql&gt; create database hive;</span><br></pre></td></tr></table></figure>
+
+<p>元数据库初始化，使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schematool -dbType mysql -initSchema</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hive1.png" alt="hive1" style="zoom:50%;">
+
+<p>使用hive即可进入</p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hive2.png" alt="hive1" style="zoom:50%;">
+
+<hr>
+<p>用root身份进入MySql<br>mysql -u root -p</p>
+<p>出现错误</p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hive3.png" alt="hive1" style="zoom:50%;">
+
+<p>步骤一：登录mysql<br>sudo mysql -u root -p<br>步骤四：修改root密码<br>update mysql.user set authentication_string=PASSWORD(‘111111’), plugin=’mysql_native_password’ where user=’root’;</p>
+<p>111111为设置的密码<br>步骤五：刷新<br>flush privileges;</p>
+<p>exit退出重启<br>service mysql restart<br>可以 mysql -u root -p 进入了</p>
+<hr>
+<h2 id="三、scala安装"><a href="#三、scala安装" class="headerlink" title="三、scala安装"></a>三、scala安装</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xzvf scala-<span class="number">2.12</span>.5.tgz -C /usr/local/bigdata/</span><br><span class="line">cd /usr/local/bigdata/</span><br><span class="line">sudo mv scala-<span class="number">2.12</span>.5/ scala</span><br><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export SCALA_HOME=/usr/local/bigdata/scala</span><br><span class="line">export PATH=$PATH:$SCALA_HOME/bin</span><br></pre></td></tr></table></figure>
+
+<p> <code>source /etc/profile</code></p>
+<p>查看版本</p>
+<p><code>scala -version</code></p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/scala1.png" alt="scala1" style="zoom:50%;">
+
+<h2 id="四、spark安装（伪分布式）"><a href="#四、spark安装（伪分布式）" class="headerlink" title="四、spark安装（伪分布式）"></a>四、spark安装（伪分布式）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xzvf spark-<span class="number">2.4</span>.3-bin-hadoop2.7.tgz -C /usr/local/bigdata/</span><br><span class="line">cd /usr/local/bigdata/</span><br><span class="line">sudo mv spark-<span class="number">2.4</span>.3-bin-hadoop2.7/ spark</span><br><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export SPARK_HOME=/usr/local/bigdata/spark</span><br><span class="line">export PATH=$PATH:$SPARK_HOME/bin</span><br></pre></td></tr></table></figure>
+
+<p> <code>source /etc/profile</code></p>
+<p> <strong>配置配置spark-env.sh</strong></p>
+<p>进入到spark/conf/</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-env.sh.template spark-env.sh</span><br><span class="line">vim spark-env.sh</span><br></pre></td></tr></table></figure>
+
+<p>添加：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export SCALA_HOME=/usr/local/bigdata/scala</span><br><span class="line">export JAVA_HOME=/usr/local/bigdata/java/java</span><br><span class="line">export HADOOP_HOME=/usr/local/bigdata/hadoop</span><br><span class="line">export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop</span><br><span class="line">SPARK_MASTER_IP=<span class="number">192.168</span>.81.136</span><br><span class="line">SPARK_LOCAL_DIRS=/usr/local/bigdata/spark</span><br><span class="line">SPARK_DRIVER_MEMORY=<span class="number">512</span>M</span><br></pre></td></tr></table></figure>
+
+<p>注意：其中MASTER_IP为服务器IP</p>
+<p>java，hadoop等具体路径根据自己实际环境设置</p>
+<p><strong>配置Slave</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp slaves.template slaves</span><br><span class="line">vim slaves</span><br></pre></td></tr></table></figure>
+
+<p> 默认就是localhost（就无须更改了）</p>
+<p><strong>启动（前提是hadoop伪分布已经启动，就是上面的jps后出现那几个）：</strong></p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/spark1.png" alt="spark1" style="zoom: 67%;">
+
+<p><strong>启动sbin目录下的start-master.sh以及start-slaves.sh</strong></p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/spark2.png" alt="spark1" style="zoom: 50%;">
+
+<p><strong>启动bin目录下的spark-shell</strong></p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/spark3.png" alt="spark1" style="zoom: 50%;">
+
+<h2 id="五、hbase安装"><a href="#五、hbase安装" class="headerlink" title="五、hbase安装"></a>五、hbase安装</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xzvf hbase-<span class="number">2.0</span>.5-bin.tar.gz -C /usr/local/bigdata/</span><br><span class="line">cd /usr/local/bigdata/</span><br><span class="line">sudo mv hbase-<span class="number">2.0</span>.5/ hbase</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统环境变量"><a href="#修改系统环境变量" class="headerlink" title="修改系统环境变量"></a>修改系统环境变量</h3><p><code>sudo vim /etc/profile</code></p>
+<p>添加：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HBASE_HOME=/usr/local/bigdata/hbase</span><br><span class="line">export PATH=$PATH:$HBASE_HOME/bin</span><br></pre></td></tr></table></figure>
+
+<p>使环境变量生效并验证环境变量生效</p>
+<p><code>source /etc/profile</code></p>
+<h3 id="修改文件夹的权限"><a href="#修改文件夹的权限" class="headerlink" title="修改文件夹的权限"></a>修改文件夹的权限</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/bigdata</span><br><span class="line"></span><br><span class="line">sudo chown -R hadoop:hadoop hbase</span><br></pre></td></tr></table></figure>
+
+<p>注意：hadoop为用户名（电脑）</p>
+<p>不改权限后面启动会报权限错误</p>
+<p>测试一下是否安装成功</p>
+<p>hbase version</p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hbase1.png" alt="hbase1" style="zoom:50%;">
+
+<h3 id="编辑hbase-env-sh"><a href="#编辑hbase-env-sh" class="headerlink" title="编辑hbase-env.sh"></a>编辑hbase-env.sh</h3><ol>
+<li>打开hbase-env.sh文件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/bigdata/hbase/conf</span><br><span class="line">sudo vim hbase-env.sh</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改该文件配置</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Java环境</span></span><br><span class="line">export JAVA_HOME=/usr/local/bigdata/java/java</span><br><span class="line"><span class="comment">#通过hadoop的配置文件找到hadoop集群（这行没写）</span></span><br><span class="line">export HBASE_CLASSPATH=/app/hadoop<span class="number">-1.1</span><span class="number">.2</span>/conf</span><br><span class="line"><span class="comment">#使用HBASE自带的zookeeper管理集群</span></span><br><span class="line">export HBASE_MANAGES_ZK=true</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑hbase-site-xml"><a href="#编辑hbase-site-xml" class="headerlink" title="编辑hbase-site.xml"></a>编辑hbase-site.xml</h3><p><code>sudo vim hbase-site.xml</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.cluster.distributed<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"># ******默认localhost，分布式时是master，slave1，slave2(此处没写)</span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.quorum<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>******<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动并验证"><a href="#启动并验证" class="headerlink" title="启动并验证"></a>启动并验证</h3><p>启动HBase</p>
+<p>通过如下命令启动Hbase</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/bigdata/hbase/bin</span><br><span class="line">./start-hbase.sh</span><br></pre></td></tr></table></figure>
+
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hbase2.png" alt="hbase1" style="zoom:50%;">
+
+<p>验证启动</p>
+<ol>
+<li>在hadoop节点使用jps查看节点状态</li>
+</ol>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hbase3.png" alt="hbase1" style="zoom:50%;">
+
+<ol start="2">
+<li>进入hbase的shell命令行，创建表member并进行查看</li>
+</ol>
+<p>hbase shell</p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/hbase4.png" alt="hbase1" style="zoom:50%;">
+
+<h2 id="六、sqoop安装"><a href="#六、sqoop安装" class="headerlink" title="六、sqoop安装"></a>六、sqoop安装</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd download</span><br><span class="line">sudo tar -xvzf sqoop-<span class="number">1.4</span>.7.bin__hadoop-<span class="number">2.6</span>.0.tar.gz -C /usr/local/bigdata/</span><br><span class="line">cd /usr/local/bigdata</span><br><span class="line">sudo mv sqoop-<span class="number">1.4</span>.7.bin__hadoop-<span class="number">2.6</span>.0/ sqoop</span><br><span class="line">sudo chown -R mangosteen:mangosteen sqoop</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改配置文件sqoop-env-sh"><a href="#修改配置文件sqoop-env-sh" class="headerlink" title="修改配置文件sqoop-env.sh"></a>修改配置文件sqoop-env.sh</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> cd sqoop/conf/</span><br><span class="line">cat sqoop-env-template.sh  &gt;&gt; sqoop-env.sh  <span class="comment">#将sqoop-env-template.sh复制一份并命名为sqoop-env.sh</span></span><br><span class="line">vim sqoop-env.sh <span class="comment">#编辑sqoop-env.sh</span></span><br></pre></td></tr></table></figure>
+
+<p>修改sqoop-env.sh的如下信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_COMMON_HOME=/usr/local/bigdata/hadoop</span><br><span class="line">export HADOOP_MAPRED_HOME=/usr/local/bigdata/hadoop</span><br><span class="line">export HBASE_HOME=/usr/local/bigdata/hbase</span><br><span class="line">export HIVE_HOME=/usr/local/bigdata/hive</span><br><span class="line"><span class="comment">#export ZOOCFGDIR= #如果配置了ZooKeeper,也需要在此配置ZooKeeper的路径</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>打开当前用户的环境变量配置文件：</p>
+<p> vim ~/.bashrc</p>
+<p> 在配置文件第一行键入如下信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export SQOOP_HOME=/usr/local/bigdata/sqoop</span><br><span class="line">export PATH=$PATH:$SBT_HOME/bin:$SQOOP_HOME/bin</span><br><span class="line">export CLASSPATH=$CLASSPATH:$SQOOP_HOME/lib</span><br></pre></td></tr></table></figure>
+
+<p><code>source ~/.bashrc</code></p>
+<p> 将mysql驱动包拷贝到$SQOOP_HOME/lib</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf mysql-connector-java<span class="number">-5.1</span><span class="number">.40</span>.tar.gz <span class="comment">#解压mysql驱动包</span></span><br><span class="line">ls <span class="comment">#这时就可以看到解压缩后得到的目录mysql-connector-java-5.1.40</span></span><br><span class="line"></span><br><span class="line">cp ./mysql-connector-java<span class="number">-5.1</span><span class="number">.40</span>/mysql-connector-java<span class="number">-5.1</span><span class="number">.40</span>-bin.jar /usr/local/sqoop/lib</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试与MySQL的连接"><a href="#测试与MySQL的连接" class="headerlink" title="测试与MySQL的连接"></a>测试与MySQL的连接</h3><p>首先请确保mysql服务已经启动了，如果没有启动，请执行下面命令启动：</p>
+<p><code>service mysql start</code></p>
+<p>然后就可以测试sqoop与MySQL之间的连接是否成功：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqoop list-databases --connect </span><br><span class="line">jdbc:mysql://<span class="number">192.168</span><span class="number">.81</span><span class="number">.136</span>:<span class="number">3306</span>/ --username hive -P</span><br></pre></td></tr></table></figure>
+
+<p>注意：192….是服务器ip；hive是mysql创建的用户名</p>
+<p>注意：会让输入密码，输入的是创建hive时的密码hive</p>
+<p> mysql的数据库列表显示在屏幕上表示连接成功，如下图：</p>
+<img src="//mangosTeeN96.github.io/2019/06/29/大数据环境搭建/sqoop1.png" alt="sqoop1" style="zoom: 67%;">
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tags"></i> hadoop</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/Java_多线程/" rel="next" title="Java_多线程">
+                <i class="fa fa-chevron-left"></i> Java_多线程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/25/Linux以及命令/" rel="prev" title="Linux以及命令.md">
+                Linux以及命令.md <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="MangosTeen">
+            
+              <p class="site-author-name" itemprop="name">MangosTeen</p>
+              <div class="site-description motion-element" itemprop="description">想养一只猫</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/mangosTeeN96" title="Git &rarr; https://github.com/mangosTeeN96" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="mailto:tiansj0810@163.com" title="Mail &rarr; mailto:tiansj0810@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                作品链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" title="http://htmlpreview.github.io/?https://github.com/mangosTeeN96/education/blob/master/Offline%20Website/index.html" rel="noopener" target="_blank">tianchi</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、hadoop安装与伪分布式搭建"><span class="nav-text">一、hadoop安装与伪分布式搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Hadoop用户"><span class="nav-text">创建Hadoop用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装jdk1-7"><span class="nav-text">安装jdk1.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装SSH服务端"><span class="nav-text">安装SSH服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hadoop"><span class="nav-text">安装Hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Hadoop"><span class="nav-text">启动Hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用浏览器查看HDFS信息"><span class="nav-text">使用浏览器查看HDFS信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭Hadoop"><span class="nav-text">关闭Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、hive安装"><span class="nav-text">二、hive安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-hive的安装"><span class="nav-text">2.1 hive的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-配置环境变量"><span class="nav-text">2.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-配置hive-site-xml"><span class="nav-text">2.3 配置hive-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-创建hive用户"><span class="nav-text">2.4 创建hive用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-使用hive用户再在mysql中创建名为hive的数据库"><span class="nav-text">2.5 使用hive用户再在mysql中创建名为hive的数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、scala安装"><span class="nav-text">三、scala安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、spark安装（伪分布式）"><span class="nav-text">四、spark安装（伪分布式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、hbase安装"><span class="nav-text">五、hbase安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改系统环境变量"><span class="nav-text">修改系统环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件夹的权限"><span class="nav-text">修改文件夹的权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑hbase-env-sh"><span class="nav-text">编辑hbase-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑hbase-site-xml"><span class="nav-text">编辑hbase-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动并验证"><span class="nav-text">启动并验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、sqoop安装"><span class="nav-text">六、sqoop安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件sqoop-env-sh"><span class="nav-text">修改配置文件sqoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试与MySQL的连接"><span class="nav-text">测试与MySQL的连接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MangosTeen</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+</body>
+</html>
